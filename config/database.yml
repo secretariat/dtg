@@ -37,5 +37,5 @@ production:
   database: dtg
   pool: 5
   username: root
-  password:
+  password: ctrhtnfhbfn
   socket: /var/lib/mysql/mysql.sock
