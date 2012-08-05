@@ -32,7 +32,7 @@ test:
 
 production:
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8(windows-1251)
   reconnect: false
   database: dtg
   pool: 5
