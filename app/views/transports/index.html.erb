@@ -1,0 +1,27 @@
+<br/>
+<br/>
+<center>
+  <h3>Listing transports</h3>
+</center>
+
+<table class="table table-condensed">
+  <tr>
+    <th class="span8">Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transports.each do |transport| %>
+  <tr>
+    <td><%= transport.name %></td>
+    <td><%= link_to 'Show', transport, :class => 'btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_transport_path(transport), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Destroy', transport, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Transport', new_transport_path, :class => 'btn btn-success' %>
