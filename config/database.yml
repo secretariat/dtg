@@ -38,4 +38,4 @@ production:
   pool: 5
   username: root
   password: ctrhtnfhbfn
-  socket: /var/lib/mysql/mysql.sock
+  socket: /usr/lib/mysql/mysql.sock
