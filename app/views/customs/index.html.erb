@@ -1,0 +1,26 @@
+<center>
+  <h1>Таможенный режим</h1>
+</center>
+
+
+<table class="table table-condensed">
+  <tr>
+    <th>Наименование  </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customs.each do |custom| %>
+  <tr>
+    <td><%= custom.name %></td>
+    <td><%= link_to 'Show', custom, :class => 'btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_custom_path(custom), :class => 'btn btn-primary' %></td>
+    <td><%= link_to 'Destroy', custom, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Custom', new_custom_path, :class => 'btn btn-success' %>
