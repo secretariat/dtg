@@ -1,4 +1,6 @@
 Dtg::Application.routes.draw do
+  resources :customs
+
   resources :transports
 
   # The priority is based upon order of creation:
