@@ -5,6 +5,11 @@ class AdminController < ApplicationController
 	def index
 	end
 
+	def show
+		list
+		render('list')
+	end
+
 	def list
 		@admin = Admin.order("admins.id DESC")
 		# @subjects = Subject.order("subjects.position ASC")
