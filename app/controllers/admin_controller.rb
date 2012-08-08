@@ -3,11 +3,11 @@ class AdminController < ApplicationController
 	layout 'admin'
 
 	def index
-		list
 	end
 
 	def list
-		@admin = Admin.find(:all)
+		@admin = Admin.order("admins.id DESC")
+		# @subjects = Subject.order("subjects.position ASC")
 		# @projects = Project.where(:user_id => current_user.id)
 		# @task = Task.new
 	end
