@@ -5,13 +5,13 @@ class AdminController < ApplicationController
 	def index
 	end
 
-	def show
-		list
-		render('list')
-	end
-
 	def list
 		@admin = Admin.order("admins.id DESC")
+		if @admin then
+			render('list')
+		else
+			render('index')
+		end
 		# @subjects = Subject.order("subjects.position ASC")
 		# @projects = Project.where(:user_id => current_user.id)
 		# @task = Task.new

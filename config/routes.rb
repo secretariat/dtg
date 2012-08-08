@@ -3,7 +3,7 @@ Dtg::Application.routes.draw do
 
   resources :transports
   
-  resources :admin, only: [:list, :new, :create, :destroy, :show]
+  resources :admin, only: [:list, :new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
