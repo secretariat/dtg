@@ -6,8 +6,9 @@ class AdminController < ApplicationController
 	end
 
 	def list
-		@admin = Admin.order("admins.id DESC")
-		if @admin then
+		# @admin = Admin.order("admins.id DESC")
+		if Admin.order("admins.id DESC") then
+			@admin = Admin.order("admins.id DESC")
 			render('list')
 		else
 			render('index')
