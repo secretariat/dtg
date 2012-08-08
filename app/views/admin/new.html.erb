@@ -1,0 +1,15 @@
+<%= link_to("Back",{:action => 'index'} )%>
+
+<%= form_for( :admin, :url => {:action => 'create'} ) do |f| %>
+ 	<table\>
+		<tr>
+			<th>Email:*</th>
+			<td><%= f.text_field(:email) %></td>
+		</tr>
+	</table>
+
+	<div>
+		<%= f.submit "Create", class: "btn btn-primary" %>
+	</div>
+
+<% end %>
