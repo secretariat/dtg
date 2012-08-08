@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806203323) do
+ActiveRecord::Schema.define(:version => 20120807200449) do
+
+  create_table "admins", :force => true do |t|
+    t.integer  "main_id"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "customs", :force => true do |t|
     t.string   "name"
@@ -19,8 +26,43 @@ ActiveRecord::Schema.define(:version => 20120806203323) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "mains", :force => true do |t|
+    t.string   "login",      :limit => 20
+    t.string   "hash_pass",  :limit => 100
+    t.string   "hash_salt",  :limit => 100
+    t.integer  "owner_id"
+    t.integer  "priv_level"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "managers", :force => true do |t|
+    t.string   "main_id"
+    t.string   "pib"
+    t.string   "postion"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "transports", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.integer  "main_id"
+    t.string   "cname"
+    t.string   "uaddr"
+    t.string   "phone"
+    t.string   "chef"
+    t.string   "email"
+    t.string   "dognum"
+    t.string   "edrpo"
+    t.string   "gdcode"
+    t.string   "pib"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
