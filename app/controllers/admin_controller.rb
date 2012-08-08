@@ -3,28 +3,37 @@ class AdminController < ApplicationController
 	layout 'admin'
 
 	def index
-		# list
-		# render('list')
+		list
 	end
 
 	def list
+		@admin = Admin.find(:all)
 		# @projects = Project.where(:user_id => current_user.id)
 		# @task = Task.new
 	end
 
 	def new
     @admin = Admin.new
+    @main = Main.new
   end
 
   def create
-  	@main = Admin.new( params[:admin] )
-    #	@projects.user = current_user
-		# if @main.save then
-			# flash[:notice] = "Администратор создан успешно"
-			# redirect_to(:action => 'index')
+  	@admin = Admin.new( params[:admin] )
+  	@main = Main.new( params[:main] )
+		if @admin.save && @main.save then
+			flash[:notice] = "Successfully created"
+			redirect_to(:action => 'index')
+		else
+			render('index')
+		end  	
+
+		# @main = Main.new( params[:main] )
+		# if  then
+		# 	flash[:notice] = "Successfully created"
+		# 	redirect_to(:action => 'index')
 		# else
-			# render('index')
-		# end  	
+		# 	render('index')
+		# end 
   end
 
   def edit
