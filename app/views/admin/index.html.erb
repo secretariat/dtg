@@ -21,8 +21,17 @@
           </div><!--/.nav-collapse -->
 
             <ul class="nav pull-right">
-            	<li><%= link_to "username"%></li>
-            	<li><%= link_to "Выйти"%></li>
+             <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#hosting">
+                  <i class="icon-user"></i>
+                  <b class="caret"></b>
+                </a>
+              <ul class="dropdown-menu">
+                <u><li><%= link_to "admin"%></li></u>
+                <li class="divider"></li>
+                <li><%= link_to "Выйти"%></li>
+              </ul>
             </ul>      
         </div>
       </div>
