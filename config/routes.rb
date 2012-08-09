@@ -1,4 +1,6 @@
 Dtg::Application.routes.draw do
+  get "main/login"
+
   resources :customs
 
   resources :transports
