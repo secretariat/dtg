@@ -1,12 +1,17 @@
-<center><h2>Страница администратора</h2></center><br/>
-<%= link_to "Администраторы", :controller => 'admin', :action => 'list' %><br/>
-<%= link_to "Менеджеры"%>
-<br/>
-<br/>
-<br/>
-<h4>Словари:<br/></h4>
-<%= link_to "Типы транспортаnfnfnf", :controller => 'transports', :action => 'index' %><br/>
-<%= link_to "Таможенный режим", :controller => 'customs', :action => 'index' %><br/>
+<center>
+	<%= image_tag "logo.png" %>
+</center>
 
-
-<%= link_to "Таможенный режим", :controller => 'customs', :action => 'index' %><br/>
+<div class="container">
+	<div class="row">
+		<center><h2>Страница администратора</h2></center><br/>
+		<%= link_to "Администраторы", :controller => 'admin', :action => 'list' %><br/>
+		<%= link_to "Менеджеры"%>
+		<br/>
+		<br/>
+		<br/>
+		<h4>Словари:<br/></h4>
+		<%= link_to "Типы транспорта", :controller => 'transports', :action => 'index' %><br/>
+		<%= link_to "Таможенный режим", :controller => 'customs', :action => 'index' %><br/>
+	</div>
+</div>
