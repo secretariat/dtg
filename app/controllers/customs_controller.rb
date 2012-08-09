@@ -1,4 +1,5 @@
 class CustomsController < ApplicationController
+  layout 'admin'
   # GET /customs
   # GET /customs.json
   def index

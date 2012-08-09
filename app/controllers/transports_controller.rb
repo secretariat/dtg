@@ -1,4 +1,5 @@
 class TransportsController < ApplicationController
+  layout 'admin'
   # GET /transports
   # GET /transports.json
   def index
