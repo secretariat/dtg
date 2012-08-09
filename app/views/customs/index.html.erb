@@ -1,26 +1,24 @@
+<center><h3>Таможенный режим</h3><br/>
+  <div class="container">
+        <h4 class="span4">Наименование</h4><br>
+        <table class="span8 table table-bordered table-condensed">
+          <tr>
+          
+          </tr>
 
-<center>
-  <h1>Таможенный режим</h1>
+        <% @customs.each do |custom| %>
+          <tr>
+            <td><%= custom.name %></td>
+            <td><%= link_to 'Редактировать', edit_custom_path(custom), :class => 'btn btn-primary' %>
+            <%= link_to 'Удалить', custom, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+          </tr>
+        <% end %>
+
+
+        </table>
+      </div>
+    <div class="row span8">
+      <%= link_to 'Добавить', new_custom_path, :class => 'pull-right btn btn-success' %>
+    </div>
+  </div>
 </center>
-
-<table class="table table-condensed">
-  <tr>
-    <th>Наименование</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @customs.each do |custom| %>
-  <tr>
-    <td><%= custom.name %></td>
-    <td><%= link_to 'Show', custom, :class => 'btn btn-success' %></td>
-    <td><%= link_to 'Edit', edit_custom_path(custom), :class => 'btn btn-primary' %></td>
-    <td><%= link_to 'Destroy', custom, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Custom', new_custom_path, :class => 'btn btn-success' %>

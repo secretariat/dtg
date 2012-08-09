@@ -1,32 +1,29 @@
-
-
 <br/>
 <br/>
-<center>
+
+<center><h3>Администраторы сиситемы</h3></center><br/>
 	<div class="container">
 		<div class="row">
-			<div class="span2">
-				<%= link_to "Новый Админ", :controller => 'admin', :action => 'new' %>
-				<br>
-			</div>
-		</div>
 			<center>
-				<table class="table table-bordered table-condensed table-stripped">
-					<th>N%</th>
-					<th>Email:</th>
-					<th>Login:</th>
-					<th>Pass:</th>
-					<th>Created:</th>
-					<% @admin.each do |ad| %>	
-						<tr>
-							<td><%= ad.id %></td>
-							<td><%= ad.email %></td>
-							<td><%= ad.main.login %></td>
-							<td><%= ad.main.hash_pass %></td>
-							<td><%= ad.main.created_at %></td>
+			<table class="table table-bordered table-condensed table-stripped">
+				<th>N%</th>
+				<th>Email:</th>
+				<th>Логин:</th>
+				<th>Создан:</th>
+				<% @admin.each do |ad| %>	
+					<tr>
+						<td><%= ad.id %></td>
+						<td><%= ad.email %></td>
+						<td><%= ad.main.login %></td>
+						<td><%= ad.main.created_at %></td>
 
-						</tr>
-					<% end %>
-				</table>
-			</div>
-<br/>
+					</tr>
+				<% end %>
+			</table>
+			</center>
+		</div>
+		<div class="row">
+			<div class="pull-right">
+					<%= link_to("Создать администратора",{:controller => 'admin', :action => 'new'}, :class => 'btn  btn-small btn-success') %>
+				</div>
+	</div>
