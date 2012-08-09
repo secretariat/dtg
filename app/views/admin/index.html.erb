@@ -1,3 +1,32 @@
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#"><img src="img/mini_logo5.png"></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Администраторы", :controller => 'admin', :action => 'list' %></li>
+              <li><%= link_to "Менеджеры"%></li>
+
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#hosting">
+                  Словари
+                  <b class="caret"></b>
+                </a>
+              <ul class="dropdown-menu">
+              	<li><%= link_to "Типы транспорта", :controller => 'transports', :action => 'index' %></li>
+              	<li><%= link_to "Таможенный режим", :controller => 'customs', :action => 'index' %></li>
+              </ul>
+              
+            </ul>
+          </div><!--/.nav-collapse -->
+
+            <ul class="nav pull-right">
+            	<li><%= link_to "username"%></li>
+            	<li><%= link_to "Выйти"%></li>
+            </ul>      
+        </div>
+      </div>
+    </div>
 <center>
 	<%= image_tag "logo.png" %>
 </center>
