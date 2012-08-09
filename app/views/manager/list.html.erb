@@ -1,28 +1,36 @@
-<%= link_to "Новый Менеджер", :controller => 'manager', :action => 'new' %><br/>
 <br/>
 <br/>
-<br/>
-<table>
-	<th>N%</th>
-	<th>ФИО:</th>
-	<th>Должность:</th>
-	<th>Телефон:</th>
-	<th>Email:</th>
-	<th>Логин:</th>
-	<th>Пароль:</th>
-	<th>Создан:</th>
-	<% @manager.each do |man| %>	
-		<tr>
-			<td><%= man.id %></td>
-			<td><%= man.pib %></td>
-			<td><%= man.postion %></td>
-			<td><%= man.phone %></td>
-			<td><%= man.email %></td>
-			<td><%= man.main.login %></td>
-			<td><%= man.main.hash_pass %></td>
-			<td><%= man.main.created_at %></td>
 
-		</tr>
-	<% end %>
-</table>
+<center><h3>Список менеджеров</h3><br/>
+	<div class="container">
+		<div class="row">
+			<div class="span8">
+			<%= link_to "Новый Менеджер", :controller => 'manager', :action => 'new' %>
+			<br>
+			</div>
+		</div>
+				<center>
+				<table class="table table-bordered table-condensed table-stripped">
+					<th>N%</th>
+					<th>ФИО:</th>
+					<th>Должность:</th>
+					<th>Телефон:</th>
+					<th>Email:</th>
+					<th>Логин:</th>
+					<th>Создан:</th>
+					<% @manager.each do |man| %>	
+						<tr>
+							<td><%= man.id %></td>
+							<td><%= man.pib %></td>
+							<td><%= man.postion %></td>
+							<td><%= man.phone %></td>
+							<td><%= man.email %></td>
+							<td><%= man.main.login %></td>
+							<td><%= man.main.created_at %></td>
+						</tr>
+					<% end %>
+				</table>
+			</center>
+		</div>
+	</div>
 <br/>

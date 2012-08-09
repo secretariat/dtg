@@ -2,13 +2,30 @@
 <br>
 <center>
 	<%= image_tag "logo.png" %>
-
-<br><br><br>
-<%= form_tag do %>
-    <form class="well form-inline">
-    <input type="text" class="input-small" placeholder="Email">
-    <input type="password" class="input-small" placeholder="Password">
-    <button type="submit" class="btn">Sign in</button>
-    </form>
 </center>
+<br>
+<%= form_tag do %>
+<center>
+	<fieldset>
+		<legend>Войти:</legend>
+
+		<div>
+			<%= label_tag :name, 'Логин:   ' %>
+			<%= text_field_tag :name, params[:name] %>
+		</div>
+		
+		<br>
+		
+		<div>
+			<%= label_tag :password, 'Пароль:' %>
+			<%= password_field_tag :password, params[:password] %>
+		</div>
+		
+		<br>	
+		
+		<!-- <div>
+			<%= submit_tag %>
+		</div> -->
+		<%= link_to("Login",{:controller => 'admin', :action => 'index'}, :class => 'btn btn-success') %><br/>
+	</fieldset>
 <% end %>

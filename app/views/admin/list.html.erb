@@ -1,23 +1,32 @@
 
-<%= link_to "Новый Админ", :controller => 'admin', :action => 'new' %><br/>
-<br/>
-<br/>
-<br/>
-<table>
-	<th>N%</th>
-	<th>Email:</th>
-	<th>Login:</th>
-	<th>Pass:</th>
-	<th>Created:</th>
-	<% @admin.each do |ad| %>	
-		<tr>
-			<td><%= ad.id %></td>
-			<td><%= ad.email %></td>
-			<td><%= ad.main.login %></td>
-			<td><%= ad.main.hash_pass %></td>
-			<td><%= ad.main.created_at %></td>
 
-		</tr>
-	<% end %>
-</table>
+<br/>
+<br/>
+<center>
+	<div class="container">
+		<div class="row">
+			<div class="span2">
+				<%= link_to "Новый Админ", :controller => 'admin', :action => 'new' %>
+				<br>
+			</div>
+		</div>
+			<center>
+				<table class="table table-bordered table-condensed table-stripped">
+					<th>N%</th>
+					<th>Email:</th>
+					<th>Login:</th>
+					<th>Pass:</th>
+					<th>Created:</th>
+					<% @admin.each do |ad| %>	
+						<tr>
+							<td><%= ad.id %></td>
+							<td><%= ad.email %></td>
+							<td><%= ad.main.login %></td>
+							<td><%= ad.main.hash_pass %></td>
+							<td><%= ad.main.created_at %></td>
+
+						</tr>
+					<% end %>
+				</table>
+			</div>
 <br/>
