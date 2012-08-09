@@ -1,3 +1,6 @@
+<br/>
+<br/>
+
 <center><h3>Таможенный режим</h3><br/>
   <div class="container">
         <h4 class="span4">Наименование</h4><br>
@@ -8,7 +11,7 @@
 
         <% @customs.each do |custom| %>
           <tr>
-            <td><%= custom.name %></td>
+            <td class="span6"><%= custom.name %></td>
             <td><%= link_to 'Редактировать', edit_custom_path(custom), :class => 'btn btn-primary' %>
             <%= link_to 'Удалить', custom, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
           </tr>
