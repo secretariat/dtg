@@ -3,6 +3,7 @@ class AdminController < ApplicationController
 	layout 'admin'
 
 	def index
+		@manager = Manager.order("managers.id DESC")
 	end
 
 	def login
@@ -10,15 +11,6 @@ class AdminController < ApplicationController
 
 	def list
 		@admin = Admin.order("admins.id DESC")
-		# if Admin.order("admins.id DESC") then
-		# 	@admin = Admin.order("admins.id DESC")
-		# 	render('list')
-		# else
-		# 	render('index')
-		# end
-		# @subjects = Subject.order("subjects.position ASC")
-		# @projects = Project.where(:user_id => current_user.id)
-		# @task = Task.new
 	end
 
 	def new

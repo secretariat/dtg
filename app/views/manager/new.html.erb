@@ -1,0 +1,29 @@
+<center><h2>Создание нового Менеджера</h2><br/><br/><br/>
+
+<%= form_for(:manager, :url => {:action => 'create'}) do |f| %>
+ 	<table\>
+		<tr>
+			<th>ФИО:*</th><br/>
+			<td><%= f.text_field(:pib) %></td><br/>
+			<th>Должность:*</th><br/>
+			<td><%= f.text_field(:postion) %></td><br/>
+			<th>Телефон:*</th><br/>
+			<td><%= f.text_field(:phone) %></td><br/>
+			<th>Email:*</th><br/>
+			<td><%= f.text_field(:email) %></td><br/>
+	</table>
+	<br/>
+	<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
+		<table\>
+		<tr>
+			<th>Логин:*</th><br/>
+			<td><%= f.text_field(:login) %></td><br/>
+			<th>Пароль:*</th><br/>
+			<td><%= f.text_field(:hash_pass) %></td><br/>
+	</table>
+	<% end %>
+	<div>
+		<%= f.submit "Создать", class: "btn btn-primary"%>
+	</div>
+<% end %>
+</center>
