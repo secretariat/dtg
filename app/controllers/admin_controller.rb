@@ -5,6 +5,9 @@ class AdminController < ApplicationController
 	def index
 	end
 
+	def login
+	end
+
 	def list
 		@admin = Admin.order("admins.id DESC")
 		# if Admin.order("admins.id DESC") then
@@ -26,7 +29,8 @@ class AdminController < ApplicationController
   def create
   	@admin = Admin.new( params[:admin] )
   	@main = Main.new( params[:main] )
-		if @admin.save && @main.save then
+  	@main.admin = @admin
+		if @main.save then
 			flash[:notice] = "Successfully created"
 			redirect_to(:action => 'index')
 		else

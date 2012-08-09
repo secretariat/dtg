@@ -1,0 +1,24 @@
+<%= form_tag do %>
+	<fieldset>
+		<legend>Please Log In</legend>
+
+		<div>
+			<%= label_tag :name, 'Логин:   ' %><br>
+			<%= text_field_tag :name, params[:name] %>
+		</div>
+		
+		<br>
+		
+		<div>
+			<%= label_tag :password, 'Пароль:' %><br>
+			<%= password_field_tag :password, params[:password] %>
+		</div>
+		
+		<br>	
+		
+		<!-- <div>
+			<%= submit_tag %>
+		</div> -->
+		<%= link_to("Login",{:controller => 'admin', :action => 'index'}, :class => 'btn btn-success') %><br/>
+	</fieldset>
+<% end %>
