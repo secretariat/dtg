@@ -3,10 +3,11 @@
 
 <center><h3>Создание нового пользователя</h3></center>
 <div class="span4 offset4">
+	<table>
 	<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
-	 	<table>
+	 	
 			<tr>
-				<th class="span3">ФИО Сотрудника:*</th>
+				<th class="span4">ФИО Сотрудника:*</th>
 				<td><%= f.text_field(:pib) %></td>
 			</tr>
 			<tr>
@@ -51,10 +52,9 @@
 					<td><%= f.text_field(:password) %></td><br/>
 				</tr>
 			<% end %>
+			<% end %>
 		</table>
 		<br>
-		<div class="span1 offset1">
-			<%= f.submit "Создать", class: "btn btn-primary"%>
-		</div>
+
 	<% end %>
 </div>
