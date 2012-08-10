@@ -1,27 +1,35 @@
 <br/>
 <br/>
 
-<center><h3>Таможенный режим</h3><br/>
+<center><h3>Таможенный режим</h3></center><br/>
   <div class="container">
-        <h4 class="span4">Наименование</h4><br>
-        <table class="span8 table table-bordered table-condensed">
-          <tr>
-          
-          </tr>
+    <div class="row">
+      
+        <div class="span1 offset2">
+          <h4>Наименование</h4>
+        </div>
+    </div>
+    <div class="row">
+      <center>
+        <table class="span8 offset2 table table-condensed">
+
 
         <% @customs.each do |custom| %>
           <tr>
             <td class="span6"><%= custom.name %></td>
-            <td><%= link_to 'Редактировать', edit_custom_path(custom), :class => 'btn btn-primary' %>
-            <%= link_to 'Удалить', custom, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-danger' %></td>
+            <td><%= link_to 'Редактировать', edit_custom_path(custom), :class => 'href' %>
+            <%= link_to 'Удалить', custom, confirm: 'Уверены?', method: :delete, :class => 'href' %></td>
           </tr>
         <% end %>
 
 
         </table>
+      </center>
+    </div>
+    <div class="row">
+      <div class="span1 offset9">
+        <%= link_to 'Добавить', new_custom_path, :class => 'btn btn-success' %>
       </div>
-    <div class="row span8">
-      <%= link_to 'Добавить', new_custom_path, :class => 'pull-right btn btn-success' %>
     </div>
   </div>
-</center>
+
