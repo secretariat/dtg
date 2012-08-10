@@ -1,7 +1,7 @@
 <br/>
 <br/>
 
-<center><h3>Создание нового пользователя</h3></center><br/>
+<center><h3>Создание нового пользователя</h3></center>
 <div class="span4 offset4">
 	<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
 	 	<table>
@@ -41,17 +41,18 @@
 				<th>Email:*</th><br/>
 				<td><%= f.text_field(:email) %></td>
 			</tr>	
-		<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
-			<tr>
-				<th>Логин:*</th><br/>
-				<td><%= f.text_field(:login) %></td><br/>
-			</tr>
-			<tr>
-				<th>Пароль:*</th><br/>
-				<td><%= f.text_field(:password) %></td><br/>
-			</tr>
-		<% end %>
-	</table>
+			<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
+				<tr>
+					<th>Логин:*</th><br/>
+					<td><%= f.text_field(:login) %></td><br/>
+				</tr>
+				<tr>
+					<th>Пароль:*</th><br/>
+					<td><%= f.text_field(:password) %></td><br/>
+				</tr>
+			<% end %>
+		</table>
+		<br>
 		<div class="span1 offset1">
 			<%= f.submit "Создать", class: "btn btn-primary"%>
 		</div>
