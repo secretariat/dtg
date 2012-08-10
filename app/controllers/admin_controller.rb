@@ -19,7 +19,7 @@ class AdminController < ApplicationController
 	def new
     @admin = Admin.new
     @main = Main.new
-  end
+  end	
 
   def create
   	@admin = Admin.new( params[:admin] )
