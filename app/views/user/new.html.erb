@@ -4,7 +4,7 @@
 <center><h3>Создание нового пользователя</h3></center>
 <div class="span4 offset4">
 	<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
-	<table>
+	 	<table>
 			<tr>
 				<th class="span3">ФИО Сотрудника:*</th>
 				<td><%= f.text_field(:pib) %></td>
@@ -14,7 +14,7 @@
 				<td><%= f.text_field(:cname) %></td>
 			</tr>
 			<tr>
-				<th>Юридический адрес:*</th><br/>
+				<th>Должность:*</th><br/>
 				<td><%= f.text_field(:uaddr) %></td>
 			</tr>
 			<tr>
@@ -41,7 +41,6 @@
 				<th>Email:*</th><br/>
 				<td><%= f.text_field(:email) %></td>
 			</tr>	
-		
 			<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
 				<tr>
 					<th>Логин:*</th><br/>
@@ -53,10 +52,9 @@
 				</tr>
 			<% end %>
 		</table>
-		<% end %>
 		<br>
 		<div class="span1 offset1">
 			<%= f.submit "Создать", class: "btn btn-primary"%>
 		</div>
-	
+	<% end %>
 </div>
