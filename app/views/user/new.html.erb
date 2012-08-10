@@ -1,42 +1,58 @@
 <br/>
 <br/>
 
-<center><h3>Создание нового пользователя</h3><br/>
-
-<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
- 	<table\>
-		<tr>
-			<th>ФИО Сотрудника:*</th><br/>
-			<td><%= f.text_field(:pib) %></td><br/>
-			<th>Название компании:*</th><br/>
-			<td><%= f.text_field(:cname) %></td><br/>
-			<th>Должность:*</th><br/>
-			<td><%= f.text_field(:uaddr) %></td><br/>
-			<th>Телефон:*</th><br/>
-			<td><%= f.text_field(:phone) %></td><br/>
-			<th>Руководитель:*</th><br/>
-			<td><%= f.text_field(:chef) %></td><br/>
-			<th>Номер договора:*</th><br/>
-			<td><%= f.text_field(:dognum) %></td><br/>
-			<th>Код ЕДРПО:*</th><br/>
-			<td><%= f.text_field(:edrpo) %></td><br/>
-			<th>Код в базе ГД:*</th><br/>
-			<td><%= f.text_field(:gdcode) %></td><br/>
-			<th>Email:*</th><br/>
-			<td><%= f.text_field(:email) %></td><br/>
-	</table>
-	<br/>
-	<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
-		<table\>
-		<tr>
-			<th>Логин:*</th><br/>
-			<td><%= f.text_field(:login) %></td><br/>
-			<th>Пароль:*</th><br/>
-			<td><%= f.text_field(:password) %></td><br/>
-	</table>
+<center><h3>Создание нового пользователя</h3></center><br/>
+<div class="span4 offset4">
+	<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+	 	<table>
+			<tr>
+				<th class="span2">ФИО Сотрудника:*</th>
+				<td><%= f.text_field(:pib) %></td>
+			</tr>
+			<tr>
+				<th>Название компании:*</th>
+				<td><%= f.text_field(:cname) %></td>А
+			</tr>
+			<tr>
+				<th>Должность:*</th><br/>
+				<td><%= f.text_field(:uaddr) %></td>
+			</tr>
+			<tr>
+				<th>Телефон:*</th><br/>
+				<td><%= f.text_field(:phone) %></td>
+			</tr>
+			<tr>
+				<th>Руководитель:*</th><br/>
+				<td><%= f.text_field(:chef) %></td>
+			</tr>
+			<tr>
+				<th>Номер договора:*</th><br/>
+				<td><%= f.text_field(:dognum) %></td>
+			</tr>
+			<tr>
+				<th>Код ЕДРПО:*</th><br/>
+				<td><%= f.text_field(:edrpo) %></td>
+			</tr>
+			<tr>
+				<th>Код в базе ГД:*</th><br/>
+				<td><%= f.text_field(:gdcode) %></td>
+			</tr>
+			<tr>
+				<th>Email:*</th><br/>
+				<td><%= f.text_field(:email) %></td>
+			</tr>	
+		<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
+			<tr>
+				<th>Логин:*</th><br/>
+				<td><%= f.text_field(:login) %></td><br/>
+			</tr>
+			<tr>
+				<th>Пароль:*</th><br/>
+				<td><%= f.text_field(:password) %></td><br/>
+			</tr>
+		<% end %>
+		<div>
+			<%= f.submit "Создать", class: "btn btn-primary"%>
+		</div>
 	<% end %>
-	<div>
-		<%= f.submit "Создать", class: "btn btn-primary"%>
-	</div>
-<% end %>
-</center>
+</div>
