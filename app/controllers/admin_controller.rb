@@ -3,6 +3,7 @@ class AdminController < ApplicationController
 	layout 'admin'
 	
 	before_filter :confirm_logged_in
+	before_filter :confirm_priveleges_admin
 
 	def index
 		@manager = Manager.order("managers.id ASC")
@@ -23,12 +24,13 @@ class AdminController < ApplicationController
   def create
   	@admin = Admin.new( params[:admin] )
   	@main = Main.new( params[:main] )
-  	@main.owner_id = session[:user_id]
   	@main.admin = @admin
+  	@main.owner_id = 0
+  	@main.priv_level = 1
   	@pass = @main.password
 		if @main.save then
 			flash[:notice] = "Admin successfully created"
-			DtgMailer.welcome_email( @main, @main.admin, @pass ).deliver
+			# DtgMailer.welcome_email( @main, @main.admin, @pass ).deliver
 			redirect_to( :controller => 'admin', :action => 'list')
 		else
 			flash[:notice] = @main.errors.full_messages

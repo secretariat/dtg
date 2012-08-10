@@ -1,17 +1,19 @@
 class ManagerController < ApplicationController
 	
-	layout 'admin'
+	layout 'manager'
 
 	before_filter :confirm_logged_in
+	before_filter :confirm_priveleges_manager
 	
 	def index
+		@user = User.order("users.id ASC")
 	end
 
 	def login
 	end
 
 	def list
-		@manager = Manager.order("managers.id DESC")
+		@manager = Manager.order("managers.id ASC")
 	end
 
 	def new
@@ -23,6 +25,8 @@ class ManagerController < ApplicationController
   	@manager = Manager.new( params[:manager] )
   	@main = Main.new( params[:main] )
   	@main.manager = @manager
+  	@main.owner_id = session[:user_id]
+  	@main.priv_level = 2
   	@pass = @main.password
 		if @main.save then
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
