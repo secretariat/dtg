@@ -11,7 +11,7 @@
 			</tr>
 			<tr>
 				<th>Название компании:*</th>
-				<td><%= f.text_field(:cname) %></td>А
+				<td><%= f.text_field(:cname) %></td>
 			</tr>
 			<tr>
 				<th>Должность:*</th><br/>
@@ -51,7 +51,7 @@
 				<td><%= f.text_field(:password) %></td><br/>
 			</tr>
 		<% end %>
-		<div>
+		<div class="span1 offset1">
 			<%= f.submit "Создать", class: "btn btn-primary"%>
 		</div>
 	<% end %>
