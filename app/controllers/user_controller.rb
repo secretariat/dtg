@@ -12,7 +12,7 @@ class UserController < ApplicationController
 	end
 
 	def list
-		@user = User.find(:all)
+		@main = Main.where(:owner_id => session[:user_id])
 		render :layout => "manager"	
 	end
 
