@@ -8,7 +8,7 @@ class Main < ActiveRecord::Base
   
   attr_accessor :password
 
-  validates_uniqueness_of :login, :scope => :login, :message => "USER WITH SUCH LOGIN ALREADY EXISTS"
+  # validates_uniqueness_of :login, :scope => :login, :message => "USER WITH SUCH LOGIN ALREADY EXISTS"
   validates_length_of :password, :within => 5..32, :on => :create
 
   before_save :create_hashed_password

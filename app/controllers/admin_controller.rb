@@ -22,8 +22,10 @@ class AdminController < ApplicationController
   	@admin = Admin.new( params[:admin] )
   	@main = Main.new( params[:main] )
   	@main.admin = @admin
+  	@pass = @main.password
 		if @main.save then
 			flash[:notice] = "Admin successfully created"
+			DtgMailer.welcome_email( @main, @main.admin, @pass ).deliver
 			redirect_to( :controller => 'admin', :action => 'list')
 		else
 			flash[:notice] = "Error creating administrator"
