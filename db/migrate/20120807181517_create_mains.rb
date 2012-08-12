@@ -1,11 +1,11 @@
 class CreateMains < ActiveRecord::Migration
   def change
     create_table :mains do |t|
-    	t.string :login, :limit => 20
-    	t.string :hash_pass, :limit => 100
-    	t.string :hash_salt, :limit => 100
-    	t.integer :owner_id 
-    	t.integer :priv_level
+    	t.string :login, :presence => true, :limit => 20
+    	t.string :hash_pass
+    	t.string :hash_salt
+    	t.integer :owner_id, :presence => true 
+    	t.integer :priv_level, :presence => true
       t.timestamps
     end
   end

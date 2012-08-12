@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 	layout 'admin'
 
 	def index
-		@manager = Manager.order("managers.id DESC")
+		@manager = Manager.order("managers.id ASC")
 	end
 
 	def login
@@ -23,19 +23,12 @@ class AdminController < ApplicationController
   	@main = Main.new( params[:main] )
   	@main.admin = @admin
 		if @main.save then
-			flash[:notice] = "Successfully created"
-			redirect_to(:action => 'index')
+			flash[:notice] = "Admin successfully created"
+			redirect_to( :controller => 'admin', :action => 'list')
 		else
-			render('index')
+			flash[:notice] = "Error creating administrator"
+			redirect_to( :controller => 'admin', :action => 'list')
 		end  	
-
-		# @main = Main.new( params[:main] )
-		# if  then
-		# 	flash[:notice] = "Successfully created"
-		# 	redirect_to(:action => 'index')
-		# else
-		# 	render('index')
-		# end 
   end
 
   def edit

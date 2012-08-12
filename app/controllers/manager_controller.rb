@@ -25,16 +25,9 @@ class ManagerController < ApplicationController
 			flash[:notice] = "Successfully created"
 			redirect_to( :controller => 'admin', :action => 'index')
 		else
-			redirect_to('index')
+			flash[:notice] = "Error creating manager"
+			redirect_to(:controller => 'manager', :action => 'index')
 		end  	
-
-		# @main = Main.new( params[:main] )
-		# if  then
-		# 	flash[:notice] = "Successfully created"
-		# 	redirect_to(:action => 'index')
-		# else
-		# 	render('index')
-		# end 
   end
 
   def edit

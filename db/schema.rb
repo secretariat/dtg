@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(:version => 20120807200449) do
 
   create_table "mains", :force => true do |t|
     t.string   "login",      :limit => 20
-    t.string   "hash_pass",  :limit => 100
-    t.string   "hash_salt",  :limit => 100
+    t.string   "hash_pass"
+    t.string   "hash_salt"
     t.integer  "owner_id"
     t.integer  "priv_level"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "managers", :force => true do |t|

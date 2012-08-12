@@ -4,28 +4,26 @@
 	<%= image_tag "logo.png" %>
 </center>
 <br>
-<%= form_tag do %>
+<%= form_tag(:controller => 'main', :action => 'attempt_login') do %>
 <center>
-	<fieldset>
 		<legend>Войти:</legend>
 
 		<div>
-			<%= label_tag :name, 'Логин:   ' %>
-			<%= text_field_tag :name, params[:name] %>
+			Логин:
+			<%= text_field_tag :login, params[:login] %>
 		</div>
 		
 		<br>
 		
 		<div>
-			<%= label_tag :password, 'Пароль:' %>
-			<%= password_field_tag :password, params[:password] %>
+			Пароль:
+			<%= password_field_tag :hash_pass, params[:hash_pass] %>
 		</div>
 		
 		<br>	
 		
-		<!-- <div>
-			<%= submit_tag %>
-		</div> -->
-		<%= link_to("Login",{:controller => 'admin', :action => 'index'}, :class => 'btn btn-success') %><br/>
-	</fieldset>
+		<div>
+			<%= submit_tag "Вход"%>
+		</div>
+		
 <% end %>
