@@ -4,6 +4,12 @@
 <center><h3>Менеджеры системы</h3><br/>
 	<div class="container">
 		<div class="row">
+				<div class="pull-left">
+					<%= link_to("Создать менеджера",{:controller => 'manager', :action => 'new' }, :class => 'btn  btn-small btn-success') %>
+				</div>
+		</div>
+		<br>
+		<div class="row">
 			<center>
 			<table class="table table-bordered table-condensed table-stripped">
 				<th>N%</th>
@@ -28,9 +34,5 @@
 			</table>
 			</center>
 		</div>
-			<div class="row">
-				<div class="pull-right">
-					<%= link_to("Создать менеджера",{:controller => 'manager', :action => 'new' }, :class => 'btn  btn-small btn-success') %>
-				</div>
-			</div>
+	</div>
 <br/>
