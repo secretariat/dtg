@@ -3,9 +3,9 @@ Dtg::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => 'baci.lindsaar.net',
-    :user_name            => '<mixey.viti@gmail.com>',
-    :password             => '<rjvghbxbrjrc>',
+    :domain               => 'dtg.kiev.ua',
+    :user_name            => 'mixey.viti',
+    :password             => 'rjvghbxbrjrc',
     :authentication       => 'plain',
   }
 
