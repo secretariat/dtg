@@ -7,6 +7,7 @@ Dtg::Application.configure do
     :user_name            => 'mixey.viti',
     :password             => 'rjvghbxbrjrc',
     :authentication       => 'plain',
+    :enable_starttls_auto => true
   }
 
 
