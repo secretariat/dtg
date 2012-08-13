@@ -37,9 +37,9 @@
                   <b class="caret"></b>
                 </a>
               <ul class="dropdown-menu">
-                <u><li><%= link_to "admin"%></li></u>
+                <u><li><%=session[:login]%></li></u>
                 <li class="divider"></li>
-                <li><%= link_to "Выйти"%></li>
+                <li><%= link_to "Выйти", :controller => 'main', :action => 'logout'%></li>
               </ul>
             </ul>      
         </div>

@@ -1,5 +1,7 @@
 class CustomsController < ApplicationController
   layout 'admin'
+
+  before_filter :confirm_logged_in
   # GET /customs
   # GET /customs.json
   def index

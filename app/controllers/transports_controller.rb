@@ -1,5 +1,8 @@
 class TransportsController < ApplicationController
   layout 'admin'
+
+  before_filter :confirm_logged_in
+
   # GET /transports
   # GET /transports.json
   def index
