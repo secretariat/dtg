@@ -15,7 +15,7 @@ Dtg::Application.configure do
     :domain               => "mail.citrusdev.com.ua",
     :user_name            => 'info@citrusdev.com.ua',
     :password             => 'info123!@#',
-    :authentication       => 'login',
+    :authentication       => 'plain',
     # :enable_starttls_auto => true
   }
 
