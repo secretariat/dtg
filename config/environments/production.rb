@@ -1,13 +1,22 @@
 Dtg::Application.configure do
   config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :address              => "smtp.gmail.com",
+  #   :port                 => 587,
+  #   :domain               => "gmail.com",
+  #   :user_name            => 'mixey.viti@gmail.com',
+  #   :password             => 'rjvghbxbrjrc',
+  #   :authentication       => 'login',
+  #   :enable_starttls_auto => true
+  # }
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => "gmail.com",
-    :user_name            => 'mixey.viti@gmail.com',
-    :password             => 'rjvghbxbrjrc',
+    :address              => "mail.citrusdev.com.ua",
+    :port                 => 25,
+    :domain               => "mail.citrusdev.com.ua",
+    :user_name            => 'info@citrusdev.com.ua',
+    :password             => 'info123!@#',
     :authentication       => 'login',
-    :enable_starttls_auto => true
+    # :enable_starttls_auto => true
   }
 
 
