@@ -4,9 +4,9 @@ Dtg::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => "gmail.com",
-    :user_name            => 'mixey.viti',
+    :user_name            => 'mixey.viti@gmail.com',
     :password             => 'rjvghbxbrjrc',
-    :authentication       => 'plain',
+    :authentication       => 'login',
     :enable_starttls_auto => true
   }
 
