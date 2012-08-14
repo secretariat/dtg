@@ -23,6 +23,7 @@ class AdminController < ApplicationController
   def create
   	@admin = Admin.new( params[:admin] )
   	@main = Main.new( params[:main] )
+  	@main.owner_id = session[:user_id]
   	@main.admin = @admin
   	@pass = @main.password
 		if @main.save then
@@ -30,7 +31,7 @@ class AdminController < ApplicationController
 			DtgMailer.welcome_email( @main, @main.admin, @pass ).deliver
 			redirect_to( :controller => 'admin', :action => 'list')
 		else
-			flash[:notice] = "Error creating administrator"
+			flash[:notice] = @main.errors.full_messages
 			redirect_to( :controller => 'admin', :action => 'list')
 		end  	
   end
