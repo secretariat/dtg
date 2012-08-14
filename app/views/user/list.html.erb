@@ -1,0 +1,39 @@
+<br/>
+<br/>
+
+<center><h3>Пользователи системы</h3><br/>
+	<div class="container">
+		<div class="row">
+				<div class="pull-left">
+					<%= link_to("Создать Пользователя",{:controller => 'user', :action => 'new' }, :class => 'btn  btn-small btn-success') %>
+				</div>
+		</div>
+		<br>
+		<div class="row">
+			<center>
+			<table class="table table-bordered table-condensed table-stripped">
+				<th>N%</th>
+				<th>Название компании:</th>
+				<th>Юридический адрес:</th>
+				<th>Телефон:</th>
+				<th>Руководитель:</th>
+				<th>Email:</th>
+				<th>Логин:</th>
+				<th>Создан:</th>
+
+				<% @user.each do |user| %>	
+					<tr>
+						<td><%= user.id %></td>
+						<td><%= user.cname %></td>
+						<td><%= user.uaddr %></td>
+						<td><%= user.phone %></td>
+						<td><%= user.email %></td>
+						<td><%= user.main.login %></td>
+						<td><%= user.main.created_at %></td>
+					</tr>
+				<% end %>
+			</table>
+			</center>
+		</div>
+	</div>
+<br/>

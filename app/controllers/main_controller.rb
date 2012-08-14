@@ -3,6 +3,7 @@ class MainController < ApplicationController
     # menu
     # render('menu')
   # end
+  layout 'main'
   
   before_filter :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
@@ -21,7 +22,14 @@ class MainController < ApplicationController
       session[:login] = authorized_user.login
       session[:priv] = authorized_user.priv_level
       flash[:notice] = "You are now logged in."
-      redirect_to( :controller => 'admin', :action => 'index')
+      case authorized_user.priv_level
+        when 1 then redirect_to( :controller => 'admin', :action => 'index')
+        when 2 then redirect_to( :controller => 'manager', :action => 'index')
+        when 3 then redirect_to( :controller => 'user', :action => 'index')
+        else redirect_to( :action => 'login')
+      end
+
+
     else
       flash[:notice] = "Invalid username/password combination."
       redirect_to( :action => 'login')
