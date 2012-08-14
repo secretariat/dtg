@@ -2,25 +2,28 @@
 <br/>
 
 <center><h3>Создание нового администратора</h3><br/>
+<div class="span4 offset4">
+	<%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
+	 	<table>
+			<tr>
+				<th class="span2">Email:*</th>
+				<td><%= f.text_field(:email) %></td>
+			</tr>
+			<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
+				<tr>
+					<th>Login:*</th><br/>
+					<td><%= f.text_field(:login) %></td>
+				</tr>
+				<tr>
+					<th>Pass:*</th><br/>
+					<td><%= f.text_field(:password) %></td>
+				</tr>
+			<% end %>
+		</table>
+		<% end %>
+</div>
+		<div class="span1 offset2">
+			<%= f.submit "Создать", class: "btn btn-primary"%>
+		</div>
 
-<%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
- 	<table\>
-		<tr>
-			<th>Email:*</th><br/>
-			<td><%= f.text_field(:email) %></td><br/>
-	</table>
-	<br/>
-	<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
-		<table\>
-		<tr>
-			<th>Login:*</th><br/>
-			<td><%= f.text_field(:login) %></td><br/>
-			<th>Pass:*</th><br/>
-			<td><%= f.text_field(:password) %></td><br/>
-	</table>
-	<% end %>
-	<div>
-		<%= f.submit "Создать", class: "btn btn-primary"%>
-	</div>
-<% end %>
-</center>
+
