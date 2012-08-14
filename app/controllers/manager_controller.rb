@@ -6,7 +6,7 @@ class ManagerController < ApplicationController
 	before_filter :confirm_priveleges_manager
 	
 	def index
-		@user = User.order("users.id ASC")
+		@user = User.where(:main_id => session[:user])
 	end
 
 	def login
