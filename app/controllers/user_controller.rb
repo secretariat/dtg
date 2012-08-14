@@ -13,11 +13,13 @@ class UserController < ApplicationController
 
 	def list
 		@user = User.find(:all)
+		render :layout => "manager"	
 	end
 
 	def new
     @user = User.new
     @main = Main.new
+    render :layout => "manager"	
   end
 
   def create

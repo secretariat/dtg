@@ -1,6 +1,10 @@
 class ManagerController < ApplicationController
 	
-	layout 'manager'
+	# if( session[:priv] == 1 )
+		# layout 'admin'
+	# else
+		layout 'manager'
+	# end
 
 	before_filter :confirm_logged_in
 	before_filter :confirm_priveleges_manager
@@ -14,11 +18,13 @@ class ManagerController < ApplicationController
 
 	def list
 		@manager = Manager.order("managers.id ASC")
+		render :layout => "admin"
 	end
 
 	def new
     @manager = Manager.new
     @main = Main.new
+    render :layout => "admin"	
   end
 
   def create
