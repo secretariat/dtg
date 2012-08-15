@@ -8,11 +8,12 @@ class UserController < ApplicationController
 	def index
 	end
 
-	def login
+	def show
+		@user = User.find( params[:cur_user] )
 	end
 
 	def list
-		@main = Main.where(:owner_id => session[:user_id])
+		@mains = Main.where(:owner_id => session[:user_id])
 		render :layout => "manager"	
 	end
 

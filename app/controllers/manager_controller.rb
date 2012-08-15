@@ -10,7 +10,7 @@ class ManagerController < ApplicationController
 	before_filter :confirm_priveleges_manager
 	
 	def index
-		@user = User.where(:main_id => session[:user])
+		@mains = Main.where(:owner_id => session[:user_id])
 	end
 
 	def login
