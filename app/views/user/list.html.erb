@@ -22,15 +22,15 @@
 
 					<% @mains.each do |main| %>	
 						<tr>
-							<td><%= count %></td>
-							<td><%= main.user.pib %></td>
-							<td><%= main.user.cname %></td>
+							<td><center><%= count %></center></td>
+							<td><center><%= main.user.pib %></center></td>
+							<td><center><%= main.user.cname %></center></td>
 							
-							<td>
-								<%= link_to( "Показать",  :controller => 'user', :action=>'show',:id => main.user.id ) %>
+							<td><center>
+								<%= link_to( "Показать",  :controller => 'user', :action=>'show',:id => main.user.id ) %></center>
 							</td>
-							<td>
-								<%= link_to( "Редактировать", :controller => 'user', :action=>'edit',:id => main.user.id ) %>
+							<td><center>
+								<%= link_to( "Редактировать", :controller => 'user', :action=>'edit',:id => main.user.id ) %></center>
 							</td>
 								
 						</tr>
