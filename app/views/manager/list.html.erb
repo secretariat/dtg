@@ -12,28 +12,29 @@
 		<div class="row">
 			<center>
 			<table class="table table-bordered table-condensed table-stripped span10 offset1">
-				<th>N%</th>
-				<th>ФИО:</th>
-				<th>Должность:</th>
-				<th>Телефон:</th>
-				<th>Email:</th>
-				<th>Логин:</th>
-				<th>Создан:</th>
+				<th><center>N%</center></th>
+				<th><center>ФИО</center></th>
+				<th><center>Должность</center></th>
+				<th><center>Телефон</center></th>
+				<th><center>Email</center></th>
+				<th><center>Логин</center></th>
+				<th><center>Создан</center></th>
+				<th></th>
 
 				<% @manager.each do |man| %>	
 					<tr>
-						<td><%= man.id %></td>
-						<td><%= man.pib %></td>
-						<td><%= man.postion %></td>
-						<td><%= man.phone %></td>
-						<td><%= man.email %></td>
-						<td><%= man.main.login %></td>
-						<td><%= man.main.created_at %></td>
-						<td>
-							<%= link_to( "Показать",  :controller => 'manager', :action=>'show', :id => man.id ) %>
+						<td><center><%= man.id %></center></td>
+						<td><center><%= man.pib %></center></td>
+						<td><center><%= man.postion %></center></td>
+						<td><center><%= man.phone %></center></td>
+						<td><center><%= man.email %></center></td>
+						<td><center><%= man.main.login %></center></td>
+						<td><center><%= man.main.created_at %></center></td>
+						<td><center>
+							<%= link_to( "Показать",  :controller => 'manager', :action=>'show', :id => man.id ) %></center>
 						</td>
-						<td>
-							<%= link_to( "Редактировать", :controller => 'manager', :action=>'edit',:id => man.id ) %>
+						<td><center>
+							<%= link_to( "Редактировать", :controller => 'manager', :action=>'edit',:id => man.id ) %></center>
 						</td>
 					</tr>
 
