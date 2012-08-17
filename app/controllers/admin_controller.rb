@@ -13,7 +13,7 @@ class AdminController < ApplicationController
 	end
 
 	def list
-		@admin = Admin.order("admins.id DESC")
+		@admin = Admin.order("admins.id ASC")
 	end
 
 	def new
@@ -35,7 +35,7 @@ class AdminController < ApplicationController
 		else
 			flash[:notice] = @main.errors.full_messages
 			redirect_to( :controller => 'admin', :action => 'list')
-		end  	
+		end 	
   end
 
   def edit

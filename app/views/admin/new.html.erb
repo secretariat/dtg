@@ -5,18 +5,20 @@
 <div class="span4 offset4">
 	<%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
 	 	<table>
-			<tr>
-				<th class="span2">Email:*</th>
-				<td><%= f.text_field(:email) %></td>
-			</tr>
-			<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
+			
+			<%= form_for(:main, :url => {:action => 'create'}) do |m| %>
+				<tr>
+					<th class="span2">Email:*</th>
+					<td><%= f.text_field(:email) %></td>
+				</tr>
+
 				<tr>
 					<th>Login:*</th><br/>
-					<td><%= f.text_field(:login) %></td>
+					<td><%= m.text_field(:login) %></td>
 				</tr>
 				<tr>
 					<th>Pass:*</th><br/>
-					<td><%= f.text_field(:password) %></td>
+					<td><%= m.text_field(:password) %></td>
 				</tr>
 			<% end %>
 		</table>

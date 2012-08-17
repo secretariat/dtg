@@ -34,15 +34,16 @@ class ManagerController < ApplicationController
   	@main.owner_id = session[:user_id]
   	@main.priv_level = 2
   	@pass = @main.password
-		if @main.save then
+		
+		if @main.save && @manager.save then
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
-			flash[:notice] = "Successfully created"
+			flash[:notice] = "Manager successfully created"
 			redirect_to( :controller => 'admin', :action => 'index')
 		else
 			flash[:notice] = "Error creating manager"
-			redirect_to(:controller => 'manager', :action => 'index')
-		end  	
-  end
+			redirect_to(:controller => 'manager', :action => 'list')
+		end 
+		
 
   def edit
   	# @projects = Project.find( params[:id] )
