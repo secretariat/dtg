@@ -28,13 +28,13 @@
 	 	<br>
 	 	<div class="row">	
 	 		<div class="span2">1.1 Наименование фирмы:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_1_1) %></div>
+	 		<div class="span4 "><%= f.text_field :field_1_1,:class=>'input-xlarge'%></div>
 
 	 		<div class="span2">1.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_1_2) %></div>
+	 		<div class="span4 "><%= f.text_field :field_1_2,:class=>'input-xlarge' %></div>
 	 		
 	 		<div class="span2">1.3 Руководитель, ФИО:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_1_3) %></div>
+	 		<div class="span4 "><%= f.text_field :field_1_3,:class=>'input-xlarge' %></div>
 	 	</div>
 	 	<br>
 	 	<div class="row">	
@@ -42,7 +42,7 @@
 	 	</div>
 	 	<br>
 	 	<div class="row">
-	 		<table class="span12 table-bordered table-condensed">
+	 		<table cellpadding='0' class="span12 table-bordered table-condensed">
 	 			<tr style="background: grey;">
 	 				<th class="span2" align="center"><b>Наименование</b></td>
 	 				<th class="span2" align="center"><b>Код УКТВЭД</b></td>
@@ -52,12 +52,12 @@
 	 				<th class="span4" align="center"><b>Доп. Информация</b></td>
 	 			</tr>
 	 			<tr>
-	 				<td><div class="span2">1</div></td>
-					<td><div class="span2">2</div></td>
-					<td><div class="span2">3</div> </td>
-					<td><div class="span1">4</div> </td>
-					<td><div class="span1">5</div> </td>
-					<td><div class="span4">6</div></td>
+	 				<td><input class="1"></td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
 			<!-- 		<%= f.text_field(:field_2_1) %></div>
 					<%= f.text_field(:field_2_2) %></div>
 					<%= f.text_field(:field_2_3) %></div>
@@ -79,37 +79,30 @@
 		 	<div class="row">
 			 	<div class="span3">3.1 Таможенная пошлина</div>
 			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_1_1) %></div>
-			 	<div class="span1 offset1">Сумма:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_1_2) %></div>
+			 	<div class="span1"><%= f.text_field :field_3_1_1,:class=>'input-mini'%></div>
+			 	<div class="span1">Сумма:</div>
+			 	<div class="span1"><%= f.text_field :field_3_1_2,:class=>'input-small'%></div>
 			</div>
 			<div class="row">
 			 	<div class="span3">3.2 Акцизный сбор</div>
 			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_2_1) %></div>
-			 	<div class="span1 offset1">Сумма:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_2_2) %></div>
+			 	<div class="span1"><%= f.text_field :field_3_2_1,:class=>'input-mini'%></div>
+			 	<div class="span1">Сумма:</div>
+			 	<div class="span1"><%= f.text_field :field_3_2_2,:class=>'input-small'%></div>
 			</div>
 			<div class="row">
 			 	<div class="span3">3.3 Для нефтепродуктов: дополнительный сбор сбор</div>
 			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_3_1) %></div>
-			 	<div class="span1 offset1">Сумма:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_3_2) %></div>
+			 	<div class="span1"><%= f.text_field :field_3_3_1,:class=>'input-mini'%></div>
+			 	<div class="span1">Сумма:</div>
+			 	<div class="span1"><%= f.text_field :field_3_3_2,:class=>'input-small'%></div>
 			</div>
 			<div class="row">
 			 	<div class="span3">3.4 Налог на добавленную стоимость (НДС)</div>
 			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_4_1) %></div>
-			 	<div class="span1 offset1">Сумма:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_4_2) %></div>
-			</div>
-			<div class="row">
-			 	<div class="span3">3.4 Налог на добавленную стоимость (НДС)</div>
-			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_4_1) %></div>
-			 	<div class="span1 offset1">Сумма:</div>
-			 	<div class="span2 input"><%= f.text_field(:field_3_4_2) %></div>
+			 	<div class="span1"><%= f.text_field :field_3_4_1,:class=>'input-mini'%></div>
+			 	<div class="span1">Сумма:</div>
+			 	<div class="span1"><%= f.text_field :field_3_4_2,:class=>'input-small'%></div>
 			</div>
 			<div class="row">
 			 	<div class="span3">3.5 Сумма таможенных платежей ВСЕГО:</div>
@@ -123,16 +116,16 @@
 	 	<br>
 	 	<div class="row">	
 	 		<div class="span2">4.1 Пункт отправления:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_4_1) %></div>
+	 		<div class="span4"><%= f.text_field :field_4_1,:class=>'input-xlarge'%></div>
 
 	 		<div class="span2">4.2 Таможня отправления:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_4_2) %></div>
+	 		<div class="span4"><%= f.text_field :field_4_2,:class=>'input-xlarge' %></div>
 
 	 		<div class="span2">4.3 Пункт назначения:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_4_3) %></div>
+	 		<div class="span4"><%= f.text_field :field_4_3,:class=>'input-xlarge' %></div>
 	 		
 	 		<div class="span2">4.4 Таможня назначения:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_4_4) %></div>
+	 		<div class="span4"><%= f.text_field :field_4_4,:class=>'input-xlarge' %></div>
 	 	</div>
 	 	<br>
 
@@ -143,15 +136,15 @@
 	 		
  		<div class="row">	
 	 		<div class="span2">5.1 Наименование фирмы:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_5_1) %></div>
+	 		<div class="span4"><%= f.text_field :field_5_1,:class=>'input-xxlarge' %></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">5.2 Таможня отправления:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_5_2) %></div>
+	 		<div class="span4"><%= f.text_field :field_5_2,:class=>'input-xxlarge' %></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">5.3 Пункт назначения:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_5_3) %></div>
+	 		<div class="span4"><%= f.text_field :field_5_3,:class=>'input-xxlarge' %></div>
  		</div>
 
  		<div class="row">	
@@ -160,32 +153,31 @@
 	 	<br>
  		<div class="row">	
 	 		<div class="span2">6.1 Наименование фирмы:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_6_1) %></div>
+	 		<div class="span4"><%= f.text_field :field_6_1,:class=>'input-xxlarge'%></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">6.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_6_2) %></div>
+	 		<div class="span4"><%= f.text_field :field_6_2,:class=>'input-xxlarge' %></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">6.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_6_3) %></div>
+	 		<div class="span4"><%= f.text_field :field_6_3,:class=>'input-xxlarge' %></div>
  		</div>
  		<div class="row">	
 	 		<div class="span2">6.4 ЕГРПОУ:</div>
-	 		<div class="span3 input"><%= f.text_field(:field_6_4) %></div>
+	 		<div class="span3"><%= f.text_field :field_6_4 %></div>
 	 		<div class="span3">6.5 Код налогоплательщика:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_6_5) %></div>
+	 		<div class="span4"><%= f.text_field :field_6_5,:class=>'input-medium'%></div>
  		</div>
  		<div class="row">	
 	 		<div class="span2">6.6 Договор внешнеэкономический №</div>
 	 		<div class="span3">
-	 			<div class="input-mini"><%= f.text_field(:field_6_6_1) %></div>
-	 			от 
-	 			<div class="input-mini"><%= f.text_field(:field_6_6_2) %>г.</div>
+	 			<%= f.text_field :field_6_6_1 ,:class=>'input-mini'%> от
+	 			<%= f.text_field :field_6_6_2,:class=>'input-mini'%> г.
 	 		</div>
 	 		<div class="span3">6.7 Счет фактура №</div>
-	 		<div class="span2">
-	 			<%= f.text_field(:field_6_7_1) %>	от <%= f.text_field(:field_6_7_2) %>г.
+	 		<div class="span3">
+	 			<%= f.text_field :field_6_7_1,:class=>'input-mini' %>	от <%= f.text_field :field_6_7_2,:class=>'input-mini'%> г.
 	 		</div>
  		</div>
 	 	<br>
@@ -215,19 +207,19 @@
 	 	<br>
  		<div class="row">	
 	 		<div class="span2">8.1 Наименование фирмы:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_8_1) %></div>
+	 		<div class="span4"><%= f.text_field :field_8_1 ,:class=>'input-xxlarge' %></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">8.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_8_2) %></div>
+	 		<div class="span4"><%= f.text_field :field_8_2 ,:class=>'input-xxlarge' %></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">8.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_8_3) %></div>
+	 		<div class="span4"><%= f.text_field :field_8_3 ,:class=>'input-xxlarge' %></div>
  		</div>
  		<div class="row">	
 	 		<div class="span2">8.4 Код Ж/Д перевозки:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_8_4) %></div>
+	 		<div class="span4"><%= f.text_field :field_8_4 ,:class=>'input-xxlarge' %></div>
  		</div>
  		<br>
 
@@ -237,21 +229,21 @@
 	 	<br>
  		<div class="row">	
 	 		<div class="span2">9.1 Наименование перевозчика:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_9_1) %></div>
+	 		<div class="span4"><%= f.text_field :field_9_1 ,:class=>'input-xxlarge'%></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">9.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_9_2) %></div>
+	 		<div class="span4 input"><%= f.text_field :field_9_2 ,:class=>'input-xxlarge'%></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span2">9.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_9_3) %></div>
+	 		<div class="span4 input"><%= f.text_field :field_9_3 ,:class=>'input-xxlarge'%></div>
  		</div>
  		<div class="row">	
 	 		<div class="span2">9.4.1 Тип, марка, гос.№:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_9_4_1) %></div>
+	 		<div class="span4 input"><%= f.text_field :field_9_4_1 ,:class=>'input-xlarge'%></div>
 	 		<div class="span2">9.4.2 Ф.И.О. водителя, паспорт:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_9_4_2) %></div>
+	 		<div class="span4 input"><%= f.text_field :field_9_4_2 ,:class=>'input-xlarge'%></div>
  		</div>
  		<br>
 
@@ -259,18 +251,19 @@
 	 		<center><h4>10. Дополнительная информация</h4></center>
 	 	</div>
 	 	<br>
-	 	<div class="row" span="10">
+	 	<div class="row">
  			<center>
-	 			<%= f.text_area :field_10, :size => "3000x10" %>
+	 			<%= f.text_area :field_10, :size => "30x10" ,:class=>'input-xxlarge'%>
 	 		</center>
 	 	</div>
 	 	<br>
 
 		<div class="row">		
-			<%= f.submit "Создать", class: "btn btn-primary pull-right"%>
-			&nbsp;
-			<%= f.submit "Копировать в новую", class: "btn btn-primary pull-right"%>
-			<%= f.submit "В печать", class: "btn btn-primary pull-right"%>
+			<div class="span4 offset8">
+				<%= f.submit "Создать", class: "btn btn-success"%>
+				<%= f.submit "Копировать в новую", class: "btn btn-info"%>
+				<%= f.submit "В печать", class: "btn btn-inverse"%>
+			</div>
 		</div>
 		
 		<% end %>
