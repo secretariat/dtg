@@ -10,6 +10,7 @@ class UserController < ApplicationController
 
 	def show
 		@user = User.find( params[:cur_user] )
+		render :layout => "manager"	
 	end
 
 	def list

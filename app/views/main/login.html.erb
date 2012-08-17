@@ -7,19 +7,16 @@
 <%= form_tag(:controller => 'main', :action => 'attempt_login') do %>
 <center>
 		<legend>Войти:</legend>
-
-		<div>
-			Логин:
-			<%= text_field_tag :login, params[:login] %>
-		</div>
-		
-		<br>
-		
-		<div>
-			Пароль:
-			<%= password_field_tag :hash_pass, params[:hash_pass] %>
-		</div>
-		
+<table>
+    <tr>
+			<td class="span1"><h4>Логин:</h4></td>
+			<td><%= text_field_tag :login, params[:login] %></td>
+		</tr>
+		<tr>
+			<td><h4>Пароль:</h4></td>
+			<td><%= password_field_tag :hash_pass, params[:hash_pass] %></td>
+		</tr>
+</table>
 		<br>	
 		
 		<div>
