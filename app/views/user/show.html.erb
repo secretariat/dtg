@@ -1,20 +1,29 @@
-<table summary="Page detail view">
-    <tr>
-      <th>ФИО: </th>
-      <td><%= @user.pib %></td><br>
-      <th>Название компании: </th>
-      <td><%= @user.cname %></td><br>
-      <th>Юридический адрес: </th>
-      <td><%= @user.uaddr %></td><br>
-      <th>Телефон: </th>
-      <td><%= @user.phone %></td><br>
-      <th>Руководитель: </th>
-      <td><%= @user.chef %></td><br>
-      <th>Номер договора: </th>
-      <td><%= @user.dognum %></td><br>
-      <th>Код ЕДРПО: </th>
-      <td><%= @user.edrpo %></td><br>
-     	<th>Код в базе ГД: </th>
-      <td><%= @user.gdcode %></td><br>
-    </tr>
-</table>
+<br/>
+<br/>
+
+<center><h3>Информация о пользователе <i><%= @user.pib %></i></h3><br/>
+    <table class="table table-bordered table-condensed table-stripped">
+        <tr>
+          <th>ФИО: </th>
+          <th>Название компании: </th>
+          <th>Юридический адрес: </th>
+          <th>Телефон: </th>
+          <th>Руководитель: </th>
+          <th>Номер договора: </th>
+          <th>Код ЕДРПО: </th>
+          <th>Код в базе ГД: </th>
+        </tr>
+        <tr>
+          <td><%= @user.pib %></td>
+          <td><%= @user.cname %></td>
+          <td><%= @user.uaddr %></td>
+          <td><%= @user.phone %></td>
+          <td><%= @user.chef %></td>
+          <td><%= @user.dognum %></td>
+          <td><%= @user.edrpo %></td>
+          <td><%= @user.gdcode %></td>
+        </tr>
+    </table>
+    <div class="span2 offset5">
+      <%= link_to 'Назад',{:controller => 'user', :action => 'list' }, :class => 'btn btn-info' %>
+    </div>

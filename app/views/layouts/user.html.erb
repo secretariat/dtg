@@ -10,7 +10,7 @@
 	<div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="/admin/"><i class="icon-home"></i></a>
+          <a class="brand" href="/user/"><i class="icon-home"></i></a>
           <div class="nav-collapse">
             <ul class="nav">
               <li><%= link_to "Заявки", :controller => 'user', :action => 'index' %></li>
@@ -32,6 +32,9 @@
         </div>
       </div>
   </div>
+  <center>
+    <%= image_tag "logo.png" %>
+  </center>
 	<div class="container">
 		<div class="row">	
 			<%= yield %>

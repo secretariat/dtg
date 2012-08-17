@@ -6,48 +6,48 @@
 	<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
 	 	<table>
 			<tr>
-				<th class="span4">ФИО Сотрудника:*</th>
+				<th class="span4" align="left">ФИО Сотрудника:*</th>
 				<td><%= f.text_field(:pib) %></td>
 			</tr>
 			<tr>
-				<th>Название компании:*</th>
+				<th align="left">Название компании:*</th>
 				<td><%= f.text_field(:cname) %></td>
 			</tr>
 			<tr>
-				<th>Должность:*</th><br/>
+				<th align="left">Должность:*</th>
 				<td><%= f.text_field(:uaddr) %></td>
 			</tr>
 			<tr>
-				<th>Телефон:*</th><br/>
+				<th align="left">Телефон:*</th>
 				<td><%= f.text_field(:phone) %></td>
 			</tr>
 			<tr>
-				<th>Руководитель:*</th><br/>
+				<th align="left">Руководитель:*</th>
 				<td><%= f.text_field(:chef) %></td>
 			</tr>
 			<tr>
-				<th>Номер договора:*</th><br/>
+				<th align="left">Номер договора:*</th>
 				<td><%= f.text_field(:dognum) %></td>
 			</tr>
 			<tr>
-				<th>Код ЕДРПО:*</th><br/>
+				<th align="left">Код ЕДРПО:*</th>
 				<td><%= f.text_field(:edrpo) %></td>
 			</tr>
 			<tr>
-				<th>Код в базе ГД:*</th><br/>
+				<th align="left">Код в базе ГД:*</th>
 				<td><%= f.text_field(:gdcode) %></td>
 			</tr>
 			<tr>
-				<th>Email:*</th><br/>
+				<th align="left">Email:*</th>
 				<td><%= f.text_field(:email) %></td>
 			</tr>	
 			<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
 				<tr>
-					<th>Логин:*</th><br/>
+					<th align="left">Логин:*</th>
 					<td><%= f.text_field(:login) %></td><br/>
 				</tr>
 				<tr>
-					<th>Пароль:*</th><br/>
+					<th align="left">Пароль:*</th>
 					<td><%= f.text_field(:password) %></td><br/>
 				</tr>
 			<% end %>
@@ -58,3 +58,4 @@
 		</div>
 	<% end %>
 </div>
+<br>
