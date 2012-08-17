@@ -39,9 +39,9 @@ class CreateZayavkas < ActiveRecord::Migration
       # t.string :field_5_2_3
       t.string :field_5_3
       t.string :field_6_1
-      t.string :field_6_2_1
-      t.string :field_6_2_2
-      t.string :field_6_2_3
+      t.string :field_6_2
+      t.string :field_6_2
+      # t.string :field_6_2_3
       t.string :field_6_3
       t.string :field_6_4
       t.string :field_6_5
