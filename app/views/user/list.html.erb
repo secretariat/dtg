@@ -17,12 +17,14 @@
 				<th>Название компании:</th>
 				<th></th>
 				<% count = 1  %>
+
 				<% @mains.each do |main| %>	
 					<tr>
 						<td><%= count %></td>
 						<td><%= main.user.pib %></td>
 						<td><%= main.user.cname %></td>
-						<td><%= link_to("Показать",{:controller => 'user', :action => 'show', :cur_user => main.user.id } ) %></td>
+						
+						<td><%= link_to( "Показать", :controller => 'user', :action => 'show', :cur_user => main.user.id ) %></td>
 					</tr>
 					<% count += 1 %>
 				<% end %>

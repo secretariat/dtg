@@ -13,7 +13,7 @@
           <a class="brand" href="/manager/"><i class="icon-home"></i></a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Пользователи", :controller => 'user', :action => 'list' %></li>
+              <li><%= link_to "Пользователи", :controller => 'manager', :action => 'index' %></li>
             </ul>
           </div><!--/.nav-collapse -->
 
@@ -37,6 +37,11 @@
   </center>
 	<div class="container">
 		<div class="row">	
+      <% if !flash[:notice].blank? %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 			<%= yield %>
 		</div>
 	</div>

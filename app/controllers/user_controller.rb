@@ -33,11 +33,11 @@ class UserController < ApplicationController
   	@pass = @main.password
 		if @main.save then
 			# DtgMailer.welcome_email( @main, @main.user, @pass ).deliver
-			flash[:notice] = "Successfully created"
-			redirect_to( :controller => 'user', :action => 'list')
+			flash[:notice] = "User successfully created"
+			redirect_to( :controller => 'manager', :action => 'index')
 		else
-			flash[:notice] = "Error creating user"
-			redirect_to(:controller => 'user', :action => 'list')
+			flash[:notice] = @main.errors.full_messages
+			redirect_to(:controller => 'user', :action => 'new')
 		end  	
   end
 

@@ -43,7 +43,8 @@ class ManagerController < ApplicationController
 			flash[:notice] = "Error creating manager"
 			redirect_to(:controller => 'manager', :action => 'list')
 		end 
-		
+	
+	end	
 
   def edit
   	# @projects = Project.find( params[:id] )
