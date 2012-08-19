@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UserController < ApplicationController
 	
 	layout 'user'
@@ -9,7 +10,7 @@ class UserController < ApplicationController
 	end
 
 	def show
-		@user = User.find( params[:cur_user] )
+		@user = User.find( params[:id] )
 		render :layout => "manager"	
 	end
 
@@ -33,26 +34,27 @@ class UserController < ApplicationController
   	@pass = @main.password
 		if @main.save then
 			# DtgMailer.welcome_email( @main, @main.user, @pass ).deliver
-			flash[:notice] = "User successfully created"
+			flash[:notice] = "Пользователь создан успешно"
 			redirect_to( :controller => 'manager', :action => 'index')
 		else
-			flash[:notice] = @main.errors.full_messages
-			redirect_to(:controller => 'user', :action => 'new')
+			flash[:notice] = "#{@main.errors.full_messages.to_sentence}, #{@user.errors.full_messages.to_sentence}"
+			# redirect_to(:controller => 'user', :action => 'new')
 		end  	
   end
 
   def edit
-  	# @projects = Project.find( params[:id] )
+  	@user = User.find( params[:id] )
+  	render :layout => "manager"	
   end
 
   def update
-  # 	@projects = Project.find( params[:id] )
-		# if @projects.update_attributes( params[:projects]) then
-		# 	flash[:notice] = "Project Updated Successfully"
-		# 	redirect_to(:action => 'list')
-		# else
-		# 	render('edit')
-		# end  	
+  	@user = User.find( params[:id] )
+		if @user.update_attributes( params[:user]) then
+			flash[:notice] = "User Updated Successfully"
+			redirect_to( :controller => 'manager', :action => 'index')
+		else
+			render('edit')
+		end  	
   end
 
   def delete

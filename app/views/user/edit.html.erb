@@ -1,0 +1,50 @@
+
+<center><h3>Редактирование пользователя</h3></center>
+
+<%= form_for( :user, :url => {:controller => 'user', :action => 'update', :id => @user.id }) do |f| %>
+ 	<table>
+			<tr>
+				<th class="span4" align="left">ФИО Сотрудника:</th>
+				<td><%= f.text_field(:pib) %></td>
+			</tr>
+			<tr>
+				<th align="left">Название компании:</th>
+				<td><%= f.text_field(:cname) %></td>
+			</tr>
+			<tr>
+				<th align="left">Юридический адрес:</th>
+				<td><%= f.text_field(:uaddr) %></td>
+			</tr>
+			<tr>
+				<th align="left">Телефон:</th>
+				<td><%= f.text_field(:phone) %></td>
+			</tr>
+			<tr>
+				<th align="left">Руководитель:</th>
+				<td><%= f.text_field(:chef) %></td>
+			</tr>
+			<tr>
+				<th align="left">Номер договора:</th>
+				<td><%= f.text_field(:dognum) %></td>
+			</tr>
+			<tr>
+				<th align="left">Код ЕДРПО:</th>
+				<td><%= f.text_field(:edrpo) %></td>
+			</tr>
+			<tr>
+				<th align="left">Код в базе ГД:</th>
+				<td><%= f.text_field(:gdcode) %></td>
+			</tr>
+			<tr>
+				<th align="left">Email:</th>
+				<td><%= f.text_field(:email) %></td>
+			</tr>	
+	</table>
+
+	<br/>
+
+	<div>
+		 <%= submit_tag("Update Page", class: "btn btn-primary") %>
+	</div>
+
+<% end %>

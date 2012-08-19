@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ManagerController < ApplicationController
 	
 	# if( session[:priv] == 1 )
@@ -37,11 +38,11 @@ class ManagerController < ApplicationController
 		
 		if @main.save && @manager.save then
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
-			flash[:notice] = "Manager successfully created"
+			flash[:notice] = "Менеджер создан успешно"
 			redirect_to( :controller => 'admin', :action => 'index')
 		else
-			flash[:notice] = "Error creating manager"
-			redirect_to(:controller => 'manager', :action => 'list')
+			flash[:notice] = "#{@main.errors.full_messages.to_sentence}, #{@manager.errors.full_messages.to_sentence}"
+			redirect_to(:controller => 'manager', :action => 'new')
 		end 
 	
 	end	

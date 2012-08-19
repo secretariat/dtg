@@ -1,17 +1,21 @@
+# -*- encoding : utf-8 -*-
 require 'digest/sha1'
 
 class Main < ActiveRecord::Base
   has_one :admin
   has_one :manager
   has_one :user
+
+  validates_associated :admin
+  validates_associated :manager
+  validates_associated :user
   
   attr_accessible :login, :hash_pass, :hash_salt, :owner_id, :priv_level, :password
   
   attr_accessor :password
-  attr_accessor :email
 
-  validates_uniqueness_of :login, :message => "already exists"
-  validates_length_of :password, :within => 5..32, :on => :create
+  validates_uniqueness_of :login, :message => ": Пользователь с таким Логином уже существует"
+  validates_length_of :password, :within => 6..32, :on => :create
   
 
   before_save :create_hashed_password

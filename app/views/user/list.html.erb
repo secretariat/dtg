@@ -11,24 +11,27 @@
 		<br>
 		<div class="row">
 			<center>
-			<table class="table table-bordered table-condensed table-stripped span10 offset1">
-				<th>N%</th>
-				<th>ФИО Сотрудника:</th>
-				<th>Название компании:</th>
-				<th></th>
-				<% count = 1  %>
+				<table class="table table-bordered table-condensed table-stripped span10 offset1">
+					<th>N%</th>
+					<th>ФИО Сотрудника:</th>
+					<th>Название компании:</th>
+					<th></th>
+					<% count = 1  %>
 
-				<% @mains.each do |main| %>	
-					<tr>
-						<td><%= count %></td>
-						<td><%= main.user.pib %></td>
-						<td><%= main.user.cname %></td>
-						
-						<td><%= link_to( "Показать", :controller => 'user', :action => 'show', :cur_user => main.user.id ) %></td>
-					</tr>
-					<% count += 1 %>
-				<% end %>
-			</table>
+					<% @mains.each do |main| %>	
+						<tr>
+							<td><%= count %></td>
+							<td><%= main.user.pib %></td>
+							<td><%= main.user.cname %></td>
+							
+							<td>
+								<%= link_to( "Показать", user_path( main.user.id ) ) %>
+							</td>
+								
+						</tr>
+						<% count += 1 %>
+					<% end %>
+				</table>
 			</center>
 		</div>
 	</div>

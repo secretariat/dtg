@@ -5,7 +5,6 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'thin'
 
-gem "hirb", "~> 0.7.0"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

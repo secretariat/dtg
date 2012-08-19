@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateMains < ActiveRecord::Migration
   def change
     create_table :mains do |t|

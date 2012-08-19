@@ -1,0 +1,4 @@
+<td>
+	<%= link_to( "Редактировать_old", edit_user_path(main.user.id) ) %>
+	<%= link_to( "Редактировать", :controller => 'user', :action=>'edit',:id => main.user.id ) %>
+</td>

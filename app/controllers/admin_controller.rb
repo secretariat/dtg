@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class AdminController < ApplicationController
 	
 	layout 'admin'
@@ -29,12 +30,12 @@ class AdminController < ApplicationController
   	@main.priv_level = 1
   	@pass = @main.password
 		if @main.save then
-			flash[:notice] = "Admin successfully created"
+			flash[:notice] = "Администратор создан успешно"
 			# DtgMailer.welcome_email( @main, @main.admin, @pass ).deliver
 			redirect_to( :controller => 'admin', :action => 'list')
 		else
-			flash[:notice] = @main.errors.full_messages
-			redirect_to( :controller => 'admin', :action => 'list')
+			flash[:notice] = "#{@main.errors.full_messages.to_sentence}, #{@admin.errors.full_messages.to_sentence}" 
+			redirect_to( :controller => 'admin', :action => 'new')
 		end 	
   end
 
