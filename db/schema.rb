@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807200449) do
+ActiveRecord::Schema.define(:version => 20120819015807) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(:version => 20120807200449) do
 
   create_table "mains", :force => true do |t|
     t.string   "login",      :limit => 20
-    t.string   "hash_pass"
-    t.string   "hash_salt"
+    t.string   "hash_pass",  :limit => 100
+    t.string   "hash_salt",  :limit => 100
     t.integer  "owner_id"
     t.integer  "priv_level"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "managers", :force => true do |t|
@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(:version => 20120807200449) do
     t.string   "edrpo"
     t.string   "gdcode"
     t.string   "pib"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "zayavkas", :force => true do |t|
+    t.string   "tamrez"
+    t.string   "typetran"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
