@@ -1,3 +1,6 @@
-<center><h3>Заявки пользователя <%= session[:login] %></h3><br/>
+<br/>
+<br/>
 
-<%= link_to("Создать ЗАЯВКУ", :controller => 'zayavka', :action => 'new', :class => 'btn  btn-small btn-success') %>
+<center><h3>Заявки пользователя <i><%= session[:login] %></i></h3><br/>
+
+<%= link_to("Создать ЗАЯВКУ", (:controller => 'zayavka', :action => 'new'), :class => 'btn  btn-small btn-success') %>
