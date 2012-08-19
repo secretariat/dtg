@@ -4,15 +4,27 @@
 <center><h3>Создание нового администратора</h3><br/>
 <div class="span4 offset4">
 	<%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
-	 	<fieldset>
-	 		<div class="control-group">
-	 			<label class="control-label" for="input01">Email:*</label>
-	 				<div class="controls">
-						<input type="text" id="input01"><%= f.text_field(:email) %>
-					</div>
-				</label>
-			</div>
-		</fieldset>
+	 	<table>
+			
+			<%= form_for(:main, :url => {:action => 'create'}) do |m| %>
+				<tr>
+					<th class="span2">Email:*</th>
+					<td class="span3"><%= f.text_field(:email) %></td>
+				</tr>
+
+				<tr>
+					<th>Login:*</th><br/>
+					<td><%= m.text_field(:login) %></td>
+				</tr>
+				<tr>
+					<th>Pass:*</th><br/>
+					<td><%= m.text_field(:password) %></td>
+				</tr>
+			<% end %>
+		</table>
+		<div class="span2 offset2">
+			<%= f.submit "Создать", class: "btn btn-primary"%>
+		</div>
 	<% end %>
 </div>
 
