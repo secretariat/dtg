@@ -2,10 +2,26 @@
   <div class="container">
   	<%= form_for(:zayavka, :url => {:action => 'create'}) do |f| %>
     <div class="row">
-	 		<div class="span2">Завление опросник №____ от ______ г.</div>
-	 		<div class="span2"> к Договору №_____ </div>
-	 		<div class="span2"> от ____ г.</div>
+	 		<div class="span4">Завление опросник №____ от ______ г.</div>
+	 		<div class="span4"> к Договору №_____ </div>
+	 		<div class="span4"> от ____ г.</div>
 	 	</div>
+	 	<div class="row">	
+	 		<div class="span4">
+	 			Таможенный режим:<br>
+	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] }) %>
+	 		</div>
+	 		<div class="span4">
+	 			Тип транспорта:<br>
+	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
+	 		</div>
+	 		<div class="span4">
+	 			Тип гарантии:<br>
+	 			<%= f.select :garantee, { "генеральная" => 1, "многоразовая" => 2, "индивидуальная" => 3} %>
+	 		</div>
+
+	 	</div>
+
 
 		<div class="row">			
 			<%= f.submit "Создать", class: "btn btn-primary"%>
