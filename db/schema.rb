@@ -70,8 +70,6 @@ ActiveRecord::Schema.define(:version => 20120819015807) do
   create_table "zayavkas", :force => true do |t|
     t.string   "tamrez"
     t.string   "typetran"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
 end
