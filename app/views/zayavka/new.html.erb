@@ -6,6 +6,7 @@
 	 		<div class="span4"> к Договору №_____ </div>
 	 		<div class="span4"> от ____ г.</div>
 	 	</div>
+	 	
 	 	<div class="row">	
 	 		<div class="span4">
 	 			Таможенный режим:
@@ -19,14 +20,14 @@
 	 			Тип гарантии:
 	 			<%= f.select :garantee, { "генеральная" => 1, "многоразовая" => 2, "индивидуальная" => 3} %>
 	 		</div>
-
 	 	</div>
+
 	 	<div class="row">	
 	 		<center><h4>1. Отправитель товара</h4></center>
 	 	<div>
 
 	 	<div class="row">	
-	 		<div class="span4"><h5>1.1 Наименование фирмы:</h5></div>
+	 		<div class="span2">1.1 Наименование фирмы:</div>
 	 		<div class="span4 input-xlarge"><%= f.text_field(:cname) %><div>
 	 	<div>
 
