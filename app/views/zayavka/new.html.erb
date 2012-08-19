@@ -1,0 +1,28 @@
+<center><h3>Создание новой Заявки</h3></center>
+<div class="span4 offset4">
+	<%= form_for(:zayavka, :url => {:action => 'create'}) do |f| %>
+	 	<table>
+	 		Завление №____ от ______ г. к Договору №_____ от ____ г.
+			<tr>
+				<th align="left">Таможенный режим:*</th>
+				<td><%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.pas] }) %></td>
+			</tr>
+			<tr>
+				<th align="left">Тип транспорта:</th>
+				<td><%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.pas] }) %></td>
+			</tr>
+			<tr>
+				<th align="left">Тип транспорта:</th>
+				<td><%= <%= f.select :garantee, { "Генеральная" => 1, "Многоразовая" => 2, "Индивидуальная" => 3} %> %></td>
+			</tr>
+			<tr>
+				<th align="left">Наименование фирмы:</th>
+				<td><%= f.text_field(:cname)%> %></td>
+			</tr>
+		</table>
+		<div class="span1 offset1">
+			<%= f.submit "Создать", class: "btn btn-primary"%>
+		</div>
+	<% end %>
+</div>
+<br>

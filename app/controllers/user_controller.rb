@@ -38,7 +38,7 @@ class UserController < ApplicationController
 			redirect_to( :controller => 'manager', :action => 'index')
 		else
 			flash[:notice] = "#{@main.errors.full_messages.to_sentence}, #{@user.errors.full_messages.to_sentence}"
-			# redirect_to(:controller => 'user', :action => 'new')
+			redirect_to(:controller => 'user', :action => 'new')
 		end  	
   end
 

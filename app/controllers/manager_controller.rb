@@ -36,7 +36,7 @@ class ManagerController < ApplicationController
   	@main.priv_level = 2
   	@pass = @main.password
 		
-		if @main.save && @manager.save then
+		if @main.save then
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
 			flash[:notice] = "Менеджер создан успешно"
 			redirect_to( :controller => 'admin', :action => 'index')

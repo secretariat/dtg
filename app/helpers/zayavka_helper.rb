@@ -1,0 +1,2 @@
+module ZayavkaHelper
+end
