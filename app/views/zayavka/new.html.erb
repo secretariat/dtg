@@ -1,15 +1,16 @@
 <center><h3>Создание новой Заявки</h3></center><br>
   <div class="container">
   	<%= form_for(:zayavka, :url => {:action => 'create'}) do |f| %>
-    <div class="row show-grid">
+    <div class="row">
 	 		<div class="span2">Завление опросник №____ от ______ г.</div>
 	 		<div class="span2"> к Договору №_____ </div>
 	 		<div class="span2"> от ____ г.</div>
 	 	</div>
 
-						
-		<%= f.submit "Создать", class: "btn btn-primary"%>
+		<div class="row">			
+			<%= f.submit "Создать", class: "btn btn-primary"%>
+		</div>
 		
 		<% end %>
-		</div>
+	</div>
 
