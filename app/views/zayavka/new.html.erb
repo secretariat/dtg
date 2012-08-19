@@ -8,19 +8,27 @@
 	 	</div>
 	 	<div class="row">	
 	 		<div class="span4">
-	 			Таможенный режим:<br>
+	 			Таможенный режим:
 	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
 	 		<div class="span4">
-	 			Тип транспорта:<br>
+	 			Тип транспорта:
 	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
 	 		<div class="span4">
-	 			Тип гарантии:<br>
+	 			Тип гарантии:
 	 			<%= f.select :garantee, { "генеральная" => 1, "многоразовая" => 2, "индивидуальная" => 3} %>
 	 		</div>
 
 	 	</div>
+	 	<div class="row">	
+	 		<center><h4>1. Отправитель товара</h4></center>
+	 	<div>
+
+	 	<div class="row">	
+	 		<div class="span4"><h5>1.1 Наименование фирмы:</h5></div>
+	 		<div class="span4 input-xlarge"><%= f.text_field(:cname) %><div>
+	 	<div>
 
 
 		<div class="row">			
