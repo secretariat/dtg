@@ -1,5 +1,6 @@
 class ZayavkaController < ApplicationController
 	
+	layout 'user'
 	def new
 		@zayavka = Zayavka.new
 	end
