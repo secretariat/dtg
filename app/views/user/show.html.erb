@@ -53,14 +53,19 @@
           <span class="input-xlarge uneditable-input"><%= @user.edrpo %></span>
         </div>
       </div>  
-
-      <div class="control-group">
-        <div class="span2"><b>Код в базе ГД: </b><div>
-          <div class="span2 input-xlarge uneditable-input"><%= @user.gdcode %></span>
+      </fieldset>
+      </form>
+      <div class="container">
+        <div class="row">
+          <div class="control-group">
+            <div class="span2"><b>Код в базе ГД: </b><div>
+            <div class="span2 input-xlarge uneditable-input"><%= @user.gdcode %></div>
+          </div>  
+        </div>  
       </div>  
-     
-    </fieldset>
-  </form>
+         
+    
+
   <div class="span2 offset5">
     <%= link_to('Назад',{ :controller => 'manager', :action => 'index'}, :class => 'btn btn-info') %>
   </div>
