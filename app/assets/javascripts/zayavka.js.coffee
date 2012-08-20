@@ -7,8 +7,14 @@ jQuery ->
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
    	$('#goods').append( $(this).data('fields').replace(regexp, time))
-   	$('#myModal').attr("role", "myModal_"+time)
-   	alert($('#myModal').attr("role"))
-    event.preventDefault()
+   	$('.modal:last').attr('id', 'myModal_'+time)
+   	objs = $('#123')
+   	
+   	alert('Len '+objs.length+objs[0].id)
+   	obj = objs[0]
+   	obj.attr('data-target', 'myModal_'+time)
+		event.preventDefault()
+
+
 
 
