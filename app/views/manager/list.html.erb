@@ -29,7 +29,15 @@
 						<td><%= man.email %></td>
 						<td><%= man.main.login %></td>
 						<td><%= man.main.created_at %></td>
+						<td>
+								<%= link_to( "Показать",  :controller => 'manager', :action=>'show', :id => man.id ) %>
+							</td>
+							</td>
+							<td>
+								<%= link_to( "Редактировать", :controller => 'manager', :action=>'edit',:id => man.id ) %>
+							</td>
 					</tr>
+
 				<% end %>
 			</table>
 			</center>

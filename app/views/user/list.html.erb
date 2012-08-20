@@ -25,7 +25,11 @@
 							<td><%= main.user.cname %></td>
 							
 							<td>
-								<%= link_to( "Показать", user_path( main.user.id ) ) %>
+								<%= link_to( "Показать",  :controller => 'user', :action=>'show',:id => main.user.id ) %>
+							</td>
+							</td>
+							<td>
+								<%= link_to( "Редактировать", :controller => 'user', :action=>'edit',:id => main.user.id ) %>
 							</td>
 								
 						</tr>

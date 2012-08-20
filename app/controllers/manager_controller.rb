@@ -14,7 +14,9 @@ class ManagerController < ApplicationController
 		@mains = Main.where(:owner_id => session[:user_id])
 	end
 
-	def login
+	def show
+		@manager = Manager.find( params[:id] )
+		render :layout => "admin"	
 	end
 
 	def list
@@ -48,17 +50,18 @@ class ManagerController < ApplicationController
 	end	
 
   def edit
-  	# @projects = Project.find( params[:id] )
+  	@manager = Manager.find( params[:id] )
+  	render :layout => "admin"	
   end
 
   def update
-  # 	@projects = Project.find( params[:id] )
-		# if @projects.update_attributes( params[:projects]) then
-		# 	flash[:notice] = "Project Updated Successfully"
-		# 	redirect_to(:action => 'list')
-		# else
-		# 	render('edit')
-		# end  	
+  	@manager = Manager.find( params[:id] )
+		if @manager.update_attributes( params[:manager]) then
+			flash[:notice] = "User Updated Successfully"
+			redirect_to( :controller => 'manager', :action => 'list')
+		else
+			render('edit')
+		end  	
   end
 
   def delete
