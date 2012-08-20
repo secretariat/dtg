@@ -53,11 +53,9 @@ class CreateZayavkas < ActiveRecord::Migration
       t.string :field_6_7_1 
       t.string :field_6_7_2 
       # t.string :field_6_7_3 
-      # t.string :field_7_1 
-      # t.string :field_7_2_1 
-      # t.string :field_7_2_2 
-      # t.string :field_7_2_3 
-      # t.string :field_7_2_4
+      t.string :field_7_1 
+      t.string :field_7_2 
+      t.string :field_7_3 
       t.string :field_8_1 #ekspeditori
       t.string :field_8_2
       # t.string :field_8_2_2
