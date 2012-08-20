@@ -57,7 +57,7 @@ class ManagerController < ApplicationController
   def update
   	@manager = Manager.find( params[:id] )
 		if @manager.update_attributes( params[:manager]) then
-			flash[:notice] = "User Updated Successfully"
+			flash[:notice] = "Пользователь успешно отредактирован"
 			redirect_to( :controller => 'manager', :action => 'list')
 		else
 			render('edit')
