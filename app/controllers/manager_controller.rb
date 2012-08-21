@@ -1,11 +1,8 @@
 # -*- encoding : utf-8 -*-
 class ManagerController < ApplicationController
 	
-	# if( session[:priv] == 1 )
-		# layout 'admin'
-	# else
-		layout 'manager'
-	# end
+	layout 'manager'
+	
 
 	before_filter :confirm_logged_in
 	before_filter :confirm_priveleges_manager
