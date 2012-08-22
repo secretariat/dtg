@@ -1,0 +1,21 @@
+<table class="table table-bordered table-condensed table-stripped span7 offset2">
+	<th>N%</th>
+	<th>Cтатус:</th>
+	<th>Дата:</th>
+	<th>Создана:</th>
+	<% @zayavkas.each do |z| %>	
+		<tr>
+			<td><%= z.id %></td>
+			<td><%= z.field_1_1 %></td>
+			<td><%= z.field_1_2 %></td>
+			<td><%= z.created_at %></td>
+			<td>
+				<%= link_to( "Показать",  '#' ) %>
+			</td>
+			<td>
+				<%= link_to( "Редактировать", '#' ) %>
+			</td>
+		</tr>
+	<% end %>
+	
+</table>

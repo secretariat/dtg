@@ -1,5 +1,5 @@
 <br>
-<center><h3>Создание новой Заявки</h3></center><br>
+<center><h3>Создание новой Заявки - <%= session[:user_id] %> --- <%= session[ :uid ] %></h3></center><br>
   <div class="container span12">
   	<%= form_for(:zayavka, :url => {:action => 'create'}) do |f| %>
     <div class="row">
@@ -19,28 +19,30 @@
 	 		</div>
 	 		<div class="span4">
 	 			Тип гарантии:
-	
+					<%= f.select :garantee, { "генеральная" => 1, "многоразовая" => 2, "индивидуальная" => 3} %>
 	 		</div>
 	 	</div>
 
 	 	<div class="row">	
 	 		<center><h4>1. Отправитель товара</h4></center>
-	 	<div>
+	 	</div>
 
-	 	<div class="row">	
 	 		<div class="span2">1.1 Наименование фирмы:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_1_1) %><div>
-	 		<div>
+	 		<div class="span4 input"><%= f.text_field(:field_1_1) %></div>
 
 	 		<div class="span2">1.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4 input"><%= f.text_field(:field_1_2_1) %><div>
-	 		<div>
+	 		<div class="span4 input"><%= f.text_field(:field_1_2) %></div>
+	 		<br/>
 
+	 		<div class="span2">1.3 Руководитель, ФИО:</div>
+	 		<div class="span4 input"><%= f.text_field(:field_1_3) %></div>
+	 		<br/>
 
+	 	<br/>
 		<div class="row">			
 			<%= f.submit "Создать", class: "btn btn-primary"%>
 		</div>
 		
 		<% end %>
-	</div>
+
 

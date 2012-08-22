@@ -3,9 +3,10 @@
 class ZayavkaController < ApplicationController
 	
 	layout 'user'
-	
+	before_filter :get_uniq_user 
+
 	def list	
-		@zayavkas = Zayavka.where( :user_id => session[:user_id] ) 
+		@zayavkas = Zayavka.where( :user_id => session[:uid]  ) 
 	end
 
 	def show
@@ -17,7 +18,10 @@ class ZayavkaController < ApplicationController
 	end
 
 	def create
-		@zayavka = Zayavka.new( params[:zayavka] )
+		# pr = Project.find( params[:project_id] )
+  	# @task = pr.tasks.new( params[:task] )
+  	user = User.find( session[:uid] )
+		@zayavka = user.zayavkas.new( params[:zayavka] )
   
 		if @zayavka.save then
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
@@ -28,6 +32,15 @@ class ZayavkaController < ApplicationController
 			redirect_to(:controller => 'user', :action => 'new')
 		end 
 
+	end
+
+	private
+
+	def get_uniq_user
+		main = Main.find( session[:user_id] )
+		user = main.user
+		session[:uid] = user.id
+		return true
 	end
 
 end

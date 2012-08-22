@@ -8,7 +8,7 @@ Dtg::Application.routes.draw do
   
   resources :admin, only: [ :index, :list, :new, :create, :destroy]
   resources :manager, only: [:index, :list, :new, :create, :destroy]
-  resources :zayavka
+  resources :zayavka, only: [:index, :list, :new, :create, :destroy]
   # resources :user
   # , only: [:index, :list, :new, :create, :destroy, :show, :edit, :update]
 

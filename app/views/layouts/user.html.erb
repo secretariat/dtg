@@ -10,10 +10,10 @@
 	<div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="/user/"><i class="icon-home"></i></a>
+          <a class="brand" href="/zayavka/list"><i class="icon-home"></i></a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Заявки", :controller => 'user', :action => 'index' %></li>
+              <li><%= link_to "Заявки", :controller => 'zayavka', :action => 'list' %></li>
             </ul>
           </div><!--/.nav-collapse -->
 
@@ -37,6 +37,11 @@
   </center>
 	<div class="container">
 		<div class="row">	
+      <% if !flash[:notice].blank? %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 			<%= yield %>
 		</div>
 	</div>

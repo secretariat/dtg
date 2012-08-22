@@ -6,9 +6,8 @@ class CreateZayavkas < ActiveRecord::Migration
     	t.string :typetran
       t.integer :garantee
       t.string :field_1_1
-      t.string :field_1_2_1
-      t.string :field_1_2_2
-      t.string :field_1_2_3
+      t.string :field_1_2
+      t.string :field_1_3
       t.string :field_2_1
       t.string :field_2_2
       t.string :field_2_3
