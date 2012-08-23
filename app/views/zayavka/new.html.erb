@@ -259,15 +259,18 @@
 	 		<center><h4>10. Дополнительная информация</h4></center>
 	 	</div>
 	 	<br>
-	 	<div class="row">
+	 	<div class="row" span="10">
  			<center>
-	 			<%= f.text_area :field_10, :size => "300x10" %>
+	 			<%= f.text_area :field_10, :size => "3000x10" %>
 	 		</center>
 	 	</div>
 	 	<br>
 
 		<div class="row">		
 			<%= f.submit "Создать", class: "btn btn-primary pull-right"%>
+			&nbsp;
+			<%= f.submit "Копировать в новую", class: "btn btn-primary pull-right"%>
+			<%= f.submit "В печать", class: "btn btn-primary pull-right"%>
 		</div>
 		
 		<% end %>

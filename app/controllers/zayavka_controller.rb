@@ -26,7 +26,7 @@ class ZayavkaController < ApplicationController
 		if @zayavka.save then
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
 			flash[:notice] = "Заявка создана успешно"
-			redirect_to( :controller => 'zayavka', :action => 'list')
+			redirect_to( :controller => 'user', :action => 'index')
 		else
 			flash[:notice] = "Ошибка при создании Заявки"
 			redirect_to(:controller => 'user', :action => 'new')
