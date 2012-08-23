@@ -1,5 +1,5 @@
 <br>
-<center><h3>Создание новой Заявки - <%= session[:user_id] %> --- <%= session[ :uid ] %></h3></center><br>
+<center><h3>Создание новой Заявки</h3></center><br>
   <div class="container span12">
   	<%= form_for(:zayavka, :url => {:action => 'create'}) do |f| %>
     <div class="row">
@@ -261,7 +261,7 @@
 	 	<br>
 	 	<div class="row">
  			<center>
-	 			<textarea width="50%" rows="3"></textarea>
+	 			<%= f.text_area :field_10, :size => "300x10" %>
 	 		</center>
 	 	</div>
 	 	<br>
