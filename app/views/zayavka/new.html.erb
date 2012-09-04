@@ -1,4 +1,5 @@
 <br>
+
 <center><h3>Создание новой Заявки</h3></center><br>
   <div class="container span12">
   	<%= form_for(:zayavka, :url => {:action => 'create'}) do |f| %>
@@ -53,7 +54,7 @@
 	 			</tr>
 	 			<tr>
 	 				<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
-					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
+					<td><input type="text" 	></td>
 					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
 					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
 					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
@@ -151,35 +152,34 @@
 	 		<center><h4>6. Субъект ВЭД, заключивший договор</h4></center>
 	 	</div>
 	 	<br>
- 		<div class="row">	
-	 		<div class="span2">6.1 Наименование фирмы:</div>
-	 		<div class="span4"><%= f.text_field :field_6_1,:class=>'input-xxlarge'%></div>
+ 		6.1 Наименование фирмы:
+ 		<div class="input-large uneditable-input">
+ 			<%= @user.pib%>
  		</div>
-	 	<div class="row">	
-	 		<div class="span2">6.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4"><%= f.text_field :field_6_2,:class=>'input-xxlarge' %></div>
+ 		
+ 		6.2 Юридический адрес, телефон, email:
+ 		<div class="input-large uneditable-input">
+ 			<%= @user.uaddr%>,<%= @user.phone%>,<%= @user.email%>
  		</div>
-	 	<div class="row">	
-	 		<div class="span2">6.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span4"><%= f.text_field :field_6_3,:class=>'input-xxlarge' %></div>
+ 		<br>
+	 	6.3 Руководитель, Ф.И.О.:
+	 	<div class="input-large uneditable-input">
+ 			<%= @user.chef%>
  		</div>
- 		<div class="row">	
-	 		<div class="span2">6.4 ЕГРПОУ:</div>
-	 		<div class="span3"><%= f.text_field :field_6_4 %></div>
-	 		<div class="span3">6.5 Код налогоплательщика:</div>
-	 		<div class="span4"><%= f.text_field :field_6_5,:class=>'input-medium'%></div>
+	 	6.4 ЕГРПОУ:
+	 	<div class="input-large uneditable-input">
+ 			<%= @user.edrpo%>
  		</div>
- 		<div class="row">	
-	 		<div class="span2">6.6 Договор внешнеэкономический №</div>
-	 		<div class="span3">
-	 			<%= f.text_field :field_6_6_1 ,:class=>'input-mini'%> от
-	 			<%= f.text_field :field_6_6_2,:class=>'input-mini'%> г.
-	 		</div>
-	 		<div class="span3">6.7 Счет фактура №</div>
-	 		<div class="span3">
-	 			<%= f.text_field :field_6_7_1,:class=>'input-mini' %>	от <%= f.text_field :field_6_7_2,:class=>'input-mini'%> г.
-	 		</div>
+	 	6.5 Код налогоплательщика:
+	 	<div class="input-large uneditable-input">
+ 			<%= @user.gdcode%>
  		</div>
+	 	6.6 Договор внешнеэкономический №
+	 	<div class="input-large uneditable-input">
+ 			<%= @user.dognum%>
+ 		</div>
+	 	6.7 Счет фактура №
+	 		
 	 	<br>
 
  		<div class="row">	

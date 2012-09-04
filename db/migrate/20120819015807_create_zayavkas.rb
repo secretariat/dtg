@@ -62,6 +62,7 @@ class CreateZayavkas < ActiveRecord::Migration
       # t.string :field_8_2_3
       t.string :field_8_3
       t.string :field_8_4
+      ############################################
       t.string :field_9_1 #perevozshik
       t.string :field_9_2
       # t.string :field_9_2_2
@@ -69,6 +70,7 @@ class CreateZayavkas < ActiveRecord::Migration
       t.string :field_9_3
       t.string :field_9_4_1
       t.string :field_9_4_2
+      ############################################
       t.string :field_10 #dop info
 
       t.timestamps

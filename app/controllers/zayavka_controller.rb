@@ -15,13 +15,13 @@ class ZayavkaController < ApplicationController
 
 	def new
 		@zayavka = Zayavka.new
+		@user = User.find( session[:uid] )
 	end
 
 	def create
-		# pr = Project.find( params[:project_id] )
-  	# @task = pr.tasks.new( params[:task] )
-  	user = User.find( session[:uid] )
-		@zayavka = user.zayavkas.new( params[:zayavka] )
+
+  	@user = User.find( session[:uid] )
+		@zayavka = @user.zayavkas.new( params[:zayavka] )
   
 		if @zayavka.save then
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
