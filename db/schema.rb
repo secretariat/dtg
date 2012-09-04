@@ -63,15 +63,18 @@ ActiveRecord::Schema.define(:version => 20120819015807) do
     t.string   "edrpo"
     t.string   "gdcode"
     t.string   "pib"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "zcount",     :default => 1
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "zayavkas", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "usercount"
     t.string   "tamrez"
     t.string   "typetran"
     t.integer  "garantee"
+    t.integer  "status"
     t.string   "field_1_1"
     t.string   "field_1_2"
     t.string   "field_1_3"

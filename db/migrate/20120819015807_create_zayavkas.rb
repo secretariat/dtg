@@ -1,10 +1,12 @@
 class CreateZayavkas < ActiveRecord::Migration
   def change
     create_table :zayavkas do |t|
-    	t.integer :user_id
+      t.integer :user_id
+    	t.integer :usercount
       t.string :tamrez
     	t.string :typetran
       t.integer :garantee
+      t.integer :status
       t.string :field_1_1
       t.string :field_1_2
       t.string :field_1_3

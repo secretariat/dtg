@@ -22,8 +22,11 @@ class ZayavkaController < ApplicationController
 
   	@user = User.find( session[:uid] )
 		@zayavka = @user.zayavkas.new( params[:zayavka] )
-  
+  	@zayavka.status = 1
+  	@zayavka.usercount = @user.zcount
+  	@user.zcount += 1
 		if @zayavka.save then
+			@user.save
 			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
 			flash[:notice] = "Заявка создана успешно"
 			redirect_to( :controller => 'user', :action => 'index')

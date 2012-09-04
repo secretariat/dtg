@@ -4,8 +4,8 @@
 	<th>Создана:</th>
 	<% @zayavkas.each do |z| %>	
 		<tr>
-			<td><%= z.id %></td>
-			<td><%= z.field_1_1 %></td>
+			<td><%= z.usercount %></td>
+			<td><%= @zayavkas.get_status( z.status ) %></td>
 			<td><%= z.created_at %></td>
 			<td>
 				<%= link_to( "Показать",  '#' ) %>

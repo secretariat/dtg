@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :edrpo
       t.string :gdcode
       t.string :pib
+      t.integer :zcount, :default => 1
 
       t.timestamps
     end
