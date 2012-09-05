@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+function addTableRow(jQtable){
+	jQtable.each(function(){
+		var tds = '<tr>';
+		jQuery.each($('tr:last td', this), function() {tds += '<td>'+$(this).html()+'</td>';});
+	tds += '</tr>';
+		if($('tbody', this).length > 0){$('tbody', this).append(tds);
+		}else {$(this).append(tds);}
+	});
+}
+
+function delTableRow(jQtable){
+	jQtable.each(function(){
+		if ($('tr', this).length <= 1) return false; 
+		$('tr:last', this).remove();
+	});
+}
