@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  zayavka_id: 1
+  naim: MyString
+  codyktved: MyString
+  nomenkl: MyString
+  kolvo: 1
+  factstoim: 1
+  dopinfo: MyString
+
+two:
+  zayavka_id: 1
+  naim: MyString
+  codyktved: MyString
+  nomenkl: MyString
+  kolvo: 1
+  factstoim: 1
+  dopinfo: MyString

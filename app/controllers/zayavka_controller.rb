@@ -15,6 +15,9 @@ class ZayavkaController < ApplicationController
 
 	def new
 		@zayavka = Zayavka.new
+		3.times do
+			@zayavka.products.build
+		end
 		@user = User.find( session[:uid] )
 	end
 
