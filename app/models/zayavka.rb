@@ -12,7 +12,7 @@ class Zayavka < ActiveRecord::Base
   def self.get_status( status )
 		
 		case status 
-			when 1 then str = "Отправлена" 
+			when 1 then str = "Отправлена"
 			when 2 then str = "Принята" 
 			when 3 then str = "Готова" 
 			when 4 then str = "Аннулирована" 

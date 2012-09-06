@@ -15,7 +15,11 @@ class ZayavkaController < ApplicationController
 
 	def new
 		@zayavka = Zayavka.new
+<<<<<<< HEAD
 		5.times do
+=======
+		1.times do
+>>>>>>> f499a81fa0db0784fe60b9cbe72b004b4d6fe702
 			@zayavka.products.build
 		end
 		@user = User.find( session[:uid] )
