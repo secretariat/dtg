@@ -1,0 +1,47 @@
+<br>
+<center><h2>Завление опросник № 0000<%= @zayavka.id %></h2></center><br>
+Таможенный режим: <%= @zayavka.tamrez %>
+Тип гарантии: <%= @zayavka.garantee %>
+Тип транспорта: <%= @zayavka.typetran %>
+
+<div class="row">	
+	<center><h4>1. Отправитель товара</h4></center>
+</div>
+
+<div class="row">	
+	<div class="span3">1.1 Наименование фирмы:</div>
+	<%= @zayavka.field_1_1 %>
+</div>
+
+<div class="row">	
+	<div class="span4">1.2 Юридический адрес, телефон, email:</div>
+	<%= @zayavka.field_1_2 %>
+</div>
+
+
+<table id="goods" cellpadding='0'  border='1' class="span12">
+	<tr style="background: grey;">
+		<th class="span2" align="center"><b>Наименование</b></td>
+		<th class="span2" align="center"><b>Код УКТВЭД</b></td>
+		<th class="span2" align="center"><b>Номенклатура</b></td>
+		<th class="span1" align="center"><b>Кол-во</b></td>
+		<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
+		<th class="span4" align="center"><b>Доп. Информация</b></td>
+	</tr>
+	
+	<% for products in @zayavka.products %>
+	  <tr>
+		  <td><%= products.naim %></td>
+		  <td><%= products.codyktved %></td>
+		  <td><%= products.nomenkl %></td>
+		  <td><%= products.kolvo %></td>
+		  <td><%= products.factstoim %></td>
+		  <td><%= products.dopinfo %></td>
+		</tr>
+	<% end %>
+</table>
+
+<div class="row">	
+	<center><h4>10. Дополнительная информация</h4></center>
+</div>
+	<div class="row"><%= @zayavka.field_10%></div>

@@ -10,16 +10,12 @@ class ZayavkaController < ApplicationController
 	end
 
 	def show
-
+		@zayavka = Zayavka.find( params[:id] )
 	end
 
 	def new
 		@zayavka = Zayavka.new
-<<<<<<< HEAD
-		5.times do
-=======
 		1.times do
->>>>>>> f499a81fa0db0784fe60b9cbe72b004b4d6fe702
 			@zayavka.products.build
 		end
 		@user = User.find( session[:uid] )
@@ -43,6 +39,22 @@ class ZayavkaController < ApplicationController
 		end 
 
 	end
+
+	def edit
+		@zayavka = Zayavka.find( params[:id] )
+		@user = User.find( session[:uid] )
+	end
+
+	def update
+  	@zayavka = Zayavka.find( params[:id] )
+  	@user = User.find( session[:uid] )
+		if @zayavka.update_attributes( params[:zayavka]) then
+			flash[:notice] = "Заявка успешно отредактирована"
+			redirect_to( :controller => 'zayavka', :action => 'list')
+		else
+			render('edit')
+		end  	
+  end
 
 	private
 

@@ -8,10 +8,10 @@
 			<td><%= @zayavkas.get_status( z.status ) %></td>
 			<td><%= z.created_at %></td>
 			<td>
-				<%= link_to( "Показать",  '#' ) %>
+				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %>
 			</td>
 			<td>
-				<%= link_to( "Редактировать", '#' ) %>
+				<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
 			</td>
 		</tr>
 	<% end %>
