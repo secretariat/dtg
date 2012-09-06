@@ -5,6 +5,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'thin'
 
+gem "nested_form"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
