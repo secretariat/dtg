@@ -3,6 +3,8 @@
 class Zayavka < ActiveRecord::Base
   # attr_accessible :title, :body
   belongs_to :user
+  has_many :products
+  accepts_nested_attributes_for :products
   # attr_accessible :user_id, :tamrez, :typetran, :garantee, :field_1_1,
   #    							:field_1_2, :field_1_3
   attr_protected

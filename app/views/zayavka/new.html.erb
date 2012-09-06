@@ -2,7 +2,7 @@
 
 <center><h3>Создание новой Заявки</h3></center><br>
   <div class="container span12">
-  	<%= form_for(:zayavka, :url => {:action => 'create'}) do |f| %>
+  	<%= form_for(@zayavka, :url => {:action => 'create'}) do |f| %>
     <div class="row">
 	 		<div class="span3"><b>Завление опросник №____ от ______ г.</div>
 	 		<div class="span2"> к Договору №_____ </div>
@@ -54,27 +54,31 @@
 	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
 	 				<th class="span4" align="center"><b>Доп. Информация</b></td>
 	 			</tr>
-	 			<tr>
-	 				<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
-					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
-					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
-					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
-					<td><input type="text" style="padding:0; margin:0; width: 99%; height:20px;"></td>
-					<td><input type="text" style="padding:0; margin:0; width: 100%; height:20px;"></td>
-	 			</tr>
+	 			
+	 			<%= f.fields_for :products do |builder| %>
+	 				<tr>
+		 				<td><%= builder.text_field :naim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+		 				<td><%= builder.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+		 				<td><%= builder.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+		 				<td><%= builder.text_field :kolvo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+		 				<td><%= builder.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+		 				<td><%= builder.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+		 			</tr>
+		 		<% end %>
+	 			
 	 		</table>
 	 	</div>
  		<div class="row">
  			<div class="pull-right">
- 				<div  class="btn btn-small btn-danger">
- 					<%= link_to( "Удалить", '#', :onclick => "delTableRow($('#goods'));" ) %>
- 					<%# onclick="addTableRow($('#goods'));" %>
- 				</div>
- 				<div  class="btn btn-small btn-success">
- 					<%= link_to( "Добавить", '#', :onclick => "addTableRow($('#goods'));" ) %>
- 					<%# onclick="addTableRow($('#goods'));" %>
- 				</div>
- 				
+				<%= tag "input",{"type" => "button", 
+											"value" => "Добавить",
+											"onclick"=>"addTableRow($('#goods'));",
+											"class" => "btn btn-small btn-success"}%>
+				
+				<%= tag "input",{"type" => "button", 
+											"value" => "Удалить",
+											"onclick"=>"delTableRow($('#goods'));",
+											"class" => "btn btn-small btn-danger"} %>
  			</div>
  		</div>
 	 	
