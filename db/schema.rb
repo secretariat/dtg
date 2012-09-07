@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(:version => 20120905171528) do
     t.string   "field_9_3"
     t.string   "field_9_4_1"
     t.string   "field_9_4_2"
+    t.string   "field_9_5"
     t.string   "field_10"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

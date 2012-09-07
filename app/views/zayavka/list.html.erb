@@ -1,17 +1,19 @@
 <table class="table table-bordered table-condensed table-stripped span7 offset2">
-	<th>N%</th>
-	<th>Cтатус:</th>
-	<th>Создана:</th>
+	<th><center>N%</center></th>
+	<th><center>Cтатус:</center></th>
+	<th><center>Создана:</center></th>
 	<% @zayavkas.each do |z| %>	
 		<tr>
-			<td><%= z.usercount %></td>
-			<td><%= @zayavkas.get_status( z.status ) %></td>
-			<td><%= z.created_at %></td>
-			<td>
+			<td><center><%= z.usercount %></center></td>
+			<td><center><%= @zayavkas.get_status( z.status ) %></center></td>
+			<td><center><%= z.created_at %></center></td>
+			<td><center>
 				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %>
+				</center>
 			</td>
-			<td>
+			<td><center>
 				<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
+				</center>
 			</td>
 		</tr>
 	<% end %>
