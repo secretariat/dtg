@@ -19,7 +19,7 @@
 					<%= f.select :garantee, { "генеральная" => 1, "многоразовая" => 2, "индивидуальная" => 3} %>
 	 		</div>
 	 		<div class="span4">
-	 			Вид транспорта:
+	 			Тип транспорта:
 	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
 	 	</div>
@@ -46,22 +46,29 @@
 	 	<br>
 	 	<div class="row">
 	 		<table id="goods" cellpadding='0'  border='1' class="span12">
-	 			<tr class="fields" style="background: grey;">
-	 				<th class="span2" align="center"><b>Наименование товара</b></td>
+	 			<tr style="background: grey;">
+	 				<th class="span2" align="center"><b>Наименование</b></td>
 	 				<th class="span2" align="center"><b>Код УКТВЭД</b></td>
 	 				<th class="span2" align="center"><b>Номенклатура</b></td>
 	 				<th class="span1" align="center"><b>Кол-во</b></td>
 	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
 	 				<th class="span4" align="center"><b>Доп. Информация</b></td>
 	 			</tr>
-	 			<%= f.fields_for :products do |builder| %>
-		 			<%= render "products", :f => builder %>
-	 			<% end %>
-		 			<%= f.link_to_add "Add", :products %>
+				
+		 			<%= f.fields_for :products do |builder| %>
+			 			<tr class="fields">
+			 				<%= render "products", :f => builder %>
+			 			</tr>
+		 			<% end %>
+	 			
 	 		</table>
 	 	</div>
 
-
+ 		<div class="row">
+ 			<div class="pull-right">
+ 				<%= f.link_to_add "Add", :products %>
+ 			</div>
+ 		</div>
 	 	
 	 	<div class="row">	
 	 		<center><h4>3. Расчет суммы таможенных платежей</h4></center>
@@ -75,7 +82,7 @@
 			 	<div class="span1"><%= f.text_field :field_3_1_2,:class=>'input-small'%></div>
 			</div>
 			<div class="row">
-			 	<div class="span3">3.2 Акцизный налог</div>
+			 	<div class="span3">3.2 Акцизный сбор</div>
 			 	<div class="span1 offset1">Ставка:</div>
 			 	<div class="span1"><%= f.text_field :field_3_2_1,:class=>'input-mini'%></div>
 			 	<div class="span1">Сумма:</div>
@@ -97,7 +104,7 @@
 			</div>
 			<div class="row">
 			 	<div class="span3">3.5 Сумма таможенных платежей ВСЕГО:</div>
-			 	<div class="span1 offset1"><%= f.text_field :field_3_5,:class=>'input-small'%></div>
+			 	<div class="span1 offset1">121212</div>
 			</div>
 	 		<br>
 
@@ -130,16 +137,16 @@
 	 		<div class="span4"><%= f.text_field :field_5_1,:class=>'input-xxlarge' %></div>
  		</div>
 	 	<div class="row">	
-	 		<div class="span3">5.2 Юридический адрес, телефон, email:</div>
+	 		<div class="span3">5.2 Таможня отправления:</div>
 	 		<div class="span4"><%= f.text_field :field_5_2,:class=>'input-xxlarge' %></div>
  		</div>
 	 	<div class="row">	
-	 		<div class="span3">5.3 Руководитель, Ф.И.О.:</div>
+	 		<div class="span3">5.3 Пункт назначения:</div>
 	 		<div class="span4"><%= f.text_field :field_5_3,:class=>'input-xxlarge' %></div>
  		</div>
 
  		<div class="row">	
-	 		<center><h4>6. Субъект ВЭД, заключивший внешнеэкономический договор</h4></center>
+	 		<center><h4>6. Субъект ВЭД, заключивший договор</h4></center>
 	 	</div>
 	 	<br>
 	 	
@@ -203,8 +210,9 @@
 	 				<div class="input-medium uneditable-input"></div>
 	 			</div>
 	 		</div>
-	 	
-	 	<div class="row">	
+	 	</div>
+
+ 		<div class="row">	
 	 		<center><h4>
 	 			7. Лицо заключившее договор на предоставление финансовой гарантии
 	 		</h4></center>
@@ -264,19 +272,14 @@
  		</div>
  		
  		<div class="row">	
-	 		<div class="span3">9.4 Для ж/д:</div>
-	 		<div class="span1">№ вагона:</div>
-	 		<div class="span1 input"><%= f.text_field :field_9_4_1 ,:class=>'input-mini'%></div>
-	 		<div class="span1">№ контейнера</div>
-	 		<div class="span1 input"><%= f.text_field :field_9_4_2 ,:class=>'input-mini'%></div>
+	 		<div class="span3">9.4.1 Тип, марка, гос.№:</div>
+	 		<div class="span4 input"><%= f.text_field :field_9_4_1 ,:class=>'input-xlarge'%></div>
 	 	</div>
 
- 		<div class="row">	
-	 		<div class="span3">9.5 Для авто:</div>
-	 		<div class="span2">Тип, марка, гос.№:</div>
-	 		<div class="span3 input"><%= f.text_field :field_9_5 ,:class=>'input-xlarge'%></div>
-	  </div>
-
+	 	<div class="row">
+		 	<div class="span3">9.4.2 Ф.И.О. водителя, паспорт:</div>
+		 	<div class="span4 input"><%= f.text_field :field_9_4_2 ,:class=>'input-xlarge'%></div>
+	 	</div>
  		<br>
 
  		<div class="row">	
@@ -298,6 +301,6 @@
 			</div>
 		</div>
 		
-<% end %>
+		<% end %>
 
 
