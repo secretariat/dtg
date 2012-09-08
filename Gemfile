@@ -5,9 +5,6 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'thin'
 
-# gem "nested_form"
-# gem "flexible-nested-qform"
-# gem 'nested_form', :git => 'git://github.com/madebydna/nested_form.git'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
