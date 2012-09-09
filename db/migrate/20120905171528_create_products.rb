@@ -9,6 +9,15 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :factstoim
       t.string :dopinfo
 
+      t.integer :pos_stavka
+      t.integer :pos_summa
+      t.integer :nalog_stavka
+      t.integer :nalog_summa
+      t.integer :neft_stavka
+      t.integer :neft_summa
+      t.integer :nds_stavka
+      t.integer :nds_summa
+      t.integer :vsego
       t.timestamps
     end
   end
