@@ -6,7 +6,8 @@ gem 'therubyracer'
 gem 'thin'
 
 gem "nested_form"
-# gem 'nested_form', :git => 'git://github.com/modsaid/nested_form.git'
+# gem 'flexible-nested-form', '0.0.3'
+# gem 'nested_form', "0.0.3", :require => false, :git => 'git://github.com/modsaid/nested_form.git'
 # gem 'nested_form', :git => 'git://github.com/madebydna/nested_form.git'
 
 # Bundle edge Rails instead:

@@ -47,15 +47,17 @@
 	 	<div class="row">
 	 		<table id="goods" cellpadding='0'  border='1' class="span12">
 	 			<tr class="fields" style="background: grey;">
-	 				<th class="span2" align="center"><b>Наименование товара</b></td>
-	 				<th class="span2" align="center"><b>Код УКТВЭД</b></td>
-	 				<th class="span2" align="center"><b>Номенклатура</b></td>
-	 				<th class="span1" align="center"><b>Кол-во</b></td>
-	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
-	 				<th class="span4" align="center"><b>Доп. Информация</b></td>
+	 				<th class="span2" align="center"><b>Наименование товара</b></th>
+	 				<th class="span2" align="center"><b>Код УКТВЭД</b></th>
+	 				<th class="span2" align="center"><b>Номенклатура</b></th>
+	 				<th class="span1" align="center"><b>Кол-во</b></th>
+	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></th>
+	 				<th class="span4" align="center"><b>Доп. Информация</b></th>
 	 			</tr>
 	 			<%= f.fields_for :products do |builder| %>
-		 			<%= render "products", :f => builder %>
+	 				<tr>
+		 				<%= render "products", :f => builder %>
+		 			</tr>
 	 			<% end %>
 		 			<%= f.link_to_add "Add", :products %>
 	 		</table>
@@ -274,7 +276,7 @@
  		<div class="row">	
 	 		<div class="span3">9.5 Для авто:</div>
 	 		<div class="span2">Тип, марка, гос.№:</div>
-	 		<div class="span3 input"><%= f.text_field :field_9_5 ,:class=>'input-xlarge'%></div>
+	 		<div class="span3 input"><%= f.text_field :field_9_4_2 ,:class=>'input-xlarge'%></div>
 	  </div>
 
  		<br>
