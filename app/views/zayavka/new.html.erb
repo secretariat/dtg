@@ -54,103 +54,21 @@
 	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
 	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
 	 				<th class="span1"></td>
+	 				<td  style="width:0px; border-left-style: hidden;"></td>
 	 			</tr>
 	 			<%= f.fields_for :products do |builder| %>
 	 				<tr>
 		 				<%= render "product_fields", :f => builder %>
 	 				</tr>
 	 			<% end %>
-				 
 	 		</table>
 	 		<div class="row">
    			<div class="pull-right">
 	 					<%= link_to_add_fields "Добавить", f, :products %>
 	 			</div>
 	 		</div>
-			<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h5 id="myModalLabel"><center><u>Расчет суммы таможенных платежей для товара</u></center></h5>
-			</div>
-				<div class="modal-body">
-					<%= form_for(@zayavka, :url => {:action => 'create'}) do |f| %>
-						<div class="row">
-						 	<div class="span2"><b>Таможенная пошлина:</b></div><br>
-						 	<div class="span1 offset1">Ставка:</div>
-							<div class="span1"><%= f.text_field :field_3_1_1,:class=>'input-mini'%></div>
-							<div class="span1">Сумма:</div>
-							<div class="span1"><%= f.text_field :field_3_1_2,:class=>'input-mini'%></div>
-						</div>
-						<div class="row">
-						 	<div class="span2"><b>Акцизный налог:</b></div><br>
-						 	<div class="span1 offset1">Ставка:</div>
-						 	<div class="span1"><%= f.text_field :field_3_2_1,:class=>'input-mini'%></div>
-						 	<div class="span1">Сумма:</div>
-						 	<div class="span1"><%= f.text_field :field_3_2_2,:class=>'input-mini'%></div>
-						</div>
-						<div class="row">
-						 	<div class="span4"><b>Для нефтепродуктов (дополнительный сбор):</b></div><br>
-						 	<div class="span1 offset1">Ставка:</div>
-						 	<div class="span1"><%= f.text_field :field_3_3_1,:class=>'input-mini'%></div>
-						 	<div class="span1">Сумма:</div>
-						 	<div class="span1"><%= f.text_field :field_3_3_2,:class=>'input-mini'%></div>
-						</div>
-						<div class="row">
-						 	<div class="span3"><b>Налог на добавленную стоимость (НДС):</b></div><br>
-						 	<div class="span1 offset1">Ставка:</div>
-						 	<div class="span1"><%= f.text_field :field_3_4_1,:class=>'input-mini'%></div>
-						 	<div class="span1">Сумма:</div>
-						 	<div class="span1"><%= f.text_field :field_3_4_2,:class=>'input-mini'%></div>
-						</div>
-						<div class="row">
-						 	<div class="span3"><b>Сумма таможенных платежей:</b></div><br>
-						 	<div class="span1 offset1">ВСЕГО:</div>
-						 	<div class="span1"><%= f.text_field :field_3_5,:class=>'input-small'%></div>
-						</div>
-					<% end %>
-					<div class="modal-footer">
-						<button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
-						<button class="btn btn-primary">Сохранить</button>
-					</div>
-				</div>
-	 		</div>
-	 	<!-- <div class="row">	
-	 		<center><h4>3. Расчет суммы таможенных платежей</h4></center>
 	 	</div>
-		 	<br>
-		 	<div class="row">
-			 	<div class="span3">3.1 Таможенная пошлина</div>
-			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span1"><%= f.text_field :field_3_1_1,:class=>'input-mini'%></div>
-			 	<div class="span1">Сумма:</div>
-			 	<div class="span1"><%= f.text_field :field_3_1_2,:class=>'input-small'%></div>
-			</div>
-			<div class="row">
-			 	<div class="span3">3.2 Акцизный налог</div>
-			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span1"><%= f.text_field :field_3_2_1,:class=>'input-mini'%></div>
-			 	<div class="span1">Сумма:</div>
-			 	<div class="span1"><%= f.text_field :field_3_2_2,:class=>'input-small'%></div>
-			</div>
-			<div class="row">
-			 	<div class="span3">3.3 Для нефтепродуктов: дополнительный сбор</div>
-			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span1"><%= f.text_field :field_3_3_1,:class=>'input-mini'%></div>
-			 	<div class="span1">Сумма:</div>
-			 	<div class="span1"><%= f.text_field :field_3_3_2,:class=>'input-small'%></div>
-			</div>
-			<div class="row">
-			 	<div class="span3">3.4 Налог на добавленную стоимость (НДС)</div>
-			 	<div class="span1 offset1">Ставка:</div>
-			 	<div class="span1"><%= f.text_field :field_3_4_1,:class=>'input-mini'%></div>
-			 	<div class="span1">Сумма:</div>
-			 	<div class="span1"><%= f.text_field :field_3_4_2,:class=>'input-small'%></div>
-			</div>
-			<div class="row">
-			 	<div class="span3">3.5 Сумма таможенных платежей ВСЕГО:</div>
-			 	<div class="span1 offset1"><%= f.text_field :field_3_5,:class=>'input-small'%></div>
-			</div>
-	 		<br> -->
+				
 
 	 	<div class="row">	
 	 		<center><h4>4. Избранный маршрут транзитного перемещения</h4></center>

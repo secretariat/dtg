@@ -54,8 +54,17 @@ ActiveRecord::Schema.define(:version => 20120905171528) do
     t.integer  "kolvo"
     t.integer  "factstoim"
     t.string   "dopinfo"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "pos_stavka"
+    t.integer  "pos_summa"
+    t.integer  "nalog_stavka"
+    t.integer  "nalog_summa"
+    t.integer  "neft_stavka"
+    t.integer  "neft_summa"
+    t.integer  "nds_stavka"
+    t.integer  "nds_summa"
+    t.integer  "vsego"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "transports", :force => true do |t|
@@ -90,26 +99,6 @@ ActiveRecord::Schema.define(:version => 20120905171528) do
     t.string   "field_1_1"
     t.string   "field_1_2"
     t.string   "field_1_3"
-    t.string   "field_2_1"
-    t.string   "field_2_2"
-    t.string   "field_2_3"
-    t.integer  "field_2_4"
-    t.integer  "field_2_5"
-    t.integer  "field_2_6_1"
-    t.integer  "field_2_6_2"
-    t.integer  "field_2_6_3"
-    t.integer  "field_2_6_4"
-    t.integer  "field_2_7"
-    t.integer  "field_2_8_1"
-    t.integer  "field_3_1_1"
-    t.integer  "field_3_1_2"
-    t.integer  "field_3_2_1"
-    t.integer  "field_3_2_2"
-    t.integer  "field_3_3_1"
-    t.integer  "field_3_3_2"
-    t.integer  "field_3_4_1"
-    t.integer  "field_3_4_2"
-    t.integer  "field_3_5"
     t.string   "field_4_1"
     t.string   "field_4_2"
     t.string   "field_4_3"
