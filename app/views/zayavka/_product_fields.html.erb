@@ -16,43 +16,43 @@
 		<!-- <div class="span8"> -->
 			<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-header">
-					<h5 id="myModalLabel">
+					<h4 id="myModalLabel">
 						<center><u>Расчет суммы таможенных платежей для товара</u></center>
-					</h5>
+					</h4>
 				</div>
 				<div class="modal-body">
-					<div>
-						 	<div><b>Таможенная пошлина:</b></div><br>
-						 	<div>Ставка:</div>
 							<div>
-								<div>Сумма:</div>
-								<div><%= f.text_field :pos_summa,:class=>'input-mini'%></div>
+							 	<h5>Таможенная пошлина:</h5>
+							 	<div class="span1">Ставка:</div>
+							 	<div class="span1"><%= f.text_field :pos_stavka,:class=>'input-mini'%></div>
+									<div class="span1">&nbsp;&nbsp;Сумма:</div>
+									<div class="span1"><%= f.text_field :pos_summa,:class=>'input-mini'%></div>
 							</div>
 							<div>
-							 	<div><b>Акцизный налог:</b></div><br>
-							 	<div>Ставка:</div>
-							 	<div><%= f.text_field :nalog_stavka,:class=>'input-mini'%></div>
-							 	<div>Сумма:</div>
-							 	<div><%= f.text_field :nalog_summa,:class=>'input-mini'%></div>
+							 	<h5>Акцизный налог:</h5>
+							 	<div class="span1">Ставка:</div>
+							 	<div class="span1"><%= f.text_field :nalog_stavka,:class=>'input-mini'%></div>
+							 	<div class="span1">&nbsp;&nbsp;Сумма:</div>
+							 	<div class="span1"><%= f.text_field :nalog_summa,:class=>'input-mini'%></div>
 							</div>
 							<div>
-							 	<div><b>Для нефтепродуктов (дополнительный сбор):</b></div><br>
-							 	<div>Ставка:</div>
-							 	<div><%= f.text_field :neft_stavka,:class=>'input-mini'%></div>
-							 	<div>Сумма:</div>
-							 	<div><%= f.text_field :neft_summa,:class=>'input-mini'%></div>
+							 	<h5>Для нефтепродуктов (дополнительный сбор):</h5>
+							 	<div class="span1">Ставка:</div>
+							 	<div class="span1"><%= f.text_field :neft_stavka,:class=>'input-mini'%></div>
+							 	<div class="span1">&nbsp;&nbsp;Сумма:</div>
+							 	<div class="span1"><%= f.text_field :neft_summa,:class=>'input-mini'%></div>
 							</div>
 							<div>
-							 	<div><b>Налог на добавленную стоимость (НДС):</b></div><br>
-							 	<div>Ставка:</div>
-							 	<div><%= f.text_field :nds_stavka,:class=>'input-mini'%></div>
-							 	<div>Сумма:</div>
-							 	<div><%= f.text_field :nds_summa,:class=>'input-mini'%></div>
+							 	<h5>Налог на добавленную стоимость (НДС):</h5>
+							 	<div class="span1">Ставка:</div>
+							 	<div class="span1"><%= f.text_field :nds_stavka,:class=>'input-mini'%></div>
+							 	<div class="span1">&nbsp;&nbsp;Сумма:</div>
+							 	<div class="span1"><%= f.text_field :nds_summa,:class=>'input-mini'%></div>
 							</div>
 							<div>
-							 	<div><b>Сумма таможенных платежей:</b></div><br>
-							 	<div>ВСЕГО:</div>
-							 	<div><%= f.text_field :vsego,:class=>'input-small'%></div>
+							 	<h5>Сумма таможенных платежей:</h5>
+							 	<div class="span1">ВСЕГО:</div>
+							 	<div class="span1"><%= f.text_field :vsego,:class=>'input-small'%></div>
 							</div>
 					</div>
 					<div class="modal-footer">
