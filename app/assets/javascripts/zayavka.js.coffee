@@ -7,6 +7,8 @@ jQuery ->
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
    	$('#goods').append( $(this).data('fields').replace(regexp, time))
+   	$('#myModal').attr("role", "myModal_"+time)
+   	alert($('#myModal').attr("role"))
     event.preventDefault()
 
 
