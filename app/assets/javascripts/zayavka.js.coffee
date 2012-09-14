@@ -11,5 +11,3 @@ jQuery ->
    	$('.modal:last').attr('id', 'myModal_'+time)
    	$('.btn-mini:last').attr('data-target', '#myModal_'+time)
    	event.preventDefault()
-
-
