@@ -50,7 +50,7 @@ class ZayavkaController < ApplicationController
   	@user = User.find( session[:uid] )
 		if @zayavka.update_attributes( params[:zayavka]) then
 			flash[:notice] = "Заявка успешно отредактирована"
-			redirect_to( :controller => 'zayavka', :action => 'list')
+			redirect_to( :controller => 'user', :action => 'index')
 		else
 			render('edit')
 		end  	
