@@ -7,6 +7,9 @@ jQuery ->
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
    	$('#goods').append( $(this).data('fields').replace(regexp, time))
-    event.preventDefault()
+   	$('div .modal hide fade').find("#myModal").prop( "id", time)
+   	$('.modal:last').attr('id', 'myModal_'+time)
+   	$('.btn-mini:last').attr('data-target', '#myModal_'+time)
+   	event.preventDefault()
 
 
