@@ -32,3 +32,9 @@ function delTableRow(jQtable){
 		$('tr:last', this).remove();
 	});
 }
+
+function insert(id, evalue)
+{
+	
+	document.getElementById(id).value = evalue
+}

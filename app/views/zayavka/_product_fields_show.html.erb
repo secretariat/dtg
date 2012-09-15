@@ -1,11 +1,9 @@
 <tr>
-	<td><% @zayavka.naim%></td>
-	<td><% @zayavka.codyktved%></td>
-	<td><% @zayavka.nomenkl%></td>
-	<td><% @zayavka.kolvo%></td>
-	<td><% @zayavka.factstoim%></td>
-	<td>
-		<%= @zayavka.pos_stavka%>,<%= @zayavka.pos_summa%>,<%= @zayavka.nalog_stavka%>,<%= @zayavka.nalog_summa%>,<%= @zayavka.neft_stavka%>,<%= @zayavka.neft_summa%>,<%= @zayavka.nds_stavka%>,<%= @zayavka.nds_summa%>,<%= @zayavka.vsego%>
-	</td>
+	<td><%= f.text_field :naim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :kolvo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
 </tr>
 
