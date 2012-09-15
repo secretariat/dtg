@@ -4,7 +4,7 @@ class Zayavka < ActiveRecord::Base
   # attr_accessible :title, :body
   belongs_to :user
   has_many :products
-  accepts_nested_attributes_for :products
+  accepts_nested_attributes_for :products, :reject_if => lambda { |a| a[:naim].blank? }
   # attr_accessible :user_id, :tamrez, :typetran, :garantee, :field_1_1,
   #    							:field_1_2, :field_1_3
   attr_protected
