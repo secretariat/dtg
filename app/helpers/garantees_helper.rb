@@ -1,0 +1,2 @@
+module GaranteesHelper
+end

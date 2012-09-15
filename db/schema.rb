@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120917195338) do
+ActiveRecord::Schema.define(:version => 20120926201103) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(:version => 20120917195338) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "garantees", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "mains", :force => true do |t|
     t.string   "login",      :limit => 20
     t.string   "hash_pass"
@@ -70,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20120917195338) do
     t.integer  "kolvo"
     t.integer  "factstoim"
     t.string   "dopinfo"
+    t.string   "opis_all"
     t.integer  "pos_stavka"
     t.integer  "pos_summa"
     t.integer  "nalog_stavka"
@@ -115,26 +122,6 @@ ActiveRecord::Schema.define(:version => 20120917195338) do
     t.string   "field_1_1"
     t.string   "field_1_2"
     t.string   "field_1_3"
-    t.string   "field_2_1"
-    t.string   "field_2_2"
-    t.string   "field_2_3"
-    t.integer  "field_2_4"
-    t.integer  "field_2_5"
-    t.integer  "field_2_6_1"
-    t.integer  "field_2_6_2"
-    t.integer  "field_2_6_3"
-    t.integer  "field_2_6_4"
-    t.integer  "field_2_7"
-    t.integer  "field_2_8_1"
-    t.integer  "field_3_1_1"
-    t.integer  "field_3_1_2"
-    t.integer  "field_3_2_1"
-    t.integer  "field_3_2_2"
-    t.integer  "field_3_3_1"
-    t.integer  "field_3_3_2"
-    t.integer  "field_3_4_1"
-    t.integer  "field_3_4_2"
-    t.integer  "field_3_5"
     t.string   "field_4_1"
     t.string   "field_4_2"
     t.string   "field_4_3"
@@ -164,6 +151,7 @@ ActiveRecord::Schema.define(:version => 20120917195338) do
     t.string   "field_9_3"
     t.string   "field_9_4_1"
     t.string   "field_9_4_2"
+    t.string   "field_9_5"
     t.string   "field_10"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

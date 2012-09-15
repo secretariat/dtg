@@ -3,7 +3,7 @@
   <div class="span12">
   	<%= form_for(@zayavka, :url => {:action => 'create'}) do |f| %>
     <div class="row">
-	 		<div class="span4 offset2"><h4>Завление опросник №____ от ______ г.</div>
+	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zid %> от ______ г.</div>
 	 		<div class="span3"><h4> к Договору № <%= @user.dognum%></h4></div>
 	 		<div class="span3"><h4> от <%= @user.updated_at%> г.</h4></b></div>
 	 	</div>
@@ -15,7 +15,7 @@
 	 		</div>
 	 		<div class="span4">
 	 			Тип гарантии:
-					<%= f.select :garantee, { "генеральная" => 1, "многоразовая" => 2, "индивидуальная" => 3} %>
+					<%= f.select( :garantee, Garantee.find(:all).collect{ |u| [u.name] } ) %>
 	 		</div>
 	 		<div class="span4">
 	 			Вид транспорта:
@@ -52,6 +52,7 @@
 	 				<th class="span1" align="center"><b>Кол-во</b></td>
 	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
 	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
+	 				<th class="span2" align="center"><b>Инфо</b></td>
 	 				<th class="span1"></td>
 	 				<td  style="width:0px; border-left-style: hidden;"></td>
 	 			</tr>
@@ -246,7 +247,10 @@
 	 		<div class="span2" style="width: 140px;">Тип, марка, гос.№:</div>
 	 		<div class="span3 input"><%= f.text_field :field_9_4_2 ,:class=>'input-xlarge'%></div>
 	  </div>
-
+	  <div class="row">	
+	 		<div class="span3">ФИО Водителя,паспорт</div>
+	 		<div class="span4 input"><%= f.text_field :field_9_5,:class=>'input-xxlarge'%></div>
+ 		</div>
  		<br>
 
  		<div class="row">	
