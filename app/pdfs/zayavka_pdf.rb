@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ZayavkaPdf < Prawn::Document
-  def initialize(zayavka)
+  def initialize(zayavka, user)
     super(top_margin: 70)
     @zayavka = zayavka
     name
