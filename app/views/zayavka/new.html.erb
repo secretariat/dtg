@@ -4,7 +4,7 @@
   	<%= form_for(@zayavka, :url => {:action => 'create'}) do |f| %>
     <div class="row">
 	 		<div class="span4 offset2"><h4>Завление опросник №____ от ______ г.</div>
-	 		<div class="span2"><h4> к Договору № <%= @user.dognum%></h4></div>
+	 		<div class="span3"><h4> к Договору № <%= @user.dognum%></h4></div>
 	 		<div class="span3"><h4> от <%= @user.updated_at%> г.</h4></b></div>
 	 	</div>
 	 	<br>
@@ -259,7 +259,8 @@
 	 	<br>
 
 		<div class="row">		
-			<div class="span4 offset8">
+			<div class="span5 offset6">
+				<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
 				<%= f.submit "Создать", class: "btn btn-success"%>
 				<%= f.submit "Копировать в новую", class: "btn btn-info"%>
 				<%= f.submit "В печать", class: "btn btn-inverse"%>

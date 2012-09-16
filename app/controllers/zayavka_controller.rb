@@ -11,6 +11,7 @@ class ZayavkaController < ApplicationController
 
 	def show
 		@zayavka = Zayavka.find( params[:id] )
+		@user = User.find( session[:uid] )
 	end
 
 	def new

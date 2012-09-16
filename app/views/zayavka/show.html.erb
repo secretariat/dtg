@@ -1,47 +1,245 @@
 <br>
-<center><h2>Завление опросник <%= @zayavka.id %></h2></center><br>
-Таможенный режим: <%= @zayavka.tamrez %>
-Тип гарантии: <%= @zayavka.garantee %>
-Тип транспорта: <%= @zayavka.typetran %>
+<center><h3>Создание новой Заявки</h3></center><br>
+  <div class="container span12">
+    <div class="row">
+	 		<div class="span4 offset2"><h4>Завление опросник №____ от ______ г.</div>
+	 		<div class="span3"><h4> к Договору № <u><%= @user.dognum%></u></h4></div>
+	 		<div class="span3"><h4> от <u><%= @user.updated_at%></u> г.</h4></b></div>
+	 	</div>
+	 	<br>
+	 	<div class="row">	
+	 		<div class="span4">
+	 			Таможенный режим:
+	 			<u><%= @zayavka.tamrez %></u>
+	 		</div>
+	 		<div class="span4">
+	 			Тип гарантии:
+					<u><%= @zayavka.garantee%></u>
+	 		</div>
+	 		<div class="span4">
+	 			Вид транспорта:
+	 			<u><%= @zayavka.typetran%></u>
+	 		</div>
+	 	</div>
+	 	<div class="row">	
+	 		<center><h4>1. Отправитель товара</h4></center>
+	 	</div>
+	 	<br>
+	 	<div class="row">	
+	 		<div class="span3">1.1 Наименование фирмы:</div>
+	 		<div class="span6 "><u><%= @zayavka.field_1_1%></u></div>
+	 	</div>
+	 	<div class="row">	
+	 		<div class="span3">1.2 Юридический адрес, телефон, email:</div>
+	 		<div class="span6 "><u><%= @zayavka.field_1_2%></u></div>
+	 	</div>
+	 	<div class="row">	
+	 		<div class="span3">1.3 Руководитель, ФИО:</div>
+	 		<div class="span6 "><u><%= @zayavka.field_1_3%></u></div>
+	 	</div>
+	 	<br>
+	 	<div class="row">	
+	 		<center><h4>2. Информация о товаре</h4></center>
+	 	</div>
+	 	<br>
+	 	<div class="row">
+	 		<table id="goods" cellpadding='0'  border='1' class="span12">
+	 			<tr style="background: grey;">
+	 				<th class="span2" align="center"><b>Наименование товара</b></td>
+	 				<th class="span2" align="center"><b>Код УКТВЭД</b></td>
+	 				<th class="span2" align="center"><b>Номенклатура</b></td>
+	 				<th class="span1" align="center"><b>Кол-во</b></td>
+	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
+	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
+	 			</tr>
+	 			<%= form_for(@zayavka, :url => {:action => 'update'}) do |f| %>
+	 				<%= f.fields_for :products do |builder| %>
+	 				<tr>
+		 				<%= render "product_fields_show", :f => builder %>
+	 				</tr>
+	 			<% end %>
+	 			<%end%>
+	 		</table>
+	 	</div>
+				
 
-<div class="row">	
-	<center><h4>1. Отправитель товара</h4></center>
-</div>
+	 	<div class="row">	
+	 		<center><h4>3. Избранный маршрут транзитного перемещения</h4></center>
+	 	</div>
+	 	<br>
+	 	<div class="row">	
+	 		<div class="span2">3.1 Пункт отправления:</div>
+	 		<div class="span4"><u><%= @zayavka.field_4_1%></u></div>
 
-<div class="row">	
-	<div class="span3">1.1 Наименование фирмы:</div>
-	<%= @zayavka.field_1_1 %>
-</div>
+	 		<div class="span2">3.2 Таможня отправления:</div>
+	 		<div class="span4"><u><%= @zayavka.field_4_2%></u></div>
 
-<div class="row">	
-	<div class="span4">1.2 Юридический адрес, телефон, email:</div>
-	<%= @zayavka.field_1_2 %>
-</div>
+	 		<div class="span2">3.3 Пункт назначения:</div>
+	 		<div class="span4"><u><%= @zayavka.field_4_3%></u></div>
+	 		
+	 		<div class="span2">3.4 Таможня назначения:</div>
+	 		<div class="span4"><u><%= @zayavka.field_4_4%></u></div>
+	 	</div>
+	 	<br>
+
+	 	<div class="row">	
+	 		<center><h4>4. Получатель товара</h4></center>
+	 	</div>
+	 	<br>
+	 		
+ 		<div class="row">	
+	 		<div class="span3">4.1 Наименование фирмы:</div>
+	 		<div class="span4"><u><%= @zayavka.field_5_1%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">4.2 Юридический адрес, телефон, email:</div>
+	 		<div class="span4"><u><%= @zayavka.field_5_2%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">4.3 Руководитель, Ф.И.О.:</div>
+	 		<div class="span4"><u><%= @zayavka.field_5_3%></u></div>
+ 		</div>
+
+ 		<div class="row">	
+	 		<center><h4>5. Субъект ВЭД, заключивший внешнеэкономический договор</h4></center>
+	 	</div>
+	 	<br>
+	 	
+	 	<div class="row">	
+ 			<div class="span3">5.1 Наименование фирмы:</div>
+ 			<div class="span6">
+ 				<u><%= @user.pib%>
+ 			</div>
+ 		</div>
+ 		 		
+ 		<div class="row">	
+ 			<div class="span3">5.2 Юридический адрес, телефон, email:</div>
+ 			<div class="span6">
+ 				<u><%= @user.uaddr%>, <%= @user.phone%>, <%= @user.email%></u>
+ 			</div>
+ 		</div>
+ 		
+	 	<div class="row">	
+ 			<div class="span3">5.3 Руководитель, Ф.И.О.:</div>
+ 			<div class="span6">
+	 			<u><%= @user.chef%></u>
+	 		</div>
+	 	</div>
 
 
-<table id="goods" cellpadding='0'  border='1' class="span12">
-	<tr style="background: grey;">
-		<th class="span2" align="center"><b>Наименование</b></td>
-		<th class="span2" align="center"><b>Код УКТВЭД</b></td>
-		<th class="span2" align="center"><b>Номенклатура</b></td>
-		<th class="span1" align="center"><b>Кол-во</b></td>
-		<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
-		<th class="span4" align="center"><b>Доп. Информация</b></td>
-	</tr>
-	
-	<% for products in @zayavka.products %>
-	  <tr>
-		  <td><%= products.naim %></td>
-		  <td><%= products.codyktved %></td>
-		  <td><%= products.nomenkl %></td>
-		  <td><%= products.kolvo %></td>
-		  <td><%= products.factstoim %></td>
-		  <td><%= products.dopinfo %></td>
-		</tr>
-	<% end %>
-</table>
+ 		<div class="row">	
+	 		<div class="span3">5.4 ЕГРПОУ:</div>
+	 		<div class="span2">
+				<u><%= @user.edrpo%></u>
+ 			</div>
+ 		</div>
+	 
+ 		<div class="row">	
+		 	<div class="span3">5.5 Код налогоплательщика:</div>
+		 	<div class="span2">
+	 			<u><%= @user.gdcode%></u>
+			</div>
+		</div>
+		
 
-<div class="row">	
-	<center><h4>10. Дополнительная информация</h4></center>
-</div>
-	<div class="row"><%= @zayavka.field_10%></div>
+	 	<div class="row">	
+		 	<div class="span3">5.6 Договор внешнеэкономический №</div>
+	 		<div class="span2">
+				<u><%= @user.dognum%></u>
+ 			</div>
+ 		
+
+	 		<div class="span2">5.7 Счет фактура №</div>
+	 			<div class="span2"></u>
+	 			</div>
+	 		</div>
+	 	
+	 	<div class="row">	
+	 		<center><h4>
+	 			6. Лицо заключившее договор на предоставление финансовой гарантии
+	 		</h4></center>
+	 	</div>
+	 	<br>
+ 		<div class="row">	
+	 		<div class="span3">6.1 Полное наименование фирмы:</div>
+	 		<div class="span6"><u><%= @zayavka.field_7_1%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">6.2 Юридический адрес, телефон, email:</div>
+	 		<div class="span6"><u><%= @zayavka.field_7_2%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">6.3 Руководитель, Ф.И.О.:</div>
+	 		<div class="span6"><u><%= @zayavka.field_7_3%></u></div>
+ 		</div>
+	 	<br>
+
+	 	<div class="row">	
+	 		<center><h4>7. Экспедиторская организация</h4></center>
+	 	</div>
+	 	<br>
+ 		<div class="row">	
+	 		<div class="span3">7.1 Наименование фирмы:</div>
+	 		<div class="span6"><u><%= @zayavka.field_8_1%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">7.2 Юридический адрес, телефон, email:</div>
+	 		<div class="span6"><u><%= @zayavka.field_8_2%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">7.3 Руководитель, Ф.И.О.:</div>
+	 		<div class="span6"><u><%= @zayavka.field_8_3%></u></div>
+ 		</div>
+ 		<div class="row">	
+	 		<div class="span3">7.4 Код Ж/Д перевозки:</div>
+	 		<div class="span6"><u><%= @zayavka.field_8_4%></u></div>
+ 		</div>
+ 		<br>
+
+ 		<div class="row">	
+	 		<center><h4>8. Информация о перевозчике и транспортном средстве</h4></center>
+	 	</div>
+	 	<br>
+ 		<div class="row">	
+	 		<div class="span3">8.1 Наименование перевозчика:</div>
+	 		<div class="span4"><u><%= @zayavka.field_9_1%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">8.2 Юридический адрес, телефон, email:</div>
+	 		<div class="span4 input"><u><%= @zayavka.field_9_2%></u></div>
+ 		</div>
+	 	<div class="row">	
+	 		<div class="span3">8.3 Руководитель, Ф.И.О.:</div>
+	 		<div class="span4 input"><u><%= @zayavka.field_9_3%></u></div>
+ 		</div>
+ 		
+ 		<div class="row">	
+	 		<div class="span3">8.4 Для ж/д:</div>
+	 		<div class="span1">№ вагона:</div>
+	 		<div class="span1 input"><u><%= @zayavka.field_9_4_1%></u></div>
+	 		<div class="span2">№ контейнера</div>
+	 		<div class="span1 input"><u><%= @zayavka.field_9_4_2%></u></div>
+	 	</div>
+
+ 		<div class="row">	
+	 		<div class="span3">8.5 Для авто:</div>
+	 		<div class="span2">Тип, марка, гос.№:</div>
+	 		<div class="span3 input"><u><%= @zayavka.field_9_4_2%></u></div>
+	  </div>
+
+ 		<br>
+
+ 		<div class="row">	
+	 		<center><h4>9. Дополнительная информация</h4></center>
+	 	</div>
+	 	<br>
+	 	<div class="row">
+ 			<center>
+	 			<%= @zayavka.field_10%>
+	 		</center>
+	 	</div>
+	 	<br>
+	 	<center>
+	 		<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
+	 	</center>
+	 	<br>
