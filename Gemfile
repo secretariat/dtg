@@ -11,6 +11,7 @@ gem 'thin'
 
 gem 'mysql2'
 gem "builder", "~> 3.0.0"
+gem 'prawn'
 
 
 # Gems used only for assets and not required
