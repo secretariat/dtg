@@ -34,7 +34,7 @@ class UserController < ApplicationController
   	@main.priv_level = 3
   	@pass = @main.password
 		if @main.save then
-			# DtgMailer.welcome_email( @main, @main.user, @pass ).deliver
+			DtgMailer.welcome_email( @main, @main.user, @pass ).deliver
 			flash[:notice] = "Пользователь создан успешно"
 			redirect_to( :controller => 'manager', :action => 'index')
 		else
