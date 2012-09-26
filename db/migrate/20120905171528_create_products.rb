@@ -8,6 +8,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :kolvo
       t.integer :factstoim
       t.string :dopinfo
+      t.string :opis_all
 
       t.integer :pos_stavka
       t.integer :pos_summa

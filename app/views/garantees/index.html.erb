@@ -1,0 +1,23 @@
+<h1>Listing garantees</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @garantees.each do |garantee| %>
+  <tr>
+    <td><%= garantee.name %></td>
+    <td><%= link_to 'Show', garantee %></td>
+    <td><%= link_to 'Edit', edit_garantee_path(garantee) %></td>
+    <td><%= link_to 'Destroy', garantee, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Garantee', new_garantee_path %>

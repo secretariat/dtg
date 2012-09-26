@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Dtg::Application.routes.draw do
+  resources :garantees
+
   root :to => 'main#login'
 
   resources :customs
