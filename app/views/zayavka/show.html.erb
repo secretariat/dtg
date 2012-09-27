@@ -1,8 +1,8 @@
 <br>
-<center><h3>Создание новой Заявки</h3></center><br>
+<center><h3>Просмотр Заявки</h3></center><br>
   <div class="container span12">
     <div class="row">
-	 		<div class="span4 offset2"><h4>Завление опросник №____ от ______ г.</div>
+	 		<div class="span4 offset2"><h4>Завление опросник № <%= '%05d' % @zayavka.id%> от ______ г.</div>
 	 		<div class="span3"><h4> к Договору № <u><%= @user.dognum%></u></h4></div>
 	 		<div class="span3"><h4> от <u><%= @user.updated_at%></u> г.</h4></b></div>
 	 	</div>
@@ -225,6 +225,11 @@
 	 		<div class="span3">8.5 Для авто:</div>
 	 		<div class="span2">Тип, марка, гос.№:</div>
 	 		<div class="span3 input"><u><%= @zayavka.field_9_4_2%></u></div>
+	  </div>
+
+	  <div class="row">	
+	 		<div class="span3">ФИО Водителя, паспорт</div>
+	 		<div class="span3 input"><u><%= @zayavka.field_9_5%></u></div>
 	  </div>
 
  		<br>
