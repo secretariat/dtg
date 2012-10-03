@@ -1,4 +1,6 @@
 class GaranteesController < ApplicationController
+  layout 'admin'
+
   # GET /garantees
   # GET /garantees.json
   def index

@@ -2,7 +2,7 @@
 	<th><center>N%</center></th>
 	<th><center>Cтатус:</center></th>
 	<th><center>Создана:</center></th>
-	<td></td>
+	<th><center></center></th>
 	<% @zayavkas.each do |z| %>	
 		<tr>
 			<td><center><%= z.usercount %></center></td>
@@ -16,9 +16,10 @@
 				<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
 				</center>
 			</td>
-			<!-- <td><center>
+			<td><center>
 				<%#= link_to "Печать", zayavka_path(z, format: "pdf") %>
-				</center> -->
+				<%= link_to "Печать", "#" %>
+				</center>
 			</td>
 		</tr>
 	<% end %>

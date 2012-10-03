@@ -1,23 +1,29 @@
-<h1>Listing garantees</h1>
+<br/>
+<center><h3>Тип гарантии</h3><br/>
+  <div class="container">
+    <div class="row">
+      
+        <div class="span1 offset2">
+          <h4>Наименование</h4>
+        </div>
+    </div>
+    <div class="row">
+      <center>
+        <table class="span8 offset2 table table-condensed">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @garantees.each do |garantee| %>
-  <tr>
-    <td><%= garantee.name %></td>
-    <td><%= link_to 'Show', garantee %></td>
-    <td><%= link_to 'Edit', edit_garantee_path(garantee) %></td>
-    <td><%= link_to 'Destroy', garantee, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Garantee', new_garantee_path %>
+      <% @garantees.each do |garantee| %>
+        <tr>
+          <td class="span6"><%= garantee.name %></td>
+          <td><%= link_to 'Редактировать', edit_garantee_path(garantee), :class => 'href' %>
+          <%= link_to 'Удалить', garantee, confirm: 'Уверены?', method: :delete, :class => 'href' %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+    <div class="row">
+      <div class="span1 offset9">
+        <%= link_to 'Добавить', new_garantee_path, :class => 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+</center>

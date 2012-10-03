@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= link_to 'Назад', garantees_path, :class => 'btn btn-info'%>
+    <%= f.submit :'Создать', :class => 'btn btn-info'%>
   </div>
 <% end %>
