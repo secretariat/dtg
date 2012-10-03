@@ -7,52 +7,43 @@ class CreateZayavkas < ActiveRecord::Migration
     	t.string :typetran
       t.integer :garantee
       t.integer :status
+      #1. Отправитель товара
       t.string :field_1_1
       t.string :field_1_2
       t.string :field_1_3
-      
+      #3. Избранный маршрут транзитного перемещения
+      t.string :field_3_1
+      t.string :field_3_2
+      t.string :field_3_3
+      t.string :field_3_4
+      #4. Получатель товара
       t.string :field_4_1
       t.string :field_4_2
       t.string :field_4_3
-      t.string :field_4_4
+      #5. Субъект ВЭД, заключивший внешнеэкономический договор
       t.string :field_5_1
       t.string :field_5_2
-      # t.string :field_5_2_2
-      # t.string :field_5_2_3
+      t.string :field_5_2
       t.string :field_5_3
-      t.string :field_6_1
-      t.string :field_6_2
-      t.string :field_6_2
-      # t.string :field_6_2_3
-      t.string :field_6_3
-      t.string :field_6_4
-      t.string :field_6_5
-      t.string :field_6_6_1 #dogovor veshneek
-      t.string :field_6_6_2 
-      t.string :field_6_6_3 
-      t.string :field_6_7_1 
-      t.string :field_6_7_2 
-      # t.string :field_6_7_3 
+      t.string :field_5_4
+      t.string :field_5_5
+      t.string :field_5_6
+      t.string :field_5_7
+      #7. Экспедиторская организация
       t.string :field_7_1 
       t.string :field_7_2 
       t.string :field_7_3 
-      t.string :field_8_1 #ekspeditori
+      t.string :field_7_4 
+      #8. Информация о перевозчике и транспортном средстве
+      t.string :field_8_1 
       t.string :field_8_2
-      # t.string :field_8_2_2
-      # t.string :field_8_2_3
       t.string :field_8_3
-      t.string :field_8_4
-      ############################################
-      t.string :field_9_1 #perevozshik
-      t.string :field_9_2
-      # t.string :field_9_2_2
-      # t.string :field_9_2_3
-      t.string :field_9_3
-      t.string :field_9_4_1
-      t.string :field_9_4_2
-      t.string :field_9_5
-            ############################################
-      t.string :field_10 #dop info
+      t.string :field_8_4_1
+      t.string :field_8_4_2
+      t.string :field_8_5
+      t.string :field_8_6
+      #9. Дополнительная информация
+      t.string :field_9 #dop info
 
       t.timestamps
     end

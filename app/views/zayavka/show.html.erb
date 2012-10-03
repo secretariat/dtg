@@ -51,6 +51,7 @@
 	 				<th class="span1" align="center"><b>Кол-во</b></td>
 	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
 	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
+	 				<th class="span2" align="center"><b>Инфо</b></td>
 	 			</tr>
 	 			<%= form_for(@zayavka, :url => {:action => 'update'}) do |f| %>
 	 				<%= f.fields_for :products do |builder| %>
@@ -62,23 +63,23 @@
 	 		</table>
 	 	</div>
 				
-
+	 	<br/>
 	 	<div class="row">	
 	 		<center><h4>3. Избранный маршрут транзитного перемещения</h4></center>
 	 	</div>
 	 	<br>
 	 	<div class="row">	
 	 		<div class="span2">3.1 Пункт отправления:</div>
-	 		<div class="span4"><u><%= @zayavka.field_4_1%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_3_1%></u></div>
 
 	 		<div class="span2">3.2 Таможня отправления:</div>
-	 		<div class="span4"><u><%= @zayavka.field_4_2%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_3_2%></u></div>
 
 	 		<div class="span2">3.3 Пункт назначения:</div>
-	 		<div class="span4"><u><%= @zayavka.field_4_3%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_3_3%></u></div>
 	 		
 	 		<div class="span2">3.4 Таможня назначения:</div>
-	 		<div class="span4"><u><%= @zayavka.field_4_4%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_3_4%></u></div>
 	 	</div>
 	 	<br>
 
@@ -89,71 +90,59 @@
 	 		
  		<div class="row">	
 	 		<div class="span3">4.1 Наименование фирмы:</div>
-	 		<div class="span4"><u><%= @zayavka.field_5_1%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_4_1%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">4.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4"><u><%= @zayavka.field_5_2%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_4_2%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">4.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span4"><u><%= @zayavka.field_5_3%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_4_3%></u></div>
  		</div>
 
- 		<div class="row">	
+ 		<br/>
+	 	<div class="row">	
 	 		<center><h4>5. Субъект ВЭД, заключивший внешнеэкономический договор</h4></center>
 	 	</div>
 	 	<br>
 	 	
 	 	<div class="row">	
  			<div class="span3">5.1 Наименование фирмы:</div>
- 			<div class="span6">
- 				<u><%= @user.pib%>
- 			</div>
+	 		<div class="span4"><%= @zayavka.field_5_1 %></div>
  		</div>
- 		 		
+
  		<div class="row">	
  			<div class="span3">5.2 Юридический адрес, телефон, email:</div>
- 			<div class="span6">
- 				<u><%= @user.uaddr%>, <%= @user.phone%>, <%= @user.email%></u>
- 			</div>
+			<div class="span4"><%= @zayavka.field_5_2 %></div>
  		</div>
- 		
-	 	<div class="row">	
- 			<div class="span3">5.3 Руководитель, Ф.И.О.:</div>
- 			<div class="span6">
-	 			<u><%= @user.chef%></u>
-	 		</div>
-	 	</div>
 
+ 		<div class="row">	
+ 			<div class="span3">5.3 Руководитель, ФИО:</div>
+			<div class="span4"><%= @zayavka.field_5_3 %></div>
+ 		</div>
 
  		<div class="row">	
 	 		<div class="span3">5.4 ЕГРПОУ:</div>
-	 		<div class="span2">
-				<u><%= @user.edrpo%></u>
- 			</div>
+	 		<div class="span4"><%= @zayavka.field_5_4 %></div>
  		</div>
 	 
  		<div class="row">	
 		 	<div class="span3">5.5 Код налогоплательщика:</div>
-		 	<div class="span2">
-	 			<u><%= @user.gdcode%></u>
-			</div>
+		 	<div class="span4"><%= @zayavka.field_5_5 %></div>
 		</div>
 		
-
 	 	<div class="row">	
-		 	<div class="span3">5.6 Договор внешнеэкономический №</div>
-	 		<div class="span2">
-				<u><%= @user.dognum%></u>
- 			</div>
+		 	<div class="span3">5.6 Договор внешнеэкономический №:</div>
+	 		<div class="span4"><%= @zayavka.field_5_6 %></div>
+ 		</div>
  		
-
-	 		<div class="span2">5.7 Счет фактура №</div>
-	 			<div class="span2"></u>
-	 			</div>
-	 		</div>
+ 		<div class="row">	
+	 		<div class="span3">5.7 Счет фактура №:</div>
+ 			<div class="span4"><%= @zayavka.field_5_7 %></div>
+	 	</div>
 	 	
+	 	<br/>
 	 	<div class="row">	
 	 		<center><h4>
 	 			6. Лицо заключившее договор на предоставление финансовой гарантии
@@ -162,15 +151,15 @@
 	 	<br>
  		<div class="row">	
 	 		<div class="span3">6.1 Полное наименование фирмы:</div>
-	 		<div class="span6"><u><%= @zayavka.field_7_1%></u></div>
+	 		<div class="span6"><u><%= @user.pib%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">6.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span6"><u><%= @zayavka.field_7_2%></u></div>
+	 		<div class="span6"><u><%= @user.uaddr%>, <%= @user.phone%>, <%= @user.email%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">6.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span6"><u><%= @zayavka.field_7_3%></u></div>
+	 		<div class="span6"><u><%= @user.chef%></u></div>
  		</div>
 	 	<br>
 
@@ -180,19 +169,19 @@
 	 	<br>
  		<div class="row">	
 	 		<div class="span3">7.1 Наименование фирмы:</div>
-	 		<div class="span6"><u><%= @zayavka.field_8_1%></u></div>
+	 		<div class="span6"><u><%= @zayavka.field_7_1%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">7.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span6"><u><%= @zayavka.field_8_2%></u></div>
+	 		<div class="span6"><u><%= @zayavka.field_7_2%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">7.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span6"><u><%= @zayavka.field_8_3%></u></div>
+	 		<div class="span6"><u><%= @zayavka.field_7_3%></u></div>
  		</div>
  		<div class="row">	
 	 		<div class="span3">7.4 Код Ж/Д перевозки:</div>
-	 		<div class="span6"><u><%= @zayavka.field_8_4%></u></div>
+	 		<div class="span6"><u><%= @zayavka.field_7_4%></u></div>
  		</div>
  		<br>
 
@@ -202,34 +191,34 @@
 	 	<br>
  		<div class="row">	
 	 		<div class="span3">8.1 Наименование перевозчика:</div>
-	 		<div class="span4"><u><%= @zayavka.field_9_1%></u></div>
+	 		<div class="span4"><u><%= @zayavka.field_8_1%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">8.2 Юридический адрес, телефон, email:</div>
-	 		<div class="span4 input"><u><%= @zayavka.field_9_2%></u></div>
+	 		<div class="span4 input"><u><%= @zayavka.field_8_2%></u></div>
  		</div>
 	 	<div class="row">	
 	 		<div class="span3">8.3 Руководитель, Ф.И.О.:</div>
-	 		<div class="span4 input"><u><%= @zayavka.field_9_3%></u></div>
+	 		<div class="span4 input"><u><%= @zayavka.field_8_3%></u></div>
  		</div>
  		
  		<div class="row">	
 	 		<div class="span3">8.4 Для ж/д:</div>
 	 		<div class="span1">№ вагона:</div>
-	 		<div class="span1 input"><u><%= @zayavka.field_9_4_1%></u></div>
+	 		<div class="span1 input"><u><%= @zayavka.field_8_4_1%></u></div>
 	 		<div class="span2">№ контейнера</div>
-	 		<div class="span1 input"><u><%= @zayavka.field_9_4_2%></u></div>
+	 		<div class="span1 input"><u><%= @zayavka.field_8_4_2%></u></div>
 	 	</div>
 
  		<div class="row">	
 	 		<div class="span3">8.5 Для авто:</div>
 	 		<div class="span2">Тип, марка, гос.№:</div>
-	 		<div class="span3 input"><u><%= @zayavka.field_9_4_2%></u></div>
+	 		<div class="span3 input"><u><%= @zayavka.field_8_5%></u></div>
 	  </div>
 
 	  <div class="row">	
 	 		<div class="span3">ФИО Водителя, паспорт</div>
-	 		<div class="span3 input"><u><%= @zayavka.field_9_5%></u></div>
+	 		<div class="span3 input"><u><%= @zayavka.field_8_6%></u></div>
 	  </div>
 
  		<br>
@@ -240,11 +229,12 @@
 	 	<br>
 	 	<div class="row">
  			<center>
-	 			<%= @zayavka.field_10%>
+	 			<%= @zayavka.field_9%>
 	 		</center>
 	 	</div>
 	 	<br>
 	 	<center>
 	 		<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
+	 		<%= link_to('Экспорт в PDF',"#", :class => 'btn') %>
 	 	</center>
 	 	<br>
