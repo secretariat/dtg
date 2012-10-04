@@ -11,6 +11,10 @@ class ManagerController < ApplicationController
 		@mains = Main.where(:owner_id => session[:user_id])
 	end
 
+	def status
+		@zayavkas = Zayavka.where( :user_id => params[:id]  ) 
+	end
+
 	def show
 		@manager = Manager.find( params[:id] )
 		render :layout => "admin"	

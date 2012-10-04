@@ -16,7 +16,7 @@
 						<th><center>N%</center></td>
 						<th><center>ФИО Сотрудника</center></td>
 						<th><center>Название компании</center></td>
-						<th><center>Просмотр Заявок</center></th>
+						<th><center>Статус Заявок</center></th>
 						<th></th>
 					</tr>
 					<% count = 1  %>
@@ -26,7 +26,7 @@
 							<td><center><%= count %></center></td>
 							<td><center><%= main.user.pib %></center></td>
 							<td><center><%= main.user.cname %></center></td>
-							<td><center><%= main.user.cname %></center></td>
+							<td><center><%= link_to( "Просмотр",  :controller => 'manager', :action=>'status',:id => main.user.id ) %></center></td>
 							<td><center>
 								<%= link_to( "Показать",  :controller => 'user', :action=>'show',:id => main.user.id ) %></center>
 							</td>
