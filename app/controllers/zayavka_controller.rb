@@ -15,9 +15,8 @@ class ZayavkaController < ApplicationController
 	end
 
 	def new
-		@zayavka = 
-
-		Zayavka.new
+		@zayavka = Zayavka.new
+		
 		@ttt = Zayavka.last
 		if( @ttt == nil ) then
 			@zid = 1

@@ -1,6 +1,6 @@
 class GaranteesController < ApplicationController
   layout 'admin'
-
+  before_filter :confirm_logged_in
   # GET /garantees
   # GET /garantees.json
   def index

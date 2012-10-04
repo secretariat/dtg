@@ -1,0 +1,21 @@
+<%= form_for(@chmail) do |f| %>
+  <% if @chmail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chmail.errors.count, "error") %> prohibited this chmail from being saved:</h2>
+
+      <ul>
+      <% @chmail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= link_to 'Назад', chmails_path, :class => 'btn btn-info'%>
+    <%= f.submit :'Создать', :class => 'btn btn-info'%>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<br/>
+<center><h3>Почтовый адрес для рассылки</h3><br/>
+  <div class="container">
+    <div class="row">
+      <center>
+        <table class="span8 offset2 table table-condensed">
+
+      <% @chmails.each do |chmail| %>
+        <tr>
+          <td class="span6"><%= chmail.email %></td>
+          <td><%= link_to 'Редактировать', edit_chmail_path(chmail), :class => 'href' %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+    <%if @chmails.size == 0 then  %>
+    <div class="row">
+      <%= link_to 'Добавить', new_chmail_path, :class => 'btn btn-success' %>
+    </div>
+    <% end %>
+  </div>
+</center>
