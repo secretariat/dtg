@@ -38,3 +38,4 @@ function insert(id, evalue)
 	
 	document.getElementById(id).value = evalue
 }
+

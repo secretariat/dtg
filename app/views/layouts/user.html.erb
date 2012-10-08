@@ -5,6 +5,22 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script>
+    $(document).ready(function(){
+      $('#xxx').click( function(){
+        var value = $('input[id*=pos_stavka]').val()+";"+
+                    $('input[id*=pos_summa]').val()+";"+
+                    $('input[id*=nalog_stavka]').val()+";"+
+                    $('input[id*=nalog_summa]').val()+";"+
+                    $('input[id*=neft_stavka]').val()+";"+
+                    $('input[id*=neft_summa]').val()+";"+
+                    $('input[id*=nds_stavka]').val()+";"+
+                    $('input[id*=nds_summa]').val()
+        // alert(value)
+        $('input[id*=opis_all]').last().val( value )
+      });
+    });
+  </script>
 </head>
 <body>  
 	<div class="navbar navbar-fixed-top">
