@@ -11,3 +11,16 @@ jQuery ->
    	$('div .modal hide fade').find("#myModal").prop( "id", time)
    	$('.modal:last').attr('id', 'myModal_'+time)
     $('.btn-mini:last').attr('data-target', '#myModal_'+time);
+
+
+jQuery ->
+  $('form').on 'click', '#xxx_btn', ( event ) ->
+    $value = $('input[id*=pos_stavka]').last().val()+";"+
+                $('input[id*=pos_summa]').last().val()+";"+
+                $('input[id*=nalog_stavka]').last().val()+";"+
+                $('input[id*=nalog_summa]').last().val()+";"+
+                $('input[id*=neft_stavka]').last().val()+";"+
+                $('input[id*=neft_summa]').last().val()+";"+
+                $('input[id*=nds_stavka]').last().val()+";"+
+                $('input[id*=nds_summa]').last().val()
+    $('input[id*=opis_all]').last().val( $value )

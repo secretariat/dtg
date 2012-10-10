@@ -5,6 +5,15 @@ class ZayavkaController < ApplicationController
 	layout 'user'
 	before_filter :get_uniq_user 
 
+	def copy
+		@zayavka = Zayavka.new
+		# @zayavka = Zayavka.find( params[:id] )
+		# @z = @zayavka
+		@zayavka.save
+		@user = User.find( session[:uid] )
+		render 'edit'
+	end
+
 	def list	
 		@zayavkas = Zayavka.where( :user_id => session[:uid]  ) 
 	end

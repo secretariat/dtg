@@ -51,7 +51,7 @@
 	 				<th class="span1" align="center"><b>Кол-во</b></td>
 	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
 	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
-	 				<th class="span2" align="center"><b>Инфо</b></td>
+	 				<th class="span2" align="center"><b>Данные расчета</b></td>
 	 			</tr>
 	 			<%= form_for(@zayavka, :url => {:action => 'update'}) do |f| %>
 	 				<%= f.fields_for :products do |builder| %>
@@ -236,5 +236,6 @@
 	 	<center>
 	 		<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
 	 		<%= link_to('Экспорт в PDF',"#", :class => 'btn') %>
+	 		<%= link_to('Копировать', :contoller => 'zayavka', :action => 'copy', :id => @zayavka.id) %>
 	 	</center>
 	 	<br>
