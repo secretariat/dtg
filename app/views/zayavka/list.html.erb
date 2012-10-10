@@ -5,7 +5,7 @@
 	<th><center></center></th>
 	<% @zayavkas.each do |z| %>	
 		<tr>
-			<td><center><%= z.usercount %></center></td>
+			<td><center><%= '%05d' % z.usercount %></center></td>
 			<td><center><%= @zayavkas.get_status( z.status ) %></center></td>
 			<td><center><%= z.created_at %></center></td>
 			<td><center>
