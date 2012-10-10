@@ -6,12 +6,20 @@ class ZayavkaController < ApplicationController
 	before_filter :get_uniq_user 
 
 	def copy
-		@zayavka = Zayavka.new
-		# @zayavka = Zayavka.find( params[:id] )
-		# @z = @zayavka
-		@zayavka.save
+		@zayavka = Zayavka.new( Zayavka.find( params[:id] ).attributes )
+		@ttt = Zayavka.last
+		if( @ttt == nil ) then
+			@zid = 1
+		else
+			@zid = @ttt.id+1
+		end
+
+		1.times do
+			@zayavka.products.build
+		end
 		@user = User.find( session[:uid] )
-		render 'edit'
+		
+		render 'new'
 	end
 
 	def list	
