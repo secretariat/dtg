@@ -233,8 +233,13 @@
 	 		<div class="span3 input"><%= f.text_field :field_8_5 ,:class=>'input-xlarge'%></div>
 	  </div>
 	  <div class="row">	
-	 		<div class="span3">ФИО Водителя,паспорт</div>
+	 		<div class="span3">8.5.1 ФИО Водителя:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_6,:class=>'input-xxlarge'%></div>
+ 		</div>
+
+ 		<div class="row">	
+	 		<div class="span3">8.5.2 Паспортные данные:</div>
+	 		<div class="span4 input"><%= f.text_field :field_8_7,:class=>'input-xxlarge'%></div>
  		</div>
  		<br>
 
@@ -253,7 +258,7 @@
 			<div class="span5 offset6">
 				<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
 				<%= f.submit "Создать", class: "btn btn-success"%>
-				<%#= f.submit "Копировать в новую", class: "btn btn-info"%>
+				<%= f.submit "Отправить", class: "btn btn-info"%>
 				<%#= f.submit "В печать", class: "btn btn-inverse"%>
 			</div>
 		</div>

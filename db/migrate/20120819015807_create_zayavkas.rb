@@ -42,6 +42,7 @@ class CreateZayavkas < ActiveRecord::Migration
       t.string :field_8_4_2
       t.string :field_8_5
       t.string :field_8_6
+      t.string :field_8_7
       #9. Дополнительная информация
       t.string :field_9 #dop info
 

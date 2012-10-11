@@ -215,14 +215,16 @@
 	 		<div class="span2">Тип, марка, гос.№:</div>
 	 		<div class="span3 input"><u><%= @zayavka.field_8_5%></u></div>
 	  </div>
-
 	  <div class="row">	
-	 		<div class="span3">ФИО Водителя, паспорт</div>
+	 		<div class="span3">8.5.1 ФИО Водителя:</div>
 	 		<div class="span3 input"><u><%= @zayavka.field_8_6%></u></div>
-	  </div>
+ 		</div>
 
+ 		<div class="row">	
+	 		<div class="span3">8.5.2 Паспортные данные:</div>
+	 		<div class="span3 input"><u><%= @zayavka.field_8_7%></u></div>
+ 		</div>
  		<br>
-
  		<div class="row">	
 	 		<center><h4>9. Дополнительная информация</h4></center>
 	 	</div>
@@ -236,6 +238,6 @@
 	 	<center>
 	 		<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
 	 		<%= link_to('Экспорт в PDF',"#", :class => 'btn') %>
-	 		<%= link_to('Копировать', :contoller => 'zayavka', :action => 'copy', :id => @zayavka.id) %>
+	 		<%= link_to('Копировать', :contoller => 'zayavka', :action => 'copy', :id => @zayavka.id, :class => 'btn') %>
 	 	</center>
 	 	<br>

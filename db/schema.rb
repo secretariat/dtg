@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(:version => 20121004195854) do
     t.string   "field_8_4_2"
     t.string   "field_8_5"
     t.string   "field_8_6"
+    t.string   "field_8_7"
     t.string   "field_9"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
