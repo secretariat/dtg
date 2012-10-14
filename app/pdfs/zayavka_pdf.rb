@@ -7,7 +7,7 @@ class ZayavkaPdf < Prawn::Document
   end
   
   def name
-    text "Номер заявки \##{@zayavka.id}"
+    text "Zayavlenie oprosnik number \##{@zayavka.id}"
   end
   
 end

@@ -236,8 +236,8 @@
 	 	</div>
 	 	<br>
 	 	<center>
-	 		<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
-	 		<%= link_to('Экспорт в PDF',"#", :class => 'btn') %>
-	 		<%= link_to('Копировать', :contoller => 'zayavka', :action => 'copy', :id => @zayavka.id, :class => 'btn') %>
+	 		<%= link_to('Назад', {:controller => 'user', :action => 'index'}, :class => 'btn') %>
+	 		<%= link_to('Экспорт в PDF', {:contoller => 'zayavka', :action => 'show', format: "pdf"}, :class => 'btn') %>
+	 		<%= link_to('Копировать', {:contoller => 'zayavka', :action => 'copy', :id => @zayavka.id}, :class => 'btn') %>
 	 	</center>
 	 	<br>
