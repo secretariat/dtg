@@ -258,8 +258,7 @@
 			<div class="span5 offset6">
 				<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
 				<%= f.submit "Создать", class: "btn btn-success"%>
-				<%= f.submit "Отправить", class: "btn btn-info"%>
-				<%#= f.submit "В печать", class: "btn btn-inverse"%>
+				<%= link_to('Отправить', { :controller => 'zayavka', :action => 'send_xml'}, class: "btn btn-info")%>
 			</div>
 		</div>
 		

@@ -60,7 +60,7 @@ class ZayavkaController < ApplicationController
 
   	@user = User.find( session[:uid] )
 		@zayavka = @user.zayavkas.new( params[:zayavka] )
-  	@zayavka.status = 1
+  	@zayavka.status = 2
   	@zayavka.usercount = @user.zcount
   	@user.zcount += 1
 		if @zayavka.save then
@@ -89,6 +89,25 @@ class ZayavkaController < ApplicationController
 		else
 			render('edit')
 		end  	
+  end
+
+
+  def send_xml
+  	@user = User.find( session[:uid] )
+		@zayavka = @user.zayavkas.new( params[:zayavka] )
+  	@zayavka.status = 1
+  	@zayavka.usercount = @user.zcount
+  	@user.zcount += 1
+		if @zayavka.save then
+			@user.save
+			@chmail = Chmail.find( :last )
+			XmlMailer.xml_email( @chmail, @zayavka ).deliver
+			flash[:notice] = "Заявка создана успешно"
+			redirect_to( :controller => 'user', :action => 'index')
+		else
+			flash[:notice] = "Ошибка при создании Заявки"
+			redirect_to(:controller => 'user', :action => 'new')
+		end 
   end
 
 	private

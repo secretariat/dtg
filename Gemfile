@@ -5,7 +5,8 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'thin'
 
-
+gem "letter_opener", :group => :development
+gem "nokogiri", "~> 1.5.5"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
