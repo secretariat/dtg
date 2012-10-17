@@ -29,10 +29,11 @@ class ZayavkaController < ApplicationController
 	def show
 		@zayavka = Zayavka.find( params[:id] )
 		@user = User.find( session[:uid] )
+		@products = @zayavka.products
 		respond_to do |format|
       format.html
       format.pdf do
-        pdf = ZayavkaPdf.new(@zayavka, @user)
+        pdf = ZayavkaPdf.new(@zayavka, @products, @user)
         send_data pdf.render, filename: "#{@zayavka.id}.pdf",
                               type: "application/pdf",
                               disposition: "inline"

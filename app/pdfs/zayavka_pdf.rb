@@ -1,10 +1,11 @@
 # -*- encoding : utf-8 -*-
 class ZayavkaPdf < Prawn::Document
-  def initialize(zayavka, user)
+  def initialize(zayavka, products, user)
 
     super(top_margin: 70)
     @zayavka = zayavka
     @user = user
+    @products = products
     show
   end
   
@@ -35,12 +36,21 @@ class ZayavkaPdf < Prawn::Document
     data = []
 		data	 << ["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
 						"Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]
-		data << ["delta", "echo", "foxtrot"]
-		table(data) do
-		   row(0).style(:size => 8, :background_color => 'dddddd', :align => :center)
-		   row(1).style(:size => 8, :align => :center)
-		      
-		end
+	items = @products do |item|
+    [
+        item.naim,
+        item.codyktved,
+        item.nomenkl,
+        item.kolvo,
+        item.factstoim,
+        item.dopinfo,
+        item.opis_all,
+    ]
+    end
+    table items, :border_style => :grid,
+      :row_colors => ["FFFFFF","DDDDDD"],
+      :headers => ["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
+                        "Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]}
 
     move_down 5
     text "3. Избранный маршрут транзитного перемещения", :align => :center, :style => :bold
