@@ -17,49 +17,110 @@ class ZayavkaPdf < Prawn::Document
     font "Verdana", :size => 10
     
     text "Завление опросник № #{@zayavka.id}     к Договору № #{@user.dognum}     от #{@user.updated_at} г.", :align => :center, :style => :bold
-    text "Таможенный режим: #{@zayavka.tamrez}     Тип гарантии: #{@zayavka.garantee}"
+    move_down 5
+    formatted_text [ { :text =>"Таможенный режим: "},
+    								 { :text => "#{@zayavka.tamrez}",:styles => [:underline]},
+    								 { :text => "     Тип гарантии: "},
+    								 { :text => "#{@zayavka.garantee}",:styles => [:underline]}]
     text "1. Отправитель товара", :align => :center, :style => :bold
-    text "1.1 Наименование фирмы: #{@zayavka.field_1_1}"
-    text "1.2 Юридический адрес, телефон, email: #{@zayavka.field_1_1}"
-    text "1.3 Руководитель, ФИО: #{@zayavka.field_1_3}"
+    formatted_text [ { :text =>"1.1 Наименование фирмы: "},
+								     { :text => "#{@zayavka.field_1_1}",:styles => [:underline]}]
+		formatted_text [ { :text =>"1.2 Юридический адрес, телефон, email: "},
+								     { :text => "#{@zayavka.field_1_2}",:styles => [:underline]}]
+		formatted_text [ { :text =>"1.3 Руководитель, ФИО: "},
+								     { :text => "#{@zayavka.field_1_3}",:styles => [:underline]}]
+
     text "2. Информация о товаре", :align => :center, :style => :bold
+    move_down 5
+    data = []
+		data	 << ["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
+						"Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]
+		data << ["delta", "echo", "foxtrot"]
+		table(data) do
+		   row(0).style(:size => 8, :background_color => 'dddddd', :align => :center)
+		   row(1).style(:size => 8, :align => :center)
+		      
+		end
+
+    move_down 5
     text "3. Избранный маршрут транзитного перемещения", :align => :center, :style => :bold
-    text "3.1 Пункт отправления: #{@zayavka.field_3_1}"
-    text "3.2 Таможня отправления: #{@zayavka.field_3_2}"
-    text "3.3 Пункт назначения: #{@zayavka.field_3_3}"
-    text "3.4 Таможня назначения: #{@zayavka.field_3_4}"
+    move_down 5
+    formatted_text [ { :text =>"3.1 Пункт отправления: "},
+								     { :text => "#{@zayavka.field_3_1}",:styles => [:underline]}]
+		formatted_text [ { :text =>"3.2 Таможня отправления: "},
+								     { :text => "#{@zayavka.field_3_2}",:styles => [:underline]}]
+		formatted_text [ { :text =>"3.3 Пункт назначения: "},
+								     { :text => "#{@zayavka.field_3_3}",:styles => [:underline]}]
+		formatted_text [ { :text =>"3.4 Таможня назначения: "},
+								     { :text => "#{@zayavka.field_3_4}",:styles => [:underline]}]
+    move_down 5
     text "4. Получатель товара", :align => :center, :style => :bold
-    text "4.1 Наименование фирмы: #{@zayavka.field_4_1}"
-    text "4.2 Юридический адрес, телефон, email: #{@zayavka.field_4_2}"
-    text "4.3 Руководитель, Ф.И.О.: #{@zayavka.field_4_3}"
+    formatted_text [ { :text =>"4.1 Наименование фирмы: "},
+								     { :text => "#{@zayavka.field_4_1}",:styles => [:underline]}]
+		formatted_text [ { :text =>"4.2 Юридический адрес, телефон, email: "},
+								     { :text => "#{@zayavka.field_4_2}",:styles => [:underline]}]
+		formatted_text [ { :text =>"4.3 Руководитель, Ф.И.О.: "},
+								     { :text => "#{@zayavka.field_4_3}",:styles => [:underline]}]
+    move_down 5
     text "5. Субъект ВЭД, заключивший внешнеэкономический договор", :align => :center, :style => :bold
-    text "5.1 Наименование фирмы: #{@zayavka.field_5_1}"
-    text "5.2 Юридический адрес, телефон, email: #{@zayavka.field_5_2}"
-    text "5.3 Руководитель, ФИО: #{@zayavka.field_5_3}"
-    text "5.4 ЕГРПОУ: #{@zayavka.field_5_4}"
-    text "5.5 Код налогоплательщика: #{@zayavka.field_5_5}"
-    text "5.6 Договор внешнеэкономический №: #{@zayavka.field_5_6}"
-    text "5.7 Счет фактура №: #{@zayavka.field_5_7}"
+    move_down 5
+    formatted_text [ { :text =>"5.1 Наименование фирмы: "},
+								     { :text => "#{@zayavka.field_5_1}",:styles => [:underline]}]
+		formatted_text [ { :text =>"5.2 Юридический адрес, телефон, email: "},
+								     { :text => "#{@zayavka.field_5_2}",:styles => [:underline]}]
+		formatted_text [ { :text =>"5.3 Руководитель, ФИО: "},
+								     { :text => "#{@zayavka.field_5_3}",:styles => [:underline]}]
+		formatted_text [ { :text =>"5.4 ЕГРПОУ: "},
+								     { :text => "#{@zayavka.field_5_4}",:styles => [:underline]}]
+    formatted_text [ { :text =>"5.5 Код налогоплательщика: "},
+								     { :text => "#{@zayavka.field_5_5}",:styles => [:underline]}]
+		formatted_text [ { :text =>"5.6 Договор внешнеэкономический №: "},
+								     { :text => "#{@zayavka.field_5_6}",:styles => [:underline]}]
+		formatted_text [ { :text =>"5.7 Счет фактура №: "},
+								     { :text => "#{@zayavka.field_5_7}",:styles => [:underline]}]
+    move_down 5
     text "6. Лицо заключившее договор на предоставление финансовой гарантии", :align => :center, :style => :bold
-    text "6.1 Полное наименование фирмы: #{@user.pib}"
-    text "6.2 Юридический адрес, телефон, email: #{@user.uaddr}"
-    text "6.3 Руководитель, Ф.И.О.: #{@user.chef}"
+    move_down 5
+    formatted_text [ { :text =>"6.1 Полное наименование фирмы: "},
+								     { :text => "#{@user.pib}",:styles => [:underline]}]
+		formatted_text [ { :text =>"6.2 Юридический адрес, телефон, email: "},
+								     { :text => "#{@user.uaddr}",:styles => [:underline]}]
+		formatted_text [ { :text =>"6.3 Руководитель, Ф.И.О.: "},
+								     { :text => "#{@user.chef}",:styles => [:underline]}]
+    move_down 5
     text "7. Экспедиторская организация", :align => :center, :style => :bold
-    text "7.1 Наименование фирмы: #{@zayavka.field_7_1}"
-    text "7.2 Юридический адрес, телефон, email: #{@zayavka.field_7_2}"
-    text "7.3 Руководитель, Ф.И.О.: #{@zayavka.field_7_3}"
-    text "7.4 Код Ж/Д перевозки: #{@zayavka.field_7_4}"
+    move_down 5
+    formatted_text [ { :text =>"7.1 Наименование фирмы: "},
+								     { :text => "#{@zayavka.field_7_1}",:styles => [:underline]}]
+		formatted_text [ { :text =>"7.2 Юридический адрес, телефон, email: "},
+								     { :text => "#{@zayavka.field_7_2}",:styles => [:underline]}]
+		formatted_text [ { :text =>"7.3 Руководитель, Ф.И.О.: "},
+								     { :text => "#{@zayavka.field_7_3}",:styles => [:underline]}]
+		formatted_text [ { :text =>"7.4 Код Ж/Д перевозки: "},
+								     { :text => "#{@zayavka.field_7_4}",:styles => [:underline]}]
+    move_down 5
     text "8. Информация о перевозчике и транспортном средстве", :align => :center, :style => :bold
-    text "8.1 Наименование перевозчика: #{@zayavka.field_8_1}"
-    text "8.2 Юридический адрес, телефон, email: #{@zayavka.field_8_2}"
-    text "8.3 Руководитель, Ф.И.О.: #{@zayavka.field_8_3}"
-    text "8.4 Для ж/д:"
-    text "№ вагона: #{@zayavka.field_8_4_1}   № контейнера: #{@zayavka.field_8_4_2}"
-    text "8.5 Для авто:   Тип, марка, гос.№: #{@zayavka.field_8_5}"
-    text "8.5.1 ФИО Водителя: #{@zayavka.field_8_6}"
-    text "8.5.2 Паспортные данные: #{@zayavka.field_8_7}"
+    move_down 5
+    formatted_text [ { :text =>"8.1 Наименование перевозчика: "},
+								     { :text => "#{@zayavka.field_8_1}",:styles => [:underline]}]
+		formatted_text [ { :text =>"8.2 Юридический адрес, телефон, email: "},
+								     { :text => "#{@zayavka.field_8_2}",:styles => [:underline]}]
+		formatted_text [ { :text =>"8.3 Руководитель, Ф.И.О.: "},
+								     { :text => "#{@zayavka.field_8_3}",:styles => [:underline]}]
+		formatted_text [ { :text =>"8.4 Для ж/д:    № вагона: "},
+								     { :text => "#{@zayavka.field_8_4_1}",:styles => [:underline]},
+										 { :text =>"   № контейнера: "},
+								     { :text => "#{@zayavka.field_8_4_2}",:styles => [:underline]}]
+	  formatted_text [ { :text =>"8.5 Для авто:   Тип, марка, гос.№: "},
+								     { :text => "#{@zayavka.field_8_5}",:styles => [:underline]}]
+		formatted_text [ { :text =>"8.5.1 ФИО Водителя: "},
+								     { :text => "#{@zayavka.field_8_6}",:styles => [:underline]}]
+		formatted_text [ { :text =>"8.5.2 Паспортные данные: "},
+								     { :text => "#{@zayavka.field_8_7}",:styles => [:underline]}]
+    move_down 5
     text "9. Дополнительная информация", :align => :center, :style => :bold
-    text "#{@zayavka.field_9}", :align => :center
+    move_down 5
+    formatted_text [ { :text =>"#{@zayavka.field_9}",  :align => :center,:styles => [:underline]}]
 
 	end
 
