@@ -33,7 +33,7 @@ class ZayavkaController < ApplicationController
       format.html
       format.pdf do
         pdf = ZayavkaPdf.new(@zayavka, @user)
-        send_data pdf.render, filename: "#{@zayavka.id}.pdf",
+        send_data pdf.render, filename: "zayavka_#{@zayavka.id}.pdf",
                               type: "application/pdf",
                               disposition: "inline"
       end
