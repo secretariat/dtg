@@ -33,9 +33,6 @@ function delTableRow(jQtable){
 	});
 }
 
-function insert(id, evalue)
-{
-	
+function insert(id, evalue){
 	document.getElementById(id).value = evalue
 }
-

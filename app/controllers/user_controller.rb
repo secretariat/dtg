@@ -7,7 +7,7 @@ class UserController < ApplicationController
 	before_filter :confirm_priveleges_user
 	
 	def index
-		@zayavkas = Zayavka.where( :user_id => session[:uid]  ) 
+		@zayavkas = Zayavka.where( :user_id => session[:uid] ).order("created_at DESC") 
 	end
 
 	def show

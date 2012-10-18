@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :chef
       t.string :email
       t.string :dognum
+      t.date   :dogdate
       t.string :edrpo
       t.string :gdcode
       t.string :pib

@@ -23,7 +23,7 @@ class ZayavkaController < ApplicationController
 	end
 
 	def list	
-		@zayavkas = Zayavka.where( :user_id => session[:uid]  ) 
+		@zayavkas = Zayavka.where( :user_id => session[:uid] ) 
 	end
 
 	def show
@@ -65,7 +65,12 @@ class ZayavkaController < ApplicationController
   	@user.zcount += 1
 		if @zayavka.save then
 			@user.save
-			# DtgMailer.welcome_email( @main, @main.manager, @pass ).deliver
+			if( params[:send_button] ) then 
+				@zayavka.update_attributes( :status => 1)
+				@products = @zayavka.products
+				@chmail = Chmail.find( :last )
+				XmlMailer.xml_email( @chmail, @zayavka, @products ).deliver
+			end
 			flash[:notice] = "Заявка создана успешно"
 			redirect_to( :controller => 'user', :action => 'index')
 		else
@@ -92,23 +97,23 @@ class ZayavkaController < ApplicationController
   end
 
 
-  def send_xml
-  	@user = User.find( session[:uid] )
-		@zayavka = @user.zayavkas.new( params[:zayavka] )
-  	@zayavka.status = 1
-  	@zayavka.usercount = @user.zcount
-  	@user.zcount += 1
-		if @zayavka.save then
-			@user.save
-			@chmail = Chmail.find( :last )
-			XmlMailer.xml_email( @chmail, @zayavka ).deliver
-			flash[:notice] = "Заявка создана успешно"
-			redirect_to( :controller => 'user', :action => 'index')
-		else
-			flash[:notice] = "Ошибка при создании Заявки"
-			redirect_to(:controller => 'user', :action => 'new')
-		end 
-  end
+  # def send_xml
+  # 	@user = User.find( session[:uid] )
+		# @zayavka = @user.zayavkas.new( params[:zayavka] )
+  # 	@zayavka.status = 1
+  # 	@zayavka.usercount = @user.zcount
+  # 	@user.zcount += 1
+		# if @zayavka.save then
+		# 	@user.save
+		# 	@chmail = Chmail.find( :last )
+		# 	XmlMailer.xml_email( @chmail, @zayavka ).deliver
+		# 	flash[:notice] = "Заявка создана успешно"
+		# 	redirect_to( :controller => 'user', :action => 'index')
+		# else
+		# 	flash[:notice] = "Ошибка при создании Заявки"
+		# 	redirect_to(:controller => 'user', :action => 'new')
+		# end 
+  # end
 
 	private
 
