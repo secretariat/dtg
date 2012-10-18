@@ -110,7 +110,6 @@ ActiveRecord::Schema.define(:version => 20121004195854) do
     t.string   "chef"
     t.string   "email"
     t.string   "dognum"
-    t.date     "dogdate"
     t.string   "edrpo"
     t.string   "gdcode"
     t.string   "pib"
