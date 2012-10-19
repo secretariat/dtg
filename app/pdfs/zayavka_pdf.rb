@@ -33,10 +33,8 @@ class ZayavkaPdf < Prawn::Document
 
     text "2. Информация о товаре", :align => :center, :style => :bold
     move_down 5
-    data = []
-		data	 << ["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
-						"Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]
-	items = @products do |item|
+    
+	items = @products.map do |item|
     [
         item.naim,
         item.codyktved,
@@ -44,13 +42,21 @@ class ZayavkaPdf < Prawn::Document
         item.kolvo,
         item.factstoim,
         item.dopinfo,
-        item.opis_all,
+        item.opis_all
     ]
     end
-    table items, :border_style => :grid,
-      :row_colors => ["FFFFFF","DDDDDD"],
-      :headers => ["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
-                        "Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]}
+   table items, 
+   # :border_style => :grid,
+                  # :row_colors => ["FFFFFF", "DDDDDD"],
+                  :header => ["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
+                        "Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]
+                  # :align => { 0 => :left, 1 => :right, 2 => :right, 3 => :right }
+    # table items
+    # , 
+    #         :border_style => :grid,
+    #         :row_colors => ["FFFFFF","DDDDDD"],
+    #         :headers => ["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
+    #                     "Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]
 
     move_down 5
     text "3. Избранный маршрут транзитного перемещения", :align => :center, :style => :bold
