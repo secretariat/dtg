@@ -60,13 +60,13 @@ class ZayavkaController < ApplicationController
 
   	@user = User.find( session[:uid] )
 		@zayavka = @user.zayavkas.new( params[:zayavka] )
-  	@zayavka.status = 2
+  	@zayavka.status = 1
   	@zayavka.usercount = @user.zcount
   	@user.zcount += 1
 		if @zayavka.save then
 			@user.save
 			if( params[:send_button] ) then 
-				@zayavka.update_attributes( :status => 1)
+				@zayavka.update_attributes( :status => 2)
 				@products = @zayavka.products
 				@chmail = Chmail.find( :last )
 				XmlMailer.xml_email( @chmail, @zayavka, @products ).deliver
@@ -89,6 +89,12 @@ class ZayavkaController < ApplicationController
   	@zayavka = Zayavka.find( params[:id] )
   	@user = User.find( session[:uid] )
 		if @zayavka.update_attributes( params[:zayavka]) then
+			if( params[:send_button] ) then 
+				@zayavka.update_attributes( :status => 2)
+				@products = @zayavka.products
+				@chmail = Chmail.find( :last )
+				XmlMailer.xml_email( @chmail, @zayavka, @products ).deliver
+			end
 			flash[:notice] = "Заявка успешно отредактирована"
 			redirect_to( :controller => 'user', :action => 'index')
 		else

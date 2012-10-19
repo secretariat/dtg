@@ -12,15 +12,30 @@
 				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %>
 				</center>
 			</td>
-			<td><center>
-				<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
-				</center>
-			</td>
-			<td><center>
-				<%#= link_to "Печать", zayavka_path(z, format: "pdf") %>
-				<%= link_to "Копировать", :controller => 'zayavka', :action=>'copy', :id => z.id %>
-				</center>
-			</td>
+			<% if z.status == 2 %>
+				<td><center>
+					<%= "Редактировать" %>
+					</center>
+				</td>
+			<% else %>
+				<td><center>
+					<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
+					</center>
+				</td>
+			<% end %>
+			<% if z.status == 1 then %>
+				<td><center>
+					<%="Копировать"%>
+				</td></center>
+			<% elsif z.status == 2 %>
+				<td><center>
+					<%= link_to "Копировать", :disabled => true, :controller => 'zayavka', :action=>'copy', :id => z.id %>
+				</td></center>
+			<% else %>
+				<td><center>
+					<%="Копировать"%>
+				</td></center>
+			<% end %>
 			<td>
 				<center>
 					<%= link_to('Отправить', { :controller => 'zayavka', :action => 'send_xml', format: "xml", :id => z.id}, class: "btn btn-info")%>

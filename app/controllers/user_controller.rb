@@ -5,6 +5,7 @@ class UserController < ApplicationController
 
 	before_filter :confirm_logged_in
 	before_filter :confirm_priveleges_user
+	before_filter :get_uniq_user, :only => 'index'
 	
 	def index
 		@zayavkas = Zayavka.where( :user_id => session[:uid] ).order("created_at DESC") 
@@ -67,4 +68,14 @@ class UserController < ApplicationController
   	# flash[:notice] = "Project destroyed"
   	# redirect_to(:action => 'list')
   end
+
+  private
+
+	def get_uniq_user
+		main = Main.find( session[:user_id] )
+		user = main.user
+		session[:uid] = user.id
+		return true
+	end
+
 end
