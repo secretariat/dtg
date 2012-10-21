@@ -6,13 +6,15 @@ gem 'therubyracer'
 gem 'thin'
 
 gem "letter_opener", :group => :development
-# gem "nokogiri", "~> 1.5.5" 
+gem "nokogiri", "~> 1.5.5" 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
 gem "builder", "~> 3.0.0"
 gem 'prawn'
+gem 'will_paginate', '~> 3.0.3'
+gem 'will_paginate-bootstrap'
 
 gem 'daemons'
 gem 'delayed_job_active_record'

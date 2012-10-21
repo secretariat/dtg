@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 
 class Zayavka < ActiveRecord::Base
+
+	self.per_page = 15
   # attr_accessible :title, :body
   belongs_to :user
   has_many :products
