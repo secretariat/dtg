@@ -3,8 +3,8 @@ class AdminController < ApplicationController
 	
 	layout 'admin'
 	
-	# before_filter :confirm_logged_in
-	# before_filter :confirm_priveleges_admin
+	before_filter :confirm_logged_in
+	before_filter :confirm_priveleges_admin
 
 	def index
 		@manager = Manager.order("managers.id ASC")
