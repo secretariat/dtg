@@ -82,7 +82,8 @@ class XmlMailer < ActionMailer::Base
 
     }
 		end
-    attachments['report.xml'] = {mime_type: 'application/xml',
+    attachments['report.xml'] = { mime_type: 'application/xml',
+                                  :encoding => 'UTF-8',
                               		content: builder.to_xml }
     mail(:to => email_to.email, :subject => "Zayavka Send")
   end
