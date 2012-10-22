@@ -2,7 +2,7 @@ class XmlMailer < ActionMailer::Base
   default from: "admin@dtg.kiev.ua"
 
   def xml_email( email_to, zayavka, product )
-  	builder = Nokogiri::XML::Builder.new do |xml|
+  	builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
     xml.zayavka {
       xml.id zayavka.id
       xml.date zayavka.created_at
@@ -81,10 +81,14 @@ class XmlMailer < ActionMailer::Base
 	    }
 
     }
+
 		end
+
     attachments['report.xml'] = { :mime_type => 'application/xml',
-                              		:content => builder.to_xml }
-    mail( :to => email_to.email, :subject => "Zayavka XML REPORT, see attached file" )
+                              		:content => builder.to_xml,
+                                  :encoding => "8bit" }
+    
+    mail( :to => email_to.email, :subject => "Zayavka XML REPORT" )
   end
 
 end
