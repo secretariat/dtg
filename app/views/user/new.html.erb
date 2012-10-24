@@ -2,7 +2,7 @@
 
 <center><h3>Создание нового пользователя</h3></center>
 <div class="span4 offset4">
-	<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+	<%= form_for(:user, :url => {:action => 'create'},:html => {:name => 'form1'}) do |f| %>
 	 	<table>
 			<tr>
 				<th class="span4" align="left">ФИО Сотрудника:*</th>
@@ -40,14 +40,14 @@
 				<th align="left">Email:*</th>
 				<td><%= f.text_field(:email) %></td>
 			</tr>	
-			<%= form_for(:main, :url => {:action => 'create'}) do |f| %>
+			<%= form_for(:main, :url => {:action => 'create'},:html => {:name => 'form2'}) do |m| %>
 				<tr>
 					<th align="left">Логин:*</th>
-					<td><%= f.text_field(:login) %></td><br/>
+					<td><%= m.text_field(:login) %></td><br/>
 				</tr>
 				<tr>
 					<th align="left">Пароль:*</th>
-					<td><%= f.text_field(:password) %></td><br/>
+					<td><%= m.text_field(:password) %></td><br/>
 				</tr>
 			<% end %>
 		</table>
@@ -56,8 +56,15 @@
 			* - поля, обязательные для заполнения
 			<br>
 			<br>
-			<%= f.submit "Создать", class: "btn btn-primary"%>
+			<%= f.submit "Создать", class: "btn btn-primary", :onclick => "return submitform();"%>
 		</div>
 	<% end %>
+	<script type="text/javascript">
+		function submitform()
+		{
+		  document.forms["form1"].submit();
+		}
+	</script>
 </div>
 <br>
+

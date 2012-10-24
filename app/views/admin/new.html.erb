@@ -2,10 +2,10 @@
 
 <center><h3>Создание нового администратора</h3><br/>
 <div class="span4 offset4">
-	<%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
+	<%= form_for(:admin, :url => {:action => 'create'}, :html => {:name => 'form1'}) do |f| %>
 	 	<table>
 			
-			<%= form_for(:main, :url => {:action => 'create'}) do |m| %>
+			<%= form_for(:main, :url => {:action => 'create'}, :html => {:name => 'form2'}) do |m| %>
 				<tr>
 					<th class="span2">Email:*</th>
 					<td class="span3"><%= f.text_field(:email) %></td>
@@ -25,9 +25,15 @@
 			* - поля, обязательные для заполнения
 			<br>
 			<br>
-			<%= f.submit "Создать", class: "btn btn-primary"%>
+			<%= f.submit "Создать", class: "btn btn-primary", :onclick => "return submitform();" %>
 		</div>
 	<% end %>
+	<script type="text/javascript">
+			function submitform()
+			{
+			  document.forms["form1"].submit();
+			}
+	</script>
 </div>
 
 
