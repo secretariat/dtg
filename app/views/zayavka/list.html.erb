@@ -10,7 +10,7 @@
 			<td><center><%= @zayavkas.get_status( z.status ) %></center></td>
 			<td><center><%= z.created_at %></center></td>
 			<td><center>
-				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %> <%= z.user_id %>
+				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %>
 				</center>
 			</td>
 			<% if z.status == 2 %>
