@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zayavka>
+  <id>5</id>
+  <date>23.10.2012</date>
+  <tamrezym></tamrezym>
+  <typetrans></typetrans>
+  <typegarantee></typegarantee>
+  <item_ender>
+    <companyname>Наименование фирмы:</companyname>
+    <uadrphonemail>Наименование фирмы:</uadrphonemail>
+    <chef>Наименование фирмы:</chef>
+  </item_ender>
+  <products/>
+  <marshryt>
+    <startpoint>Наименование фирмы:</startpoint>
+    <startcustom>Наименование фирмы:</startcustom>
+    <endtpoint>Наименование фирмы:</endtpoint>
+    <endcustom>Наименование фирмы:</endcustom>
+  </marshryt>
+  <reciever>
+    <companyname>Наименование фирмы:</companyname>
+    <uadrphonemail>Наименование фирмы:</uadrphonemail>
+    <chef>Наименование фирмы:</chef>
+  </reciever>
+  <sybekt_ved>
+    <companyname>Наименование фирмы:</companyname>
+    <uadrphonemail>Наименование фирмы:</uadrphonemail>
+    <chef>Наименование фирмы:</chef>
+    <egrpoy>Наименование фирмы:</egrpoy>
+    <kod_pl>Наименование фирмы:</kod_pl>
+    <dognum>Наименование фирмы:</dognum>
+    <bill>Наименование фирмы:</bill>
+  </sybekt_ved>
+  <ekspeditory>
+    <companyname>Наименование фирмы:</companyname>
+    <uadrphonemail>Наименование фирмы:</uadrphonemail>
+    <chef>Наименование фирмы:</chef>
+    <kod_zd>Наименование фирмы:</kod_zd>
+  </ekspeditory>
+  <transporter>
+    <name>Наименование фирмы:</name>
+    <uadrphonemail>Наименование фирмы:</uadrphonemail>
+    <chef>Наименование фирмы:</chef>
+    <vagnum>Наименование фирмы:</vagnum>
+    <contnum>Наименование фирмы:</contnum>
+    <avto>Наименование фирмы:</avto>
+    <driverpib>Наименование фирмы:</driverpib>
+    <passport>Наименование фирмы:</passport>
+  </transporter>
+  <dopopolnitelno>
+    <dopinfo>Наименование фирмы:&#13;
+</dopinfo>
+  </dopopolnitelno>
+</zayavka>
+
