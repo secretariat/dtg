@@ -8,8 +8,8 @@ class UserController < ApplicationController
 	before_filter :get_uniq_user, :only => 'index'
 	
 	def index
-		@zayavkas = Zayavka.paginate(:page => params[:page], :conditions => (:user_id == session[:uid]) ).order("created_at DESC") 
-
+		# @zayavkas = Zayavka.where(:user_id => session[:uid])
+		@zayavkas = Zayavka.where( :user_id => session[:uid] ).paginate(:page => params[:page] ).order('created_at DESC')
 	end
 
 	def show
@@ -18,7 +18,7 @@ class UserController < ApplicationController
 	end
 
 	def list
-		@mains = Main.where(:owner_id => session[:user_id])
+		@mains = Main.where( :owner_id => session[:user_id] )
 		render :layout => "manager"	
 	end
 

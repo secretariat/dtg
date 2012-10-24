@@ -2,6 +2,7 @@ class XmlMailer < ActionMailer::Base
   default from: "admin@dtg.kiev.ua"
 
   def xml_email( email_to, zayavka, product )
+<<<<<<< HEAD
   # 	builder = Nokogiri::XML::Builder.new do |xml|
   #   xml.zayavka {
   #     xml.id zayavka.id
@@ -9,6 +10,15 @@ class XmlMailer < ActionMailer::Base
   #     xml.tamrezym zayavka.tamrez
   #     xml.typetrans zayavka.typetran
   #     xml.typegarantee zayavka.garantee
+=======
+  	builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
+    xml.zayavka {
+      xml.id zayavka.id
+      xml.date zayavka.created_at
+      xml.tamrezym zayavka.tamrez
+      xml.typetrans zayavka.typetran
+      xml.typegarantee zayavka.garantee
+>>>>>>> 076cbaca4c0d369c320dccf4df4ba4e9b03acacc
       
   #     xml.item_ender{
   #     	xml.companyname zayavka.field_1_1
@@ -80,11 +90,23 @@ class XmlMailer < ActionMailer::Base
 	 #    	xml.dopinfo zayavka.field_9	
 	 #    }
 
+<<<<<<< HEAD
   #   }
 		# end
     # attachments['report.xml'] = { :mime_type => 'application/xml',
     #                           		:content => builder.to_xml }
     mail(:to => email_to.email, :subject => "Zayavka XML REPORT")
+=======
+    }
+
+		end
+
+    attachments['report.xml'] = { :mime_type => 'application/xml',
+                              		:content => builder.to_xml,
+                                  :encoding => "8bit" }
+    
+    mail( :to => email_to.email, :subject => "Zayavka XML REPORT" )
+>>>>>>> 076cbaca4c0d369c320dccf4df4ba4e9b03acacc
   end
 
 end
