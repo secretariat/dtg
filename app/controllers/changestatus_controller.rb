@@ -6,10 +6,13 @@ class ChangestatusController < ApplicationController
 		@zayavka = Zayavka.find( params[:id] )
 		# @user = User.find( @zayavka.user_id )
 		@hash = Digest::MD5.hexdigest( @zayavka.id.to_s	)
-		# if( params[:hash] == @hash ) then 
+		if( params[:hash] == @hash ) then 
+			@status = "SUCCESSFULLY"
 			@zayavka.status = params[:status]
 			@zayavka.save
-		# end
+		else
+			@status = "UNSUCCESSFULLY"
+		end
 	end
 
 end

@@ -12,7 +12,7 @@ class ManagerController < ApplicationController
 	end
 
 	def status
-		@zayavkas = Zayavka.where( :user_id => params[:id]  ) 
+		@zayavkas = Zayavka.where( :user_id => params[:id] ).order('created_at DESC') 
 	end
 
 	def show
