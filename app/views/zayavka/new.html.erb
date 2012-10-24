@@ -3,7 +3,7 @@
   <div class="span12">
   	<%= form_for(@zayavka, :url => {:action => 'create'}) do |f| %>
     <div class="row">
-	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zid %> от <%= Time.now%> г.</div>
+	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= Time.now%> г.</div>
 	 		<div class="span2"><h4> к Договору № <%= @user.dognum%></h4></div>
 	 		<div class="span2"><h4> от <%=@user.dogdate%>г.</h4></b></div>
 	 	</div>
