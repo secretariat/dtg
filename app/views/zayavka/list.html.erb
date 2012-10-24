@@ -1,4 +1,4 @@
-<%= will_paginate @zayavkas, :renderer => BootstrapPagination::Rails %>
+<%#= will_paginate @zayavkas, :renderer => BootstrapPagination::Rails %>
 <table class="table table-bordered table-condensed table-stripped span7 offset2">
 	<th><center>N%</center></th>
 	<th><center>Cтатус:</center></th>
@@ -10,7 +10,7 @@
 			<td><center><%= @zayavkas.get_status( z.status ) %></center></td>
 			<td><center><%= z.created_at %></center></td>
 			<td><center>
-				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %>
+				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %> <%= z.user_id %>
 				</center>
 			</td>
 			<% if z.status == 2 %>
