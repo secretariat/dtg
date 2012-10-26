@@ -75,7 +75,7 @@ class XmlMailer < ActionMailer::Base
 	    }
 
 	    #9 DopInfo
-	    xml.dopopolnitelno{
+	    xml.dopolnitelno{
 	    	xml.dopinfo zayavka.field_9	
 	    }
 
