@@ -4,7 +4,7 @@ class CreateManagers < ActiveRecord::Migration
     create_table :managers do |t|
     	t.string :main_id
       t.string :pib
-      t.string :postion
+      t.string :position
       t.string :phone
       t.string :email
 
