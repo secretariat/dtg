@@ -7,14 +7,14 @@ class AdminController < ApplicationController
 	before_filter :confirm_priveleges_admin
 
 	def index
-		@manager = Manager.order("managers.id ASC")
+		@manager = Manager.order("managers.id DESC")
 	end
 
 	def login
 	end
 
 	def list
-		@admin = Admin.order("admins.id ASC")
+		@admin = Admin.order("created_at DESC")
 	end
 
 	def new

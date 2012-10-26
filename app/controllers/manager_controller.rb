@@ -8,7 +8,7 @@ class ManagerController < ApplicationController
 	before_filter :confirm_priveleges_manager
 	
 	def index
-		@mains = Main.where(:owner_id => session[:user_id])
+		@mains = Main.where(:owner_id => session[:user_id]).order('created_at DESC')
 	end
 
 	def status
