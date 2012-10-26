@@ -59,9 +59,8 @@ class ZayavkaController < ApplicationController
 				@products = @zayavka.products
 				@chmail = Chmail.find( :last )
 
-				XmlMailer.delay.xml_email( @chmail, @zayavka, @products )
-				# XmlMailer.xml_email( @chmail, @zayavka, @products ).deliver
 				# XmlMailer.delay.xml_email( @chmail, @zayavka, @products )
+				XmlMailer.xml_email( @chmail, @zayavka, @products ).deliver
 
 			end
 			flash[:notice] = "Заявка создана успешно"
@@ -86,8 +85,8 @@ class ZayavkaController < ApplicationController
 				@zayavka.update_attributes( :status => 2)
 				@products = @zayavka.products
 				@chmail = Chmail.find( :last )
-				XmlMailer.delay.xml_email( @chmail, @zayavka, @products )
-				# XmlMailer.xml_email( @chmail, @zayavka, @products ).deliver
+				# XmlMailer.delay.xml_email( @chmail, @zayavka, @products )
+				XmlMailer.xml_email( @chmail, @zayavka, @products ).deliver
 			end
 			flash[:notice] = "Заявка успешно отредактирована"
 			redirect_to( :controller => 'user', :action => 'index')
