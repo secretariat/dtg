@@ -9,7 +9,6 @@ class XmlMailer < ActionMailer::Base
       xml.tamrezym zayavka.tamrez
       xml.typetrans zayavka.typetran
       xml.typegarantee zayavka.garantee
-      
       xml.item_ender{
       	xml.companyname zayavka.field_1_1
       	xml.uadrphonemail zayavka.field_1_2
@@ -81,12 +80,10 @@ class XmlMailer < ActionMailer::Base
 	    }
 
     }
-
 		end
 
     attachments['report.xml'] = { :mime_type => 'application/xml',
-                              		:content => builder.to_xml,
-                                  :encoding => "8bit" }
+                              		:content => builder.to_xml}
     
     mail( :to => email_to.email, :subject => "Zayavka XML REPORT" )
   end
