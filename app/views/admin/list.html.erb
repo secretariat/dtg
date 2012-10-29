@@ -15,12 +15,18 @@
 				<th><center>Email</center></th>
 				<th><center>Логин</center></th>
 				<th><center>Создан</center></th>
+				<th></th>
 				<% @admin.each do |ad| %>	
 					<tr>
 						<td><center><%= ad.id %></center></td>
 						<td><center><%= ad.email %></center></td>
 						<td><center><%= ad.main.login %></center></td>
-						<td><center><%= ad.main.created_at %></center></td>
+						<td><center><%= ad.main.created_at%></center></td>
+						<td>
+							<center>
+								<%= link_to( "", ad, :method => :delete,  :class => "icon-remove", :confirm => "Вы уверены?") %>
+							</center>
+						</td>
 					</tr>
 				<% end %>
 			</table>

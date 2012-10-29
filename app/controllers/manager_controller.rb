@@ -65,13 +65,9 @@ class ManagerController < ApplicationController
 		end  	
   end
 
-  def delete
-  	# @projects = Project.find( params[:id] )
-  end
-
   def destroy
-  	# Project.find( params[:id] ).destroy
-  	# flash[:notice] = "Project destroyed"
-  	# redirect_to(:action => 'list')
+  	Manager.find( params[:id] ).main.destroy
+  	flash[:notice] = "Менеджер успешно удален"
+  	redirect_to(:action => 'list')
   end
 end

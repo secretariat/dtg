@@ -36,6 +36,11 @@
 						<td><center>
 							<%= link_to( "Редактировать", :controller => 'manager', :action=>'edit',:id => man.id ) %></center>
 						</td>
+						<td>
+							<center>
+								<%= link_to( "", man, :method => :delete,  :class => "icon-remove", :confirm => "Вы уверены?") %>
+							</center>
+						</td>
 					</tr>
 
 				<% end %>

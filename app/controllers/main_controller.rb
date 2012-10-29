@@ -37,6 +37,12 @@ class MainController < ApplicationController
     end
     
   end
+
+  def destroy
+    Main.find( params[:id] ).destroy
+    flash[:notice] = "Пользователь успешно удален"
+    redirect_to( :controller => 'user', :action => 'list')
+  end
   
   def logout
     session[:user_id] = nil

@@ -2,9 +2,9 @@
 require 'digest/sha1'
 
 class Main < ActiveRecord::Base
-  has_one :admin
-  has_one :manager
-  has_one :user
+  has_one :admin,  :dependent => :destroy
+  has_one :manager,  :dependent => :destroy
+  has_one :user,  :dependent => :destroy
 
   validates_associated :admin
   validates_associated :manager

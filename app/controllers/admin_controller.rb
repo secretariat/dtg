@@ -53,13 +53,13 @@ class AdminController < ApplicationController
 		# end  	
   end
 
-  def delete
-  	# @projects = Project.find( params[:id] )
-  end
+  # def delete
+  # 	@admin = Admin.find( params[:id] )
+  # end
 
   def destroy
-  	# Project.find( params[:id] ).destroy
-  	# flash[:notice] = "Project destroyed"
-  	# redirect_to(:action => 'list')
+  	Admin.find( params[:id] ).main.destroy
+  	flash[:notice] = "Администратор успешно удален"
+  	redirect_to( :action => 'list')
   end
 end

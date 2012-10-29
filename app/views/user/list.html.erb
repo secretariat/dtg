@@ -33,7 +33,11 @@
 							<td><center>
 								<%= link_to( "Редактировать", :controller => 'user', :action=>'edit',:id => main.user.id ) %></center>
 							</td>
-								
+							<td>
+							<center>
+								<%= link_to( "", main, :method => :delete,  :class => "icon-remove", :confirm => "Вы уверены?") %>
+							</center>
+						</td>
 						</tr>
 						<% count += 1 %>
 					<% end %>

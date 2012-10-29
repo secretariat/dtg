@@ -60,10 +60,6 @@ class UserController < ApplicationController
 		end  	
   end
 
-  def delete
-  	# @projects = Project.find( params[:id] )
-  end
-
   def destroy
   	# Project.find( params[:id] ).destroy
   	# flash[:notice] = "Project destroyed"
