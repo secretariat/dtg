@@ -5,7 +5,7 @@ class CreateZayavkas < ActiveRecord::Migration
     	t.integer :usercount
       t.string :tamrez
     	t.string :typetran
-      t.integer :garantee
+      t.string :garantee
       t.integer :status
       #1. Отправитель товара
       t.string :field_1_1
