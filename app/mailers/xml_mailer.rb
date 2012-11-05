@@ -1,7 +1,7 @@
 class XmlMailer < ActionMailer::Base
   default from: "admin@dtg.kiev.ua"
 
-  def xml_email( email_to, zayavka, product )
+  def xml_email( email_to, user, zayavka, product )
   	builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
     xml.zayavka {
       xml.id zayavka.id
@@ -55,6 +55,20 @@ class XmlMailer < ActionMailer::Base
 	      xml.dognum zayavka.field_5_6
 	      xml.bill zayavka.field_5_7
 	     }
+
+      # 6 Firma zakluchivshaya dogovor
+      xml.client{
+        xml.cname user.cname
+        xml.uaddr user.uaddr
+        xml.phone user.phone
+        xml.email user.email
+        xml.chef user.chef
+        xml.dognum user.dognum
+        xml.dogdate user.dogdate
+        xml.edrpo user.edrpo
+        xml.gdcode user.gdcode
+        xml.pib user.pib
+      }
       # 7 Ekspeditory
       xml.ekspeditory{
 	      xml.companyname zayavka.field_7_1
