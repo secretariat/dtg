@@ -4,13 +4,10 @@ class ZayavkaController < ApplicationController
 	
 	layout 'user'
 	before_filter :get_uniq_user 
-
+	
 	def copy
 		@zayavka = Zayavka.new( Zayavka.find( params[:id] ).attributes )
-
-		1.times do
-			@zayavka.products.build
-		end
+		# @zayavka.products = Zayavka.find( params[:id] ).products
 		@user = User.find( session[:uid] )
 		@zcount = @user.zcount
 		render 'new'
