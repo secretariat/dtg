@@ -23,6 +23,7 @@ class ZayavkaController < ApplicationController
 	def show
 		@zayavka = Zayavka.find( params[:id] )
 		@user = User.find( session[:uid] )
+		@zcount = @zayavka.usercount
 		@products = @zayavka.products
 		respond_to do |format|
       format.html
@@ -75,11 +76,13 @@ class ZayavkaController < ApplicationController
 	def edit
 		@zayavka = Zayavka.find( params[:id] )
 		@user = User.find( session[:uid] )
+		@zcount = @zayavka.usercount
 	end
 
 	def update
   	@zayavka = Zayavka.find( params[:id] )
   	@user = User.find( session[:uid] )
+  	@zcount = @zayavka.usercount
 		if @zayavka.update_attributes( params[:zayavka]) then
 			if( params[:send_button] ) then 
 				@zayavka.update_attributes( :status => 2)
