@@ -30,7 +30,7 @@
 				</td></center>
 			<% elsif z.status == 2 %>
 				<td><center>
-					<%= link_to "Копировать", :disabled => true, :controller => 'zayavka', :action=>'copy', :id => z.id %>
+					<%= link_to "Копировать", :disabled => true, :controller => 'zayavka', :action=>'duplicate', :id => z.id %>
 				</td></center>
 			<% else %>
 				<td><center>

@@ -5,6 +5,8 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'thin'
 
+gem 'amoeba'
+
 gem "letter_opener", :group => :development
 gem "nokogiri", "~> 1.5.5" 
 # Bundle edge Rails instead:

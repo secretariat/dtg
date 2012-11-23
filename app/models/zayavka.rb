@@ -3,13 +3,26 @@
 class Zayavka < ActiveRecord::Base
 
 	self.per_page = 15
-  # attr_accessible :title, :body
   belongs_to :user
   has_many :products
+
+  amoeba do
+    enable
+  end
+
   accepts_nested_attributes_for :products, :reject_if => lambda { |a| a[:naim].blank? }
-  # attr_accessible :user_id, :tamrez, :typetran, :garantee, :field_1_1,
-  #    							:field_1_2, :field_1_3
   attr_protected
+
+ #  def duplicate
+	#   new_zayavka = Zayavka.new(self.attributes)
+	#   new_products = []
+	#   self.products.each do |pr|
+	#     new_products << pr.clone
+	#   end
+	#   new_zayavka.products << new_products
+	#   # new_zayavka.number = new_zayavka.number + "_dup"
+	#   return new_zayavka
+	# end
 
   def self.get_status( status )
 		

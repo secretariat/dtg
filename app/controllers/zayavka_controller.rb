@@ -5,12 +5,14 @@ class ZayavkaController < ApplicationController
 	layout 'user'
 	before_filter :get_uniq_user 
 	
-	def copy
-		@zayavka = Zayavka.new( Zayavka.find( params[:id] ).attributes )
-		# @zayavka.products = Zayavka.find( params[:id] ).products
+	def duplicate
+		@zayavka = Zayavka.find( params[:id] ).dup
+		# @zayavka = Zayavka.new( Zayavka.find( params[:id] ).attributes )
+		# @zayavka = @z.duplicate
+		# @zayavka.products = Zayavka.find( params[:id] ).products.clone
 		@user = User.find( session[:uid] )
 		@zcount = @user.zcount
-		render 'new'
+		# render 'new'
 	end
 
 	def list	
