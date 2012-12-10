@@ -9,46 +9,46 @@
 			<td><center><%= '%05d' % z.usercount %></center></td>
 			<td><center><%= @zayavkas.get_status( z.status ) %></center></td>
 			<td><center><%= z.created_at %></center></td>
-			<td><center>
-				<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %>
+			<!-- SHOW->active for all types of status -->
+			<td>
+				<center>
+					<%= link_to( "Показать", :controller => 'zayavka', :action=>'show', :id => z.id ) %>
 				</center>
 			</td>
-			<% if z.status == 2 %>
-				<td><center>
-					<%= "Редактировать" %>
+			<!-- SAVED->active ONLY for EDIT and DUPLICATE-->
+			<% if z.status == 1 %>
+				<td>
+					<center>
+						<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
 					</center>
 				</td>
-			<% else %>
-				<td><center>
-					<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
+				<td>
+					<center>
+						<%= link_to "Копировать", :controller => 'zayavka', :action=>'duplicate', :id => z.id %>
 					</center>
 				</td>
-			<% end %>
-			<% if z.status == 1 then %>
-				<td><center>
-					<%="Копировать"%>
-				</td></center>
-			<% elsif z.status == 2 %>
-				<td><center>
-					<%= link_to "Копировать", :disabled => true, :controller => 'zayavka', :action=>'duplicate', :id => z.id %>
-				</td></center>
+			<!-- SENT->active ONLY for EDIT and DUPLICATE-->
 			<% else %>
-				<td><center>
-					<%="Копировать"%>
-				</td></center>
-			<% end %>
-			<!-- <td>
-				<center>
-					<%#= link_to('Отправить', { :controller => 'zayavka', :action => 'send_xml', format: "xml", :id => z.id}, class: "btn btn-info")%>
-				</center>
-			</td> -->
+				<td>
+					<center>
+						<%= "Редактировать" %>
+					</center>
+				</td>
+				<td>
+					<center>
+						<%= link_to "Копировать", :controller => 'zayavka', :action=>'duplicate', :id => z.id %>
+					</center>
+				</td>
+			<% end  %>
 		</tr>
 	<% end %>
 	
 </table>
-<!-- <div class="row"> -->
-		<%#= will_paginate @zayavkas, :renderer => BootstrapPagination::Rails %>
-<!-- </div> -->
 
-	
 
+<!-- <td>
+				<center>
+					<%#= link_to('Отправить', { :controller => 'zayavka', :action => 'send_xml', format: "xml", :id => z.id}, class: "btn btn-info")%>
+				</center>
+			</td> 
+-->

@@ -10,7 +10,7 @@ class ZayavkaPdf < Prawn::Document
   end
   
   def show
-	  font_families.update(
+	font_families.update(
     "Verdana" => {
       :bold => "prawn_fonts/verdanab.ttf",
       :italic => "prawn_fonts/verdanai.ttf",
