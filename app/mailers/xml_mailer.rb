@@ -5,6 +5,7 @@ class XmlMailer < ActionMailer::Base
   	builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|
     xml.zayavka {
       xml.id zayavka.id
+      xml.user_z_id user.zcount-1
       xml.date zayavka.created_at
       xml.tamrezym zayavka.tamrez
       xml.typetrans zayavka.typetran
