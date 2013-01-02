@@ -37,8 +37,7 @@ class UserController < ApplicationController
   	@pass = @main.password
 		if @main.save then
 			@uname = @main.user.pib
-			# DtgMailer.delay.welcome_email( @main, @main.user, @pass )
-			DtgMailer.welcome_email( @uname, @main, @main.user, @pass ).deliver
+			DtgMailer.delay.welcome_email(@uname, @main, @main.user, @pass )
 			flash[:notice] = "Пользователь создан успешно"
 			redirect_to( :controller => 'manager', :action => 'index')
 		else

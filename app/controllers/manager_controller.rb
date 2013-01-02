@@ -41,8 +41,7 @@ class ManagerController < ApplicationController
 		
 		if @main.save then
 			@uname = @main.manager.pib
-			# DtgMailer.delay.welcome_email( @main, @main.manager, @pass )
-			DtgMailer.welcome_email( @uname, @main, @main.manager, @pass ).deliver
+			DtgMailer.delay.welcome_email( @uname, @main, @main.manager, @pass )
 			flash[:notice] = "Менеджер создан успешно"
 			redirect_to( :controller => 'admin', :action => 'index')
 		else
