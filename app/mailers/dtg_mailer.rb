@@ -2,7 +2,8 @@
 class DtgMailer < ActionMailer::Base
   default from: "admin@dtg.kiev.ua"
 
-  def welcome_email(user, user_mail, pass)
+  def welcome_email( uname, user, user_mail, pass)
+  	@uname = uname
     @user = user
     @user_mail = user_mail
     @pass = pass

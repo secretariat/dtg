@@ -30,8 +30,10 @@ class AdminController < ApplicationController
   	@main.priv_level = 1
   	@pass = @main.password
 		if @main.save then
+			@uname = @main.login
 			flash[:notice] = "Администратор создан успешно"
-			DtgMailer.delay.welcome_email( @main, @main.admin, @pass )
+			# DtgMailer.delay.welcome_email( @main, @main.admin, @pass )
+			DtgMailer.welcome_email( @uname, @main, @main.admin, @pass ).deliver
 			redirect_to( :controller => 'admin', :action => 'list')
 		else
 			flash[:notice] = "#{@main.errors.full_messages.to_sentence}, #{@admin.errors.full_messages.to_sentence}" 
