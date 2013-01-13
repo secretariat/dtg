@@ -54,6 +54,7 @@ GEM
       multi_json (~> 1.0)
     hashery (2.0.1)
     hike (1.2.1)
+    hirb (0.7.0)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.1.1)
@@ -156,6 +157,7 @@ DEPENDENCIES
   daemons
   delayed_job_active_record
   execjs
+  hirb
   jquery-rails
   letter_opener
   mysql2

@@ -16,8 +16,8 @@
 						<th><center>N%</center></td>
 						<th><center>ФИО Сотрудника</center></td>
 						<th><center>Название компании</center></td>
-						<th><center>Статус Заявок</center></th>
-						<th></th>
+						<th><center>Заявки</center></th>
+						<th colspan=3><center>Редактировать</center></th>
 					</tr>
 					<% count = 1  %>
 
@@ -31,7 +31,7 @@
 								<%= link_to( "Показать",  :controller => 'user', :action=>'show',:id => main.user.id ) %></center>
 							</td>
 							<td><center>
-								<%= link_to( "Редактировать", :controller => 'user', :action=>'edit',:id => main.user.id ) %></center>
+								<%= link_to( "Изменить", :controller => 'user', :action=>'edit',:id => main.user.id ) %></center>
 							</td>
 							<td>
 							<center>

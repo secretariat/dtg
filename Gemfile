@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem 'execjs'
 gem 'therubyracer'
 gem 'thin'
+gem 'hirb'
 
 gem 'amoeba'
 

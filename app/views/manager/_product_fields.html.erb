@@ -1,0 +1,66 @@
+<tr>
+	<td><%= f.text_field :naim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :kolvo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :opis_all, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td>
+		<center>
+			<button  class="btn btn-mini" id="123" data-toggle="modal" data-target="#myModal" style="">+</button>
+		</center>
+	</td>
+	<td  style="width:0px; border-left-style: hidden;">
+		<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h5 id="myModalLabel">
+					<center><h4><u>Расчет суммы таможенных платежей для товара</u></h4></center>
+				</h5>
+			</div>
+			<div class="modal-body">
+				<div>
+				 	<div><h5>Таможенная пошлина:</h5></div>
+				 	Ставка:
+					<%= f.text_field :pos_stavka,:class=>'input-mini'%>
+					Сумма:
+					<%= f.text_field :pos_summa,:class=>'input-mini'%>
+				</div>
+				<div>
+				 	<div><h5>Акцизный налог:</h5></div>
+				 	Ставка:
+				 	<%= f.text_field :nalog_stavka,:class=>'input-mini'%>
+				 	Сумма:
+				 	<%= f.text_field :nalog_summa,:class=>'input-mini'%>
+				</div>
+				<div>
+				 	<div><h5>Для нефтепродуктов (дополнительный сбор):</h5></div>
+				 	Ставка:
+				 	<%= f.text_field :neft_stavka,:class=>'input-mini'%>
+				 	Сумма:
+				 	<%= f.text_field :neft_summa,:class=>'input-mini'%>
+				</div>
+				<div>
+				 	<div><h5>Налог на добавленную стоимость (НДС):</h5></div>
+				 	Ставка:
+				 	<%= f.text_field :nds_stavka,:class=>'input-mini'%>
+				 	Сумма:
+				 	<%= f.text_field :nds_summa,:class=>'input-mini'%>
+					
+				</div>
+				<div>
+					<div><h5>Сумма таможенных платежей:</h5></div>
+					Всего:
+				 	<%= f.text_field :vsego,:class=>'input-mini'%>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Отменить</button>
+				<button class="btn btn-info" id="xxx_btn" data-dismiss="modal" aria-hidden="true" onClick="insert(,"123")">Сохранить</button>
+				
+			</div>
+			</div>
+	</td>
+</tr>
+

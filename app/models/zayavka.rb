@@ -13,17 +13,6 @@ class Zayavka < ActiveRecord::Base
   accepts_nested_attributes_for :products, :reject_if => lambda { |a| a[:naim].blank? }
   attr_protected
 
- #  def duplicate
-	#   new_zayavka = Zayavka.new(self.attributes)
-	#   new_products = []
-	#   self.products.each do |pr|
-	#     new_products << pr.clone
-	#   end
-	#   new_zayavka.products << new_products
-	#   # new_zayavka.number = new_zayavka.number + "_dup"
-	#   return new_zayavka
-	# end
-
   def self.get_status( status )
 		
 		case status 

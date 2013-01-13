@@ -2,22 +2,47 @@
 class ManagerController < ApplicationController
 	
 	layout 'manager'
-	
 
 	before_filter :confirm_logged_in
 	before_filter :confirm_priveleges_manager
 	
 	def index
-		@mains = Main.where(:owner_id => session[:user_id]).order('created_at DESC')
+		# @mains = Main.where(:owner_id => session[:user_id]).order('created_at DESC')
+		@mains = Main.where(:priv_level => 3 ).order('created_at DESC')
 	end
 
 	def status
 		@zayavkas = Zayavka.where( :user_id => params[:id] ).order('created_at DESC') 
+		@user = User.find( params[:id] )
+		if @zayavkas.size == 0 then
+			render :action => 'znf'
+		end
 	end
+
+	# def znf
+		
+	# end
 
 	def show
 		@manager = Manager.find( params[:id] )
 		render :layout => "admin"	
+	end
+
+	def zshow
+		@zayavka = Zayavka.find( params[:id] )
+		@user = User.find( @zayavka.user_id )
+		@zcount = @zayavka.usercount
+		@products = @zayavka.products
+		# respond_to do |format|
+      # format.html
+    #   format.pdf do
+    #     pdf = ZayavkaPdf.new(@zayavka, @products, @user)
+    #     send_data pdf.render, filename: "#{@zayavka.id}.pdf",
+    #                           type: "application/pdf",
+    #                           disposition: "inline"
+    #   end
+    # end
+		
 	end
 
 	def list

@@ -3,7 +3,7 @@
 class ZayavkaController < ApplicationController
 	
 	layout 'user'
-	before_filter :get_uniq_user 
+	before_filter :get_uniq_user, :except => [:zshow]
 	
 	def duplicate
 		@zayavka = Zayavka.find( params[:id] ).dup
