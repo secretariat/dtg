@@ -22,7 +22,9 @@ class ZayavkaPdf < Prawn::Document
     formatted_text [ { :text =>"Таможенный режим: "},
     								 { :text => "#{@zayavka.tamrez}",:styles => [:underline]},
     								 { :text => "     Тип гарантии: "},
-    								 { :text => "#{@zayavka.garantee}",:styles => [:underline]}]
+    								 { :text => "#{@zayavka.garantee}",:styles => [:underline]},
+                                     { :text => "     Вид транспорта: "},
+                                     { :text => "#{@zayavka.typetran}",:styles => [:underline]}]
     text "1. Отправитель товара", :align => :center, :style => :bold
     formatted_text [ { :text =>"1.1 Наименование фирмы: "},
 								     { :text => "#{@zayavka.field_1_1}",:styles => [:underline]}]
