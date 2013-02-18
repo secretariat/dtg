@@ -9,15 +9,15 @@
 	 	<br>
 	 	<div class="row">	
 	 		<div class="span4">
-	 			Таможенный режим:
+	 			Таможенный режим*:
 	 			<u><%= @zayavka.tamrez %></u>
 	 		</div>
 	 		<div class="span4">
-	 			Тип гарантии:
+	 			Тип гарантии*:
 					<u><%= @zayavka.garantee%></u>
 	 		</div>
 	 		<div class="span4">
-	 			Вид транспорта:
+	 			Вид транспорта*:
 	 			<u><%= @zayavka.typetran%></u>
 	 		</div>
 	 	</div>
@@ -49,6 +49,7 @@
 	 				<th class="span2" align="center"><b>Код УКТВЭД</b></td>
 	 				<th class="span2" align="center"><b>Номенклатура</b></td>
 	 				<th class="span1" align="center"><b>Кол-во</b></td>
+	 				<th class="span1" align="center"><b>Ед. изм.</b></td>
 	 				<th class="span1" align="center"><b>Фактур. стоимость за ед.</b></td>
 	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
 	 				<th class="span2" align="center"><b>Данные расчета</b></td>
@@ -244,6 +245,18 @@
 	 		</center>
 	 	</div>
 	 	<br>
+	 	<br>
+	 	<div class="row">	
+	 		<center><h4>10. Личные комментарии</h4></center>
+	 	</div>
+	 	<br>
+	 	<div class="row">
+ 			<center>
+	 			<%= @zayavka.own_comments%>
+	 		</center>
+	 	</div>
+	 	<br>
+
 	 	<center>
 	 		<%= link_to('Назад', {:controller => 'user', :action => 'index'}, :class => 'btn') %>
 	 		<%= link_to('Экспорт в PDF', {:contoller => 'zayavka', :action => 'show', format: "pdf"}, :class => 'btn') %>

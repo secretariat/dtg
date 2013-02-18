@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218191309) do
+ActiveRecord::Schema.define(:version => 20130218212605) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(:version => 20130218191309) do
 
   create_table "chmails", :force => true do |t|
     t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "currencies", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -101,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20130218191309) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.string   "edizm",        :default => "шт."
+    t.string   "currency"
   end
 
   create_table "transports", :force => true do |t|
@@ -163,8 +170,9 @@ ActiveRecord::Schema.define(:version => 20130218191309) do
     t.string   "field_8_6"
     t.string   "field_8_7"
     t.string   "field_9"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.text     "own_comments"
   end
 
   add_index "zayavkas", ["user_id"], :name => "index_zayavkas_on_user_id"

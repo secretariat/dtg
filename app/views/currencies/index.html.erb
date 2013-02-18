@@ -1,0 +1,30 @@
+<br/>
+<br/>
+
+<center><h3>Список валют</h3></center><br/>
+<div class="container">
+  <div class="row">
+    
+      <div class="span1 offset2">
+        <h4>Наименование</h4>
+      </div>
+  </div>
+  <div class="row">
+    <center>
+      <table class="span8 offset2 table table-condensed">
+        <% @currencies.each do |currency| %>
+          <tr>
+            <td class="span6"><%= currency.name %></td>
+            <td><%= link_to 'Редактировать', edit_currency_path(currency) %></td>
+            <td><%= link_to 'Удалить', currency, confirm: 'Уверены?', method: :delete %></td>
+          </tr>
+        <% end %>
+      </table>
+     </center>
+  </div>
+  <div class="row">
+    <div class="span1 offset9">
+      <%= link_to 'Добавить', new_currency_path, :class => 'btn btn-success' %>
+    </div>
+  </div>
+</div>

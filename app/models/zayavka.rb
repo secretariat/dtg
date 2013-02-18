@@ -6,6 +6,8 @@ class Zayavka < ActiveRecord::Base
   belongs_to :user
   has_many :products
 
+  # validates_presence_of :field_3_1, :message => "Поле ФИО не может быть пустым"
+
   amoeba do
     enable
   end

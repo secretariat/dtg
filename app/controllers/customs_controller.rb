@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 class CustomsController < ApplicationController
   layout 'admin'
-
+  
   before_filter :confirm_logged_in
-  # GET /customs
-  # GET /customs.json
+  before_filter :confirm_priveleges_admin
+  
   def index
     @customs = Custom.all
 

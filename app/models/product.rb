@@ -17,5 +17,6 @@ class Product < ActiveRecord::Base
   								:nds_stavka, 
   								:nds_summa, 
   								:vsego, 
-  								:opis_all
+  								:opis_all, 
+                  :edizm
 end

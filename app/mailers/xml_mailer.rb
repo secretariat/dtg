@@ -23,7 +23,8 @@ class XmlMailer < ActionMailer::Base
 	      		xml.naim pr.naim
 	      		xml.cod pr.codyktved
 	      		xml.nomennkl pr.nomenkl
-	      		xml.number pr.kolvo
+            xml.number pr.kolvo
+	      		xml.ed_izmereniya pr.edizm
 	      		xml.factprice pr.factstoim
 	      		xml.dopinfo pr.dopinfo
 	      		xml.calc_data pr.opis_all

@@ -1,16 +1,14 @@
 # -*- encoding : utf-8 -*-
 Dtg::Application.routes.draw do
-  resources :edizms
-
-  resources :chmails
-
-  resources :garantees
-
   root :to => 'main#login'
-
+  
+  resources :currencies
+  resources :edizms
+  resources :chmails
+  resources :garantees
   resources :customs
   resources :edizms
-
+  resources :currencies
   resources :transports
   
   resources :admin, only: [ :index, :list, :new, :create, :destroy]

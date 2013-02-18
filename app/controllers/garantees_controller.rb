@@ -1,9 +1,10 @@
 # -*- encoding : utf-8 -*-
 class GaranteesController < ApplicationController
   layout 'admin'
+  
   before_filter :confirm_logged_in
-  # GET /garantees
-  # GET /garantees.json
+  before_filter :confirm_priveleges_admin
+  
   def index
     @garantees = Garantee.all
 

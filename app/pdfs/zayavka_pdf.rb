@@ -35,7 +35,7 @@ class ZayavkaPdf < Prawn::Document
 
     text "2. Информация о товаре", :align => :center, :style => :bold
     move_down 5
-    items = [["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", 
+    items = [["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", "Ед. изм." 
                      "Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]]
 
 	items += @products.map do |item|
@@ -44,6 +44,7 @@ class ZayavkaPdf < Prawn::Document
         item.codyktved,
         item.nomenkl,
         item.kolvo,
+        item.edizm,
         item.factstoim,
         item.dopinfo,
         item.opis_all

@@ -1,11 +1,10 @@
 # -*- encoding : utf-8 -*-
 class TransportsController < ApplicationController
   layout 'admin'
-
+  
   before_filter :confirm_logged_in
-
-  # GET /transports
-  # GET /transports.json
+  before_filter :confirm_priveleges_admin
+  
   def index
     @transports = Transport.all
 

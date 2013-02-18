@@ -1,7 +1,10 @@
 # -*- encoding : utf-8 -*-
 class ChmailsController < ApplicationController
+  
   layout 'admin'
+  
   before_filter :confirm_logged_in
+  before_filter :confirm_priveleges_admin
   
   def index
     @chmails = Chmail.all

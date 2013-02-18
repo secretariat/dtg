@@ -6,6 +6,7 @@ gem 'therubyracer'
 gem 'thin'
 gem 'hirb'
 
+gem 'client_side_validations'
 gem 'amoeba'
 
 gem "letter_opener", :group => :development

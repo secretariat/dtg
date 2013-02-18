@@ -22,6 +22,9 @@
 			</div>
 			<div class="modal-body">
 				<div>
+				 	Валюта расчета:
+				 	<%= f.select( :currency, Currency.find(:all).collect{ |u| [u.name] }, :class => "span1") %>
+
 				 	<div><h5>Таможенная пошлина:</h5></div>
 				 	Ставка:
 					<%= f.text_field :pos_stavka,:class=>'input-mini'%>

@@ -22,3 +22,13 @@
 	width: 99%;
 	height:20px;
 }
+
+.field_with_errors {
+	display: inline;
+}
+
+.field_with_errors .message{
+	color: red;
+	padding-left: 5px;
+	font-size: 12px;
+}

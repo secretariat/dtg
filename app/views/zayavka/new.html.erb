@@ -1,7 +1,7 @@
 <br>
 <center><h3>Создание новой Заявки</h3></center><br>
   <div class="span12">
-  	<%= form_for(@zayavka, :url => {:action => 'create'}) do |f| %>
+  	<%= form_for( @zayavka, :url => {:action => 'create'} ) do |f| %>
     <div class="row">
 	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= Time.now%> г.</div>
 	 		<div class="span2"><h4> к Договору № <%= @user.dognum%></h4></div>
@@ -9,16 +9,18 @@
 	 	</div>
 	 	<br>
 	 	<div class="row">	
+	 		<center>(* - поля обязательные для заполнения)</center>
+	 		<br/>
 	 		<div class="span4">
-	 			Таможенный режим:
+	 			Таможенный режим*:
 	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
 	 		<div class="span4">
-	 			Тип гарантии:
+	 			Тип гарантии*:
 					<%= f.select( :garantee, Garantee.find(:all).collect{ |u| [u.name] } ) %>
 	 		</div>
 	 		<div class="span4">
-	 			Вид транспорта:
+	 			Вид транспорта*:
 	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
 	 	</div>
@@ -72,20 +74,20 @@
 				
 
 	 	<div class="row">	
-	 		<center><h4>3. Избранный маршрут транзитного перемещения</h4></center>
+	 		<center><h4>3. Избранный маршрут транзитного перемещения*</h4></center>
 	 	</div>
 	 	<br>
 	 	<div class="row">	
-	 		<div class="span2">3.1 Пункт отправления:</div>
+	 		<div class="span2">3.1 Пункт отправления*:</div>
 	 		<div class="span3"><%= f.text_field :field_3_1,:class=>'input-large'%></div>
 
-	 		<div class="span2" style="width:200px;">3.2 Таможня отправления:</div>
+	 		<div class="span2" style="width:200px;">3.2 Таможня отправления*:</div>
 	 		<div class="span3"><%= f.text_field :field_3_2,:class=>'input-large' %></div>
 
-	 		<div class="span2">3.3 Пункт назначения:</div>
+	 		<div class="span2">3.3 Пункт назначения*:</div>
 	 		<div class="span3"><%= f.text_field :field_3_3,:class=>'input-large' %></div>
 	 		
-	 		<div class="span2" style="width:200px;">3.4 Таможня назначения:</div>
+	 		<div class="span2" style="width:200px;">3.4 Таможня назначения*:</div>
 	 		<div class="span3"><%= f.text_field :field_3_4,:class=>'input-large' %></div>
 	 	</div>
 	 	<br>
@@ -151,7 +153,7 @@
 
 	 	<div class="row">	
 	 		<center><h4>
-	 			6. Лицо заключившее договор на предоставление финансовой гарантии
+	 			6. Лицо заключившее договор на предоставление финансовой гарантии*
 	 		</h4></center>
 	 	</div>
 	 	<br>
@@ -221,7 +223,7 @@
  		</div>
  		
  		<div class="row">	
-	 		<div class="span3">8.4 Для ж/д:</div>
+	 		<div class="span3">8.4 Для ж/д*:</div>
 	 		<div class="span1">№ вагона:</div>
 	 		<div class="span1 input"><%= f.text_field :field_8_4_1 ,:class=>'input-mini'%></div>
 	 		<div class="span1" style="width: 90px;"> № контейнера: </div>
@@ -229,7 +231,7 @@
 	 	</div>
 
  		<div class="row">	
-	 		<div class="span3">8.5 Для авто:</div>
+	 		<div class="span3">8.5 Для авто*:</div>
 	 		<div class="span2" style="width: 120px;">Тип, марка, гос.№:</div>
 	 		<div class="span3 input"><%= f.text_field :field_8_5 ,:class=>'input-xlarge'%></div>
 	  </div>
@@ -251,6 +253,16 @@
 	 	<div class="row">
  			<center>
 	 			<%= f.text_area :field_9, :size => "30x10" ,:class=>'input-xxlarge'%>
+	 		</center>
+	 	</div>
+
+	 	<div class="row">	
+	 		<center><h4>10. Личные комментарии</h4></center>
+	 	</div>
+	 	<br>
+	 	<div class="row">
+ 			<center>
+	 			<%= f.text_area :own_comments, :size => "30x5" ,:class=>'input-xxlarge'%>
 	 		</center>
 	 	</div>
 	 	<br>
