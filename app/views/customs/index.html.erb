@@ -12,17 +12,13 @@
     <div class="row">
       <center>
         <table class="span8 offset2 table table-condensed">
-
-
-        <% @customs.each do |custom| %>
-          <tr>
-            <td class="span6"><%= custom.name %></td>
-            <td><%= link_to 'Редактировать', edit_custom_path(custom), :class => 'href' %>
-            <%= link_to 'Удалить', custom, confirm: 'Уверены?', method: :delete, :class => 'href' %></td>
-          </tr>
-        <% end %>
-
-
+          <% @customs.each do |custom| %>
+            <tr>
+              <td class="span6"><%= custom.name %></td>
+              <td><%= link_to 'Редактировать', edit_custom_path(custom), :class => 'href' %>
+              <%= link_to 'Удалить', custom, confirm: 'Уверены?', method: :delete, :class => 'href' %></td>
+            </tr>
+          <% end %>
         </table>
       </center>
     </div>
@@ -32,4 +28,3 @@
       </div>
     </div>
   </div>
-

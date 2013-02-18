@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004195854) do
+ActiveRecord::Schema.define(:version => 20130218191309) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(:version => 20121004195854) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
+  create_table "edizms", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "garantees", :force => true do |t|
     t.string   "name"
@@ -92,8 +98,9 @@ ActiveRecord::Schema.define(:version => 20121004195854) do
     t.string   "nds_stavka"
     t.string   "nds_summa"
     t.string   "vsego"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "edizm",        :default => "шт."
   end
 
   create_table "transports", :force => true do |t|

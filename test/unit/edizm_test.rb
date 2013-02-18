@@ -1,7 +1,6 @@
-# -*- encoding : utf-8 -*-
 require 'test_helper'
 
-class XmlMailerTest < ActionMailer::TestCase
+class EdizmTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

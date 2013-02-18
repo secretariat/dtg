@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateZayavkas < ActiveRecord::Migration
   def change
     create_table :zayavkas do |t|

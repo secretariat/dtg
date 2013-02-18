@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Product < ActiveRecord::Base
 	belongs_to :zayavka
   attr_accessible :codyktved,

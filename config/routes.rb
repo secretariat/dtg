@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Dtg::Application.routes.draw do
+  resources :edizms
+
   resources :chmails
 
   resources :garantees
@@ -7,6 +9,7 @@ Dtg::Application.routes.draw do
   root :to => 'main#login'
 
   resources :customs
+  resources :edizms
 
   resources :transports
   

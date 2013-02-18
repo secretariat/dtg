@@ -1,5 +1,4 @@
 # -*- encoding : utf-8 -*-
-# -*- encoding : utf-8 -*-
 Dtg::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -38,4 +37,5 @@ Dtg::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.delivery_method = :letter_opener
+
 end

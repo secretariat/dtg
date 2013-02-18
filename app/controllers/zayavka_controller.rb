@@ -41,6 +41,7 @@ class ZayavkaController < ApplicationController
 		1.times do
 			@zayavka.products.build
 		end
+		
 		@user = User.find( session[:uid] )
 		@zcount = @user.zcount
 	end

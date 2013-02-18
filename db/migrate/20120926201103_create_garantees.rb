@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateGarantees < ActiveRecord::Migration
   def change
     create_table :garantees do |t|

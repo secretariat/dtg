@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class XmlMailer < ActionMailer::Base
   default from: "admin@dtg.kiev.ua"
 

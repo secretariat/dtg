@@ -1,0 +1,30 @@
+<br/>
+<br/>
+
+<center><h3>Единицы измерения</h3></center><br/>
+<div class="container">
+  <div class="row">
+    
+      <div class="span1 offset2">
+        <h4>Наименование</h4>
+      </div>
+  </div>
+  <div class="row">
+    <center>
+      <table class="span8 offset2 table table-condensed">
+        <% @edizms.each do |edizm| %>
+          <tr>
+            <td class="span6"><%= edizm.name %></td>
+            <td><%= link_to 'Редактировать', edit_edizm_path(edizm), :class => 'href' %></td>
+            <td><%= link_to 'Удалить', edizm, confirm: 'Уверены?', method: :delete %></td>
+          </tr>
+        <% end %>
+      </table>
+    </center>
+  </div>
+  <div class="row">
+    <div class="span1 offset9">
+      <%= link_to 'Добавить', new_edizm_path, :class => 'btn btn-success' %>
+    </div>
+  </div>
+</div>
