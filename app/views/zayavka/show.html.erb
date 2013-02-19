@@ -8,15 +8,15 @@
 	 	</div>
 	 	<br>
 	 	<div class="row">	
-	 		<div class="span4">
+	 		<div class="span3 offset1">
 	 			Таможенный режим*:
 	 			<u><%= @zayavka.tamrez %></u>
 	 		</div>
-	 		<div class="span4">
+	 		<div class="span3">
 	 			Тип гарантии*:
 					<u><%= @zayavka.garantee%></u>
 	 		</div>
-	 		<div class="span4">
+	 		<div class="span3">
 	 			Вид транспорта*:
 	 			<u><%= @zayavka.typetran%></u>
 	 		</div>
@@ -54,6 +54,8 @@
 	 				<th class="span1" align="center"><b>Фактур. с-ть всего товара</b></td>
 	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
 	 				<th class="span2" align="center"><b>Данные расчета</b></td>
+	 				<th class="span1"></td>
+	 				<td style="width:0px; border-left-style: hidden;"></td>
 	 			</tr>
 	 			<%= form_for(@zayavka, :url => {:action => 'update'}) do |f| %>
 	 				<%= f.fields_for :products do |builder| %>

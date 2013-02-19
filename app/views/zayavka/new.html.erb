@@ -4,22 +4,22 @@
   	<%= form_for( @zayavka, :url => {:action => 'create'} ) do |f| %>
     <div class="row">
 	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= Time.now%> г.</div>
-	 		<div class="span2"><h4> к Договору № <%= @user.dognum%></h4></div>
+	 		<div class="span3"><h4> к Договору № <%= @user.dognum%></h4></div>
 	 		<div class="span2"><h4> от <%=@user.dogdate%>г.</h4></b></div>
 	 	</div>
 	 	<br>
 	 	<div class="row">	
 	 		<center>(* - поля обязательные для заполнения)</center>
 	 		<br/>
-	 		<div class="span4">
+	 		<div class="span3 offset1">
 	 			Таможенный режим*:
 	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
-	 		<div class="span4">
+	 		<div class="span3">
 	 			Тип гарантии*:
 					<%= f.select( :garantee, Garantee.find(:all).collect{ |u| [u.name] } ) %>
 	 		</div>
-	 		<div class="span4">
+	 		<div class="span3">
 	 			Вид транспорта*:
 	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
@@ -58,7 +58,7 @@
 	 				<th class="span3" align="center"><b>Доп. Информация</b></td>
 	 				<th class="span2" align="center"><b>Данные расчета</b></td>
 	 				<th class="span1"></td>
-	 				<td  style="width:0px; border-left-style: hidden;"></td>
+	 				<td style="width:0px; border-left-style: hidden;"></td>
 	 			</tr>
 	 			<%= f.fields_for :products do |builder| %>
 	 				<tr>
@@ -225,15 +225,15 @@
  		
  		<div class="row">	
 	 		<div class="span3">8.4 Для ж/д*:</div>
-	 		<div class="span1">№ вагона:</div>
+	 		<div class="span1" style="width:140px;">№ вагона:</div>
 	 		<div class="span1 input"><%= f.text_field :field_8_4_1 ,:class=>'input-mini'%></div>
-	 		<div class="span1" style="width: 90px;"> № контейнера: </div>
+	 		<div class="span1" style="width: 120px;"> № контейнера: </div>
 	 		<div class="span1 input"><%= f.text_field :field_8_4_2 ,:class=>'input-mini'%></div>
 	 	</div>
 
  		<div class="row">	
 	 		<div class="span3">8.5 Для авто*:</div>
-	 		<div class="span2" style="width: 120px;">Тип, марка, гос.№:</div>
+	 		<div class="span2" style="width: 140px;">Тип, марка, гос.№:</div>
 	 		<div class="span3 input"><%= f.text_field :field_8_5 ,:class=>'input-xlarge'%></div>
 	  </div>
 	  <div class="row">	
