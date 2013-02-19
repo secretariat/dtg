@@ -18,5 +18,7 @@ class Product < ActiveRecord::Base
   								:nds_summa, 
   								:vsego, 
   								:opis_all, 
-                  :edizm
+                  :edizm,
+                  :currency,
+                  :factstoim_all
 end

@@ -98,6 +98,11 @@ class ZayavkaController < ApplicationController
 		end  	
   end
 
+	def destroy
+  	Zayavka.find( params[:id] ).destroy
+  	flash[:notice] = "Заявка успешно удалена."
+  	redirect_to :back
+  end
 
   # def send_xml
   # 	@user = User.find( session[:uid] )

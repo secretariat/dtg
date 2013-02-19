@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130218212605) do
+ActiveRecord::Schema.define(:version => 20130219210012) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -104,10 +104,11 @@ ActiveRecord::Schema.define(:version => 20130218212605) do
     t.string   "nds_stavka"
     t.string   "nds_summa"
     t.string   "vsego"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.string   "edizm",        :default => "шт."
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "edizm",         :default => "шт."
     t.string   "currency"
+    t.string   "factstoim_all"
   end
 
   create_table "transports", :force => true do |t|
