@@ -27,6 +27,11 @@
 						<%= link_to "Копировать", :controller => 'zayavka', :action=>'duplicate', :id => z.id %>
 					</center>
 				</td>
+				<td>
+					<center>
+						<%= link_to( "", z, :method => :delete,  :class => "icon-remove", :confirm => "Вы уверены?") %>
+					</center>
+				</td>
 			<!-- SENT->active ONLY for EDIT and DUPLICATE-->
 			<% else %>
 				<td>
@@ -37,6 +42,11 @@
 				<td>
 					<center>
 						<%= link_to "Копировать", :controller => 'zayavka', :action=>'duplicate', :id => z.id %>
+					</center>
+				</td>
+				<td>
+					<center>
+						<%= link_to( "", "#",  :class => "icon-remove") %>
 					</center>
 				</td>
 			<% end  %>

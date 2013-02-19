@@ -22,5 +22,6 @@ jQuery ->
                 $('input[id*=neft_stavka]').last().val()+";"+
                 $('input[id*=neft_summa]').last().val()+";"+
                 $('input[id*=nds_stavka]').last().val()+";"+
-                $('input[id*=nds_summa]').last().val()
+                $('input[id*=nds_summa]').last().val()+";"+
+                $('select[id*=currency]').last().val()
     $('input[id*=opis_all]').last().val( $value )
