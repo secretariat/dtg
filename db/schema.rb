@@ -95,20 +95,6 @@ ActiveRecord::Schema.define(:version => 20130219210012) do
     t.integer  "factstoim"
     t.string   "dopinfo"
     t.string   "opis_all"
-<<<<<<< HEAD
-    t.string   "pos_stavka"
-    t.string   "pos_summa"
-    t.string   "nalog_stavka"
-    t.string   "nalog_summa"
-    t.string   "neft_stavka"
-    t.string   "neft_summa"
-    t.string   "nds_stavka"
-    t.string   "nds_summa"
-    t.string   "vsego"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
-    t.string   "edizm",         :default => "шт."
-=======
     t.integer  "pos_stavka"
     t.integer  "pos_summa"
     t.integer  "nalog_stavka"
@@ -118,10 +104,9 @@ ActiveRecord::Schema.define(:version => 20130219210012) do
     t.integer  "nds_stavka"
     t.integer  "nds_summa"
     t.integer  "vsego"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
-    t.string   "edizm",        :default => "шт."
->>>>>>> d9fac1ba799a46678318c4eddce5c428f2bda55c
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "edizm",         :default => "шт."
     t.string   "currency"
     t.string   "factstoim_all"
   end
