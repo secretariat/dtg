@@ -3,7 +3,7 @@
 	<td><%= f.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
 	<td><%= f.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
 	<td><%= f.text_field :kolvo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.select( :edizm, Edizm.find(:all).collect{ |u| [u.name] }, :style => "padding:0; margin:0; width: 99%; height:20px;")%></td>
+	<td><%= f.select( :edizm, Edizm.find(:all).collect{|u| [u.name]},{},:style =>"width:80px;height:21px;	margin-top:8px;")%></td>
 	<td><%= f.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
 	<td><%= f.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
 	<td><%= f.text_field :opis_all, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
@@ -23,7 +23,7 @@
 			<div class="modal-body">
 				<div>
 				 	Валюта расчета:
-				 	<%= f.select( :currency, Currency.find(:all).collect{ |u| [u.name] }, :class => "span1") %>
+				 	<%= f.select( :currency, Currency.find(:all).collect{ |u| [u.name] }, {}, :style =>"width:80px;height:21px;	margin-top:8px;") %>
 
 				 	<div><h5>Таможенная пошлина:</h5></div>
 				 	Ставка:
