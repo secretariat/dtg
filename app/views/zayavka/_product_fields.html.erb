@@ -1,13 +1,13 @@
 <tr>
-	<td><%= f.text_field :naim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.text_field :kolvo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.select( :edizm, Edizm.find(:all).collect{|u| [u.name]},{},:style =>"width:100px;height:21px;margin:0;")%></td>
-	<td><%= f.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.text_field :factstoim_all, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
-	<td><%= f.text_field :opis_all, :style => "padding:0; margin:0; width: 99%; height:20px;"%></td>
+	<td><%= f.text_field :naim, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.text_field :kolvo, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.select( :edizm, Edizm.find(:all).collect{|u| [u.name]},{},:style =>"width:100px;height:26px;margin: 0;")%></td>
+	<td><%= f.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.text_field :factstoim_all, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.text_field :opis_all, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td>
 		<center>
 			<button  class="btn btn-mini" id="123" data-toggle="modal" data-target="#myModal" style="">+</button>
@@ -25,7 +25,7 @@
 				<div>
 				 	Валюта расчета:
 
-				 	<%= f.select( :currency, Currency.find(:all).collect{ |u| [u.name] }, {}, :style =>"width:80px;height:21px;	margin-top:8px;") %>
+				 	<%= f.select( :currency, Currency.find(:all).collect{ |u| [u.name] }, {}, :style =>"width:80px;") %>
 
 				 	<div><h5>Таможенная пошлина:</h5></div>
 				 	Ставка:
