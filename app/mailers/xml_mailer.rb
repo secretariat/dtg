@@ -16,6 +16,7 @@ class XmlMailer < ActionMailer::Base
       	xml.uadrphonemail zayavka.field_1_2
       	xml.chef zayavka.field_1_3
       }
+      xml.z_currency zayavka.z_currency
       xml.products{
       	x = 1
       	product.each do |pr|  
@@ -25,7 +26,8 @@ class XmlMailer < ActionMailer::Base
 	      		xml.nomennkl pr.nomenkl
             xml.number pr.kolvo
 	      		xml.ed_izmereniya pr.edizm
-	      		xml.factprice pr.factstoim
+            xml.factprice pr.factstoim
+	      		xml.factprice_all pr.factstoim_all
 	      		xml.dopinfo pr.dopinfo
 	      		xml.calc_data pr.opis_all
       		}

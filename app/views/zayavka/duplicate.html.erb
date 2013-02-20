@@ -43,6 +43,11 @@
 	 		<center><h4>2. Информация о товаре</h4></center>
 	 	</div>
 	 	<br>
+	 	<div class="row">	
+	 		<div class="span2">2.1 Валюта контракта*:</div>
+	 		<div class="span6"><%= f.select( :z_currency, Currency.find(:all).collect{ |u| [u.name] }) %></div>
+	 	</div>
+	 	<br>
 	 	<div class="row">
 	 		<table id="goods" cellpadding='0'  border='1' class="span12">
 	 			<tr style="background: grey;">

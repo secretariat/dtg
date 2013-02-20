@@ -35,8 +35,10 @@ class ZayavkaPdf < Prawn::Document
 
     text "2. Информация о товаре", :align => :center, :style => :bold
     move_down 5
-    items = [["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", "Ед. изм." 
-                     "Фактур. стоимость за ед.", "Доп. Информация", "Данные расчета"]]
+    formatted_text [ { :text =>"2.1 Валюта контракта: "},
+                                     { :text => "#{@zayavka.z_currency}",:styles => [:underline]}]
+    move_down 5
+    items = [["Наименование товара", "Код УКТВЭД", "Номенклатура", "Кол-во", "Ед. изм.", "Фактур. с-ть за ед.", "Фактур. с-ть всего товара", "Доп. Информация", "Данные расчета"]]
 
 	items += @products.map do |item|
     [
@@ -46,6 +48,7 @@ class ZayavkaPdf < Prawn::Document
         item.kolvo,
         item.edizm,
         item.factstoim,
+        item.factstoim_all,
         item.dopinfo,
         item.opis_all
     ]
@@ -55,12 +58,13 @@ class ZayavkaPdf < Prawn::Document
         row(0).background_color = '808080'
         row(0).font_style = :bold
         column(0).width=100
-        column(1).width=90
+        column(1).width=30
         column(2).width=90
         column(3).width=35
-        column(4).width=60
-        column(5).width=80
-        column(6).width=70
+        column(4).width=50
+        column(5).width=40
+        column(6).width=40
+        column(7).width=70
         rows(0..50).align = :center
         rows(0..50).style(:size => 8)
     end
