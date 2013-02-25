@@ -2,12 +2,12 @@
 
 one:
   pib: MyString
-  postion: MyString
+  position: MyString
   phone: MyString
   email: MyString
 
 two:
   pib: MyString
-  postion: MyString
+  position: MyString
   phone: MyString
   email: MyString

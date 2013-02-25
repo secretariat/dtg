@@ -49,7 +49,7 @@
 	 	<br>
 	 	<div class="row">	
 	 		<div class="span2">2.1 Валюта контракта*:</div>
-	 		<div class="span6"><%= f.select( :z_currency, Currency.find(:all).collect{ |u| [u.name] }) %></div>
+	 		<div class="span6"><%= f.select( :z_currency, Currency.find(:all).collect{ |u| [u.name] }, {}, :style=>'width:100px;') %></div>
 	 	</div>
 	 	<br>
 	 	<div class="row">
