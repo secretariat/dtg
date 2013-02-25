@@ -25,3 +25,14 @@ jQuery ->
                 $('input[id*=nds_summa]').last().val()+";"+
                 $('select[id*=currency]').last().val()
     $('input[id*=opis_all]').last().val( $value )
+
+jQuery ->
+  $('form').on 'change', '.numbers_only', ( event ) ->
+    if $.isNumeric( $('.numbers_only').val() ) == false 
+      alert("Поле Количество должно содержать только цифры")
+
+#jQuery ->
+# $('form').on 'change', $('select[name*=tamrez]'), ( event ) ->
+#   if $('select[name*=tamrez]').val() == "Временный"
+#     alert( $(.input-mini customs).сss( "display" ) )
+      

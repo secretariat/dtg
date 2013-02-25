@@ -36,3 +36,5 @@ function delTableRow(jQtable){
 function insert(id, evalue){
 	document.getElementById(id).value = evalue
 }
+
+$(".numbers_only").numeric(false, function() { alert("Integers only"); this.value = ""; this.focus(); });

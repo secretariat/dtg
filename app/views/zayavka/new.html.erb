@@ -1,6 +1,7 @@
 <br>
 <center><h3>Создание новой Заявки</h3></center><br>
   <div class="span12">
+  	<%#= form_for( @zayavka, :url => {:action => 'create'}, :validate => true ) do |f| %>
   	<%= form_for( @zayavka, :url => {:action => 'create'} ) do |f| %>
     <div class="row">
 	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= Time.now%> г.</div>
@@ -13,7 +14,8 @@
 	 		<br/>
 	 		<div class="span3 offset1">
 	 			Таможенный режим*:
-	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] }) %>
+	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] } ) %>
+	 			<div class="span3 input" style="display: none;"><%= f.text_field :field_8_4_2 , :class=>'input-mini customs'%>месяцев</div>
 	 		</div>
 	 		<div class="span3">
 	 			Тип гарантии*:
@@ -73,7 +75,7 @@
 	 		</table>
 	 		<div class="row">
    			<div class="pull-right">
-	 					<%= link_to_add_fields "Добавить", f, :products %>
+ 					<%= link_to_add_fields "Добавить", f, :products %>
 	 			</div>
 	 		</div>
 	 	</div>

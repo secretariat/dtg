@@ -7,6 +7,11 @@ class ZayavkaController < ApplicationController
 	
 	def duplicate
 		@zayavka = Zayavka.find( params[:id] ).dup
+		@zayavka.field_8_4_1 = ""
+		@zayavka.field_8_4_2 = ""
+		@zayavka.field_8_5 = ""
+		@zayavka.field_8_6 = ""
+		@zayavka.field_8_7 = ""
 		# @zayavka = Zayavka.new( Zayavka.find( params[:id] ).attributes )
 		# @zayavka = @z.duplicate
 		# @zayavka.products = Zayavka.find( params[:id] ).products.clone

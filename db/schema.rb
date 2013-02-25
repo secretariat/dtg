@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220181422) do
+ActiveRecord::Schema.define(:version => 20130225212445) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(:version => 20130220181422) do
     t.datetime "updated_at",   :null => false
     t.text     "own_comments"
     t.string   "z_currency"
+    t.string   "temp_period"
   end
 
   add_index "zayavkas", ["user_id"], :name => "index_zayavkas_on_user_id"
