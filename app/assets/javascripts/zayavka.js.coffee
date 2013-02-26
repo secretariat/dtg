@@ -26,6 +26,7 @@ jQuery ->
                 $('select[id*=currency]').last().val()
     $('input[id*=opis_all]').last().val( $value )
 
+
 jQuery ->
   $('form').on 'change', '.numbers_only', ( event ) ->
     if $.isNumeric( $('.numbers_only').val() ) == false 
