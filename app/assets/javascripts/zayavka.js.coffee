@@ -29,5 +29,5 @@ jQuery ->
 jQuery ->
   $('form').on 'change', '.numbers_only', ( event ) ->
     if $.isNumeric( $('.numbers_only').val() ) == false 
-      alert("Поле Количество должно содержать только цифры")
+      alert("Only Numbers")
       
