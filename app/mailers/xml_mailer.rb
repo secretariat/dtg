@@ -9,6 +9,7 @@ class XmlMailer < ActionMailer::Base
       xml.user_z_id user.zcount-1
       xml.date zayavka.created_at
       xml.tamrezym zayavka.tamrez
+      xml.temp_period zayavka.temp_period
       xml.typetrans zayavka.typetran
       xml.typegarantee zayavka.garantee
       xml.item_ender{

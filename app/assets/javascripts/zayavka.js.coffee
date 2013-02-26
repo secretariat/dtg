@@ -30,4 +30,12 @@ jQuery ->
   $('form').on 'change', '.numbers_only', ( event ) ->
     if $.isNumeric( $('.numbers_only').val() ) == false 
       alert("Поле Количество должно содержать только цифры")
-      
+
+jQuery ->
+  $('form').on 'change', $('select[id*=tamrez]'), ( event ) ->
+    if $('select[id*=tamrez]').val() == "Временный"
+      $('input[id*=zayavka_temp_period]').show()
+      $('label[for*=zayavka_]').show()
+    else
+      $('input[id*=zayavka_temp_period]').hide()
+      $('label[for*=zayavka_]').hide()

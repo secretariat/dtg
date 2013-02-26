@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.all
  *= require_tree .
 */
 
@@ -31,4 +32,8 @@
 	color: red;
 	padding-left: 5px;
 	font-size: 12px;
+}
+
+.customs{
+	display: none;
 }

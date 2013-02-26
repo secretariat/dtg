@@ -19,12 +19,19 @@ class ZayavkaPdf < Prawn::Document
     
     text "Завление опросник № #{@zayavka.id} от #{@zayavka.created_at}     к Договору № #{@user.dognum}     от #{@user.dogdate} г.", :align => :center, :style => :bold
     move_down 5
+    
     formatted_text [ { :text =>"Таможенный режим: "},
-    								 { :text => "#{@zayavka.tamrez}",:styles => [:underline]},
-    								 { :text => "     Тип гарантии: "},
-    								 { :text => "#{@zayavka.garantee}",:styles => [:underline]},
-                                     { :text => "     Вид транспорта: "},
-                                     { :text => "#{@zayavka.typetran}",:styles => [:underline]}]
+                        { :text => "#{@zayavka.tamrez}",:styles => [:underline]},
+                        { :text => "     Тип гарантии: "},
+                        { :text => "#{@zayavka.garantee}",:styles => [:underline]},
+                        { :text => "     Вид транспорта: "},
+                        { :text => "#{@zayavka.typetran}",:styles => [:underline]}]
+    move_down 3
+    if @zayavka.tamrez == "Временный" then
+        formatted_text [{ :text => "Срок действия гарантии (мес.): "},
+        { :text => "#{@zayavka.temp_period}", :styles => [:underline]}]
+    end
+
     text "1. Отправитель товара", :align => :center, :style => :bold
     formatted_text [ { :text =>"1.1 Наименование фирмы: "},
 								     { :text => "#{@zayavka.field_1_1}",:styles => [:underline]}]

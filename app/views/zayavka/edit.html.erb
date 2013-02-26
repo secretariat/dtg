@@ -9,9 +9,17 @@
 	 	</div>
 	 	<br>
 	 	<div class="row">	
+	 		<center>(* - поля обязательные для заполнения)</center>
+	 		<br/>
 	 		<div class="span3 offset1">
 	 			Таможенный режим:
-	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] }) %>
+	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] } ) %>
+	 			<div class="span3 input">
+	 				<% if @zayavka.tamrez == "Временный" %> 
+	 					<%= f.label :'Срок действия гарантии (мес)'%>
+	 					<%= f.text_field :temp_period%></div>
+	 				<% end %>
+	 			</div>
 	 		</div>
 	 		<div class="span3">
 	 			Тип гарантии:
