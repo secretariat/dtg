@@ -6,6 +6,7 @@ gem 'therubyracer'
 gem 'thin'
 gem 'hirb'
 
+gem "jquery-ui-rails"
 gem 'client_side_validations'
 gem 'amoeba'
 

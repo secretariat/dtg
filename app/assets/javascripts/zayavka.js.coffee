@@ -26,9 +26,13 @@ jQuery ->
                 $('select[id*=currency]').last().val()
     $('input[id*=opis_all]').last().val( $value )
 
-
 jQuery ->
   $('form').on 'change', '.numbers_only', ( event ) ->
     if $.isNumeric( $('.numbers_only').val() ) == false 
-      alert("Only Numbers")
+      alert("Поле Количество должно содержать только цифры")
+
+jQuery ->
+  $('form').on 'change', $('select[id*=temp]'), ( event ) ->
+    if $('select[id*=temp]').val() == "Временный"
+      $('#customs').show() 
       
