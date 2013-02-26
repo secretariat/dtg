@@ -1,7 +1,6 @@
 <br>
 <center><h3>Создание новой Заявки</h3></center><br>
   <div class="span12">
-  	<%#= form_for( @zayavka, :url => {:action => 'create'}, :validate => true ) do |f| %>
   	<%= form_for( @zayavka, :url => {:action => 'create'} ) do |f| %>
     <div class="row">
 	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= Time.now%> г.</div>
