@@ -14,12 +14,7 @@
 	 		<div class="span3 offset1">
 	 			Таможенный режим:
 	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] } ) %>
-	 			<div class="span3 input">
-	 				<% if @zayavka.tamrez == "Временный" %> 
-	 					<%= f.label :'Срок действия гарантии (мес)'%>
-	 					<%= f.text_field :temp_period%></div>
-	 				<% end %>
-	 			</div>
+
 	 		</div>
 	 		<div class="span3">
 	 			Тип гарантии:
@@ -28,6 +23,18 @@
 	 		<div class="span3">
 	 			Вид транспорта:
 	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
+	 		</div>
+	 		<br>
+	 		<div class="span10 offset1 input">
+	 				<% if @zayavka.tamrez == "Временный" %> 
+	 					<div class="span3" style="margin-left:0;">
+	 						<%= f.label :'Срок действия гарантии (мес):'%>
+	 					</div>
+						<div class="span3">
+							<%= f.text_field :temp_period, :style => 'width:30px;'%>
+						</div>
+					<% end %>
+	 			</div>
 	 		</div>
 	 	</div>
 	 	<div class="row">	
