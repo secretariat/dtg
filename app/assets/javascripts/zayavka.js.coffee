@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-	$('form').on 'click', '.add_fields', (event) ->
+	$('form').on 'click', '.add_fielPds', (event) ->
 
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
@@ -27,8 +27,8 @@ jQuery ->
     $('input[id*=opis_all]').last().val( $value )
 
 jQuery ->
-  $('form').on 'change', '.numbers_only', ( event ) ->
-    if $.isNumeric( $('.numbers_only').val() ) == false 
+  $('form').bind 'change', $('input[id*=kolvo]'), ( event ) ->
+    if $.isNumeric( $('input[id*=kolvo').val() ) == false
       alert("Поле Количество должно содержать только цифры")
 
 jQuery ->
@@ -39,3 +39,4 @@ jQuery ->
     else
       $('input[id*=zayavka_temp_period]').hide()
       $('label[for*=zayavka_]').hide()
+
