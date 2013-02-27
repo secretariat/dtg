@@ -27264,9 +27264,9 @@ $.widget( "ui.tooltip", {
     });
   });
 
-  jQuery(function() {
-    return $('form').on('change', '.numbers_only', function(event) {
-      if ($.isNumeric($('.numbers_only').val()) === false) {
+  $(document).on('change', $('input.numbers_only'), function() {
+    return $('input.numbers_only').each(function() {
+      if ($(this).val() !== '' && $.isNumeric($(this).val()) === false) {
         return alert("Поле Количество должно содержать только цифры");
       }
     });

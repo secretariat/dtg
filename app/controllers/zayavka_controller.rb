@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 
 class ZayavkaController < ApplicationController
-	
+
 	layout 'user'
 	before_filter :get_uniq_user, :except => [:zshow]
-	
+
 	def duplicate
 		@zayavka = Zayavka.find( params[:id] ).dup
 		@zayavka.field_8_4_1 = ""
@@ -20,8 +20,8 @@ class ZayavkaController < ApplicationController
 		# render 'new'
 	end
 
-	def list	
-		@zayavkas = Zayavka.where( :user_id => session[:uid] ) 
+	def list
+		@zayavkas = Zayavka.where( :user_id => session[:uid] )
 	end
 
 	def show
@@ -46,7 +46,7 @@ class ZayavkaController < ApplicationController
 		1.times do
 			@zayavka.products.build
 		end
-		
+
 		@user = User.find( session[:uid] )
 		@zcount = @user.zcount
 	end
@@ -60,7 +60,7 @@ class ZayavkaController < ApplicationController
   	@user.zcount += 1
 		if @zayavka.save then
 			@user.save
-			if( params[:send_button] ) then 
+			if( params[:send_button] ) then
 				@zayavka.update_attributes( :status => 2)
 				@products = @zayavka.products
 				@chmail = Chmail.find( :last )
@@ -74,7 +74,7 @@ class ZayavkaController < ApplicationController
 		else
 			flash[:notice] = "Ошибка при создании Заявки"
 			redirect_to(:controller => 'user', :action => 'new')
-		end 
+		end
 
 	end
 
@@ -89,7 +89,7 @@ class ZayavkaController < ApplicationController
   	@user = User.find( session[:uid] )
   	@zcount = @zayavka.usercount
 		if @zayavka.update_attributes( params[:zayavka]) then
-			if( params[:send_button] ) then 
+			if( params[:send_button] ) then
 				@zayavka.update_attributes( :status => 2)
 				@products = @zayavka.products
 				@chmail = Chmail.find( :last )
@@ -100,7 +100,7 @@ class ZayavkaController < ApplicationController
 			redirect_to( :controller => 'user', :action => 'index')
 		else
 			render('edit')
-		end  	
+		end
   end
 
 	def destroy
@@ -124,7 +124,7 @@ class ZayavkaController < ApplicationController
 		# else
 		# 	flash[:notice] = "Ошибка при создании Заявки"
 		# 	redirect_to(:controller => 'user', :action => 'new')
-		# end 
+		# end
   # end
 
 	private
