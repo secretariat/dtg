@@ -14,11 +14,8 @@
 	 		<div class="span3 offset1">
 	 			Таможенный режим*:
 	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] } ) %>
-	 			<div class="span3 input">
-	 				<%= f.label :'Срок действия гарантии (мес)', :style => 'display: none;'%><br/>
-	 				<%= f.text_field :temp_period, :style => 'display: none;'%></div>
-	 			</div>
-	 		<div class="span3">
+	 		</div>
+ 			<div class="span3">
 	 			Тип гарантии*:
 					<%= f.select( :garantee, Garantee.find(:all).collect{ |u| [u.name] } ) %>
 	 		</div>
@@ -27,6 +24,16 @@
 	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
 	 		</div>
 	 	</div>
+	 	<div class=row>
+		 	<div class="span10 offset1">
+ 				<div class="span3" style="margin-left:0;">
+ 					<%= f.label :'Срок действия гарантии (мес):', :style => 'display: none;'%>
+ 				</div>
+				<div class="span3">
+				<%= f.text_field :temp_period, :style => 'display: none; width:30px;'%>
+				</div>
+ 			</div>
+ 		</div>
 	 	<div class="row">	
 	 		<center><h4>1. Отправитель товара</h4></center>
 	 	</div>
