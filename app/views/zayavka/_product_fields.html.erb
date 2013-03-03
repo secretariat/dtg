@@ -1,4 +1,4 @@
-<tr>
+<tr class="fieldset">
 	<td><%= f.text_field :naim, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
@@ -12,6 +12,8 @@
 		<center>
 			<button  class="btn btn-mini" id="123" data-toggle="modal" data-target="#myModal" style="">+</button>
 		</center>
+		<%= f.hidden_field :_destroy %>
+		<%= link_to "x", '#', class: "remove_fields" %>
 	</td>
 	<td  style="width:0px; border-left-style: hidden;">
 		<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -53,7 +55,7 @@
 				 	<%= f.text_field :nds_stavka,:class=>'input-mini'%>
 				 	Сумма:
 				 	<%= f.text_field :nds_summa,:class=>'input-mini'%>
-					
+
 				</div>
 				<div>
 					<div><h5>Сумма таможенных платежей:</h5></div>
@@ -64,7 +66,7 @@
 			<div class="modal-footer">
 				<button class="btn" data-dismiss="modal" aria-hidden="true">Отменить</button>
 				<button class="btn btn-info" id="xxx_btn" data-dismiss="modal" aria-hidden="true" onClick="insert(,"123")">Сохранить</button>
-				
+
 			</div>
 			</div>
 	</td>

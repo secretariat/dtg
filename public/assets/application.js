@@ -27244,7 +27244,7 @@ $.widget( "ui.tooltip", {
 (function() {
 
   jQuery(function() {
-    return $('form').on('click', '.add_fields', function(event) {
+    $('form').on('click', '.add_fields', function(event) {
       var regexp, time;
       time = new Date().getTime();
       regexp = new RegExp($(this).data('id'), 'g');
@@ -27253,6 +27253,11 @@ $.widget( "ui.tooltip", {
       $('div .modal hide fade').find("#myModal").prop("id", time);
       $('.modal:last').attr('id', 'myModal_' + time);
       return $('.btn-mini:last').attr('data-target', '#myModal_' + time);
+    });
+    return $('form').on('click', '.remove_fields', function(event) {
+      $(this).prev('input[type=hidden]').val('1');
+      $(this).closest('.fieldset').hide();
+      return event.preventDefault();
     });
   });
 
@@ -27304,24 +27309,29 @@ $.widget( "ui.tooltip", {
 
 
 
-function addTableRow(jQtable){
-	jQtable.each(function(){
-		var tds = '<tr>';
-		jQuery.each($('tr:last td', this), function() {tds += '<td>'+$(this).html()+'</td>';});
-	tds += '</tr>';
-		if($('tbody', this).length > 0){$('tbody', this).append(tds);
-		}else {$(this).append(tds);}
-	});
-}
+// function addTableRow(jQtable){
+// 	jQtable.each(function(){
+// 		var tds = '<tr>';
+// 		jQuery.each($('tr:last td', this), function() {tds += '<td>'+$(this).html()+'</td>';});
+// 	tds += '</tr>';
+// 		if($('tbody', this).length > 0){$('tbody', this).append(tds);
+// 		}else {$(this).append(tds);}
+// 	});
+// }
 
-function delTableRow(jQtable){
-	jQtable.each(function(){
-		if ($('tr', this).length <= 1) return false; 
-		$('tr:last', this).remove();
-	});
-}
+// function delTableRow(jQtable){
+// 	jQtable.each(function(){
+// 		if ($('tr', this).length <= 1) return false;
+// 		$('tr:last', this).remove();
+// 	});
+// }
 
-function insert(id, evalue){
-	document.getElementById(id).value = evalue
-}
+// function insert(id, evalue){
+// 	document.getElementById(id).value = evalue
+// }
+
+// function remove_fields(link) {
+//   $(link).prev("input[type=hidden]").val("1");
+//   $(link).up(".fields").hide();
+// }
 ;

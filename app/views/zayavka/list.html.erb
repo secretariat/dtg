@@ -4,7 +4,7 @@
 	<th><center>Cтатус:</center></th>
 	<th><center>Создана:</center></th>
 	<th><center></center></th>
-	<% @zayavkas.each do |z| %>	
+	<% @zayavkas.each do |z| %>
 		<tr>
 			<td><center><%= '%05d' % z.usercount %></center></td>
 			<td><center><%= @zayavkas.get_status( z.status ) %></center></td>
@@ -19,7 +19,7 @@
 			<% if z.status == 1 %>
 				<td>
 					<center>
-						<%= link_to( "Редактировать", :controller => 'zayavka', :action=>'edit', :id => z.id ) %>
+						<%= link_to( "Редактировать", edit_zayavka_path(z) ) %>
 					</center>
 				</td>
 				<td>

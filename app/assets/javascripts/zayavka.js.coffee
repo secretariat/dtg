@@ -11,6 +11,10 @@ jQuery ->
    	$('.modal:last').attr('id', 'myModal_'+time)
     $('.btn-mini:last').attr('data-target', '#myModal_'+time);
 
+  $('form').on 'click', '.remove_fields', (event) ->
+    $(this).prev('input[type=hidden]').val('1')
+    $(this).closest('.fieldset').hide()
+    event.preventDefault()
 
 jQuery ->
   $('form').on 'click', '#xxx_btn', ( event ) ->

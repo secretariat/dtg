@@ -1,20 +1,19 @@
 <br>
 <center><h3>Редактирование Заявки</h3></center><br>
   <div class="container span12">
-  	<%= form_for(@zayavka, :url => {:controller => 'zayavka', :action => 'update', :id => @zayavka.id }) do |f| %>
+  	<%= form_for(@zayavka, :url => { :controller => 'zayavka', :action => 'update', :id => @zayavka.id }) do |f| %>
     <div class="row">
 	 		<div class="span4 offset2"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= @zayavka.created_at%> г.</div>
 	 		<div class="span3"><h4> к Договору № <%= @user.dognum%></h4></div>
 	 		<div class="span2"><h4> от <%=@user.dogdate%>г.</h4></b></div>
 	 	</div>
 	 	<br>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center>(* - поля обязательные для заполнения)</center>
 	 		<br/>
 	 		<div class="span3 offset1">
 	 			Таможенный режим:
 	 			<%= f.select( :tamrez, Custom.find(:all).collect{ |u| [u.name] } ) %>
-
 	 		</div>
 	 		<div class="span3">
 	 			Тип гарантии:
@@ -26,15 +25,14 @@
 	 		</div>
 	 		<br>
 	 		<div class="span10 offset1 input">
-	 				<% if @zayavka.tamrez == "Временный" %> 
-	 					<div class="span3" style="margin-left:0;">
-	 						<%= f.label :'Срок действия гарантии (мес):'%>
-	 					</div>
-						<div class="span3">
-							<%= f.text_field :temp_period, :style => 'width:30px;'%>
-						</div>
-					<% end %>
-	 			</div>
+ 				<% if @zayavka.tamrez == "Временный" %>
+ 					<div class="span3" style="margin-left:0;">
+ 						<%= f.label :'Срок действия гарантии (мес):'%>
+ 					</div>
+					<div class="span3">
+						<%= f.text_field :temp_period, :style => 'width:30px;'%>
+					</div>
+				<% end %>
 	 		</div>
 	 	</div>
 	 	<div class="row">
@@ -116,63 +114,61 @@
 	 		<div class="span3">4.1 Наименование фирмы:</div>
 	 		<div class="span4"><%= f.text_field :field_4_1,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">4.2 Юридический адрес, телефон, email:</div>
 	 		<div class="span4"><%= f.text_field :field_4_2,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">4.3 Руководитель, Ф.И.О.:</div>
 	 		<div class="span4"><%= f.text_field :field_4_3,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<center><h4>5. Субъект ВЭД, заключивший внешнеэкономический договор</h4></center>
 	 	</div>
 	 	<br>
-	 	
-	 	<div class="row">	
+	 	<div class="row">
  			<div class="span3">5.1 Наименование фирмы:</div>
 	 		<div class="span4"><%= f.text_field :field_5_1 ,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
  			<div class="span3">5.2 Юридический адрес, телефон, email:</div>
 			<div class="span4"><%= f.text_field :field_5_2 ,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
  			<div class="span3">5.3 Руководитель, ФИО:</div>
 			<div class="span4"><%= f.text_field :field_5_3 ,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">5.4 ЕГРПОУ:</div>
 	 		<div class="span4"><%= f.text_field :field_5_4 ,:class=>'input-xxlarge' %></div>
  		</div>
-	 
- 		<div class="row">	
+
+ 		<div class="row">
 		 	<div class="span3">5.5 Код налогоплательщика:</div>
 		 	<div class="span4"><%= f.text_field :field_5_5 ,:class=>'input-xxlarge' %></div>
 		</div>
-		
-	 	<div class="row">	
+	 	<div class="row">
 		 	<div class="span3">5.6 Договор внешнеэкономический №:</div>
 	 		<div class="span4"><%= f.text_field :field_5_6 ,:class=>'input-xxlarge' %></div>
  		</div>
- 		
- 		<div class="row">	
+
+ 		<div class="row">
 	 		<div class="span3">5.7 Счет фактура №:</div>
  			<div class="span4"><%= f.text_field :field_5_7 ,:class=>'input-xxlarge' %></div>
 	 	</div>
 
 
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center><h4>
 	 			6. Лицо заключившее договор на предоставление финансовой гарантии
 	 		</h4></center>
 	 	</div>
 	 	<br>
-	 	<div class="row">	
+	 	<div class="row">
  			<div class="span3">6.1 Полное наименование фирмы:
  			</div>
 	 			<div class="span6">
@@ -180,7 +176,7 @@
 	 				</div>
 	 			</div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
  			<div class="span3">6.2 Юридический адрес, телефон, email:</div>
  			<div class="span6">
  				<div class="input-xxlarge uneditable-input">
@@ -188,7 +184,7 @@
  				</div>
  			</div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
  			<div class="span3">6.3 Руководитель, Ф.И.О.:</div>
  			<div class="span6">
  				<div class="input-medium uneditable-input">
@@ -198,46 +194,46 @@
 	 	</div>
 	 	<br>
 
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center><h4>7. Экспедиторская организация</h4></center>
 	 	</div>
 	 	<br>
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">7.1 Наименование фирмы:</div>
 	 		<div class="span6"><%= f.text_field :field_7_1 ,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">7.2 Юридический адрес, телефон, email:</div>
 	 		<div class="span6"><%= f.text_field :field_7_2 ,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">7.3 Руководитель, Ф.И.О.:</div>
 	 		<div class="span6"><%= f.text_field :field_7_3 ,:class=>'input-xxlarge' %></div>
  		</div>
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">7.4 Код Ж/Д перевозки:</div>
 	 		<div class="span6"><%= f.text_field :field_7_4 ,:class=>'input-xxlarge' %></div>
  		</div>
  		<br>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<center><h4>8. Информация о перевозчике и транспортном средстве</h4></center>
 	 	</div>
 	 	<br>
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">8.1 Наименование перевозчика:</div>
 	 		<div class="span4"><%= f.text_field :field_8_1 ,:class=>'input-xxlarge'%></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">8.2 Юридический адрес, телефон, email:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_2 ,:class=>'input-xxlarge'%></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">8.3 Руководитель, Ф.И.О.:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_3 ,:class=>'input-xxlarge'%></div>
  		</div>
- 		
- 		<div class="row">	
+
+ 		<div class="row">
 	 		<div class="span3">8.4 Для ж/д*:</div>
 	 		<div class="span1" style="width:140px;">№ вагона:</div>
 	 		<div class="span1 input"><%= f.text_field :field_8_4_1 ,:class=>'input-mini'%></div>
@@ -245,23 +241,23 @@
 	 		<div class="span1 input"><%= f.text_field :field_8_4_2 ,:class=>'input-mini'%></div>
 	 	</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">8.5 Для авто*:</div>
 	 		<div class="span2" style="width: 140px;">Тип, марка, гос.№:</div>
 	 		<div class="span3 input"><%= f.text_field :field_8_5 ,:class=>'input-xlarge'%></div>
 	  </div>
-	  <div class="row">	
+	  <div class="row">
 	 		<div class="span3">8.5.1 ФИО Водителя:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_6,:class=>'input-xxlarge'%></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">8.5.2 Паспортные данные:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_7,:class=>'input-xxlarge'%></div>
  		</div>
  		<br>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<center><h4>9. Дополнительная информация</h4></center>
 	 	</div>
 	 	<br>
@@ -271,7 +267,7 @@
 	 		</center>
 	 	</div>
 
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center><h4>10. Личные комментарии</h4></center>
 	 	</div>
 	 	<br>
@@ -280,9 +276,8 @@
 	 			<%= f.text_area :own_comments, :size => "30x5" ,:class=>'input-xxlarge'%>
 	 		</center>
 	 	</div>
-	 	
 	 	<br>
-		<div class="row">		
+		<div class="row">
 			<div class="span4 offset6">
 				<%#= f.submit "Сохранить", class: "btn btn-success"%>
 				<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
@@ -290,7 +285,6 @@
 			  <%= submit_tag "Отправить", :name => 'send_button', class: "btn btn-info" %>
 			</div>
 		</div>
-		
 <% end %>
 
 

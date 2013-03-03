@@ -55,7 +55,7 @@
 	 		<center><h4>2. Информация о товаре</h4></center>
 	 	</div>
 	 	<br>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span2">2.1 Валюта контракта*:</div>
 	 		<div class="span6"><%= f.select( :z_currency, Currency.find(:all).collect{ |u| [u.name] }, {}, :style=>'width:100px;') %></div>
 	 	</div>
@@ -87,13 +87,12 @@
 	 			</div>
 	 		</div>
 	 	</div>
-				
 
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center><h4>3. Избранный маршрут транзитного перемещения*</h4></center>
 	 	</div>
 	 	<br>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span2">3.1 Пункт отправления*:</div>
 	 		<div class="span3"><%= f.text_field :field_3_1,:class=>'input-large'%></div>
 
@@ -283,7 +282,7 @@
 	 	</div>
 	 	<br>
 
-		<div class="row">		
+		<div class="row">
 			<div class="span5 offset6">
 				<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>
 				<%= submit_tag "Создать", :name => 'create_button', class: "btn btn-success" %>
