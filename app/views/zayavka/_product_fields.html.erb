@@ -2,20 +2,22 @@
 	<td><%= f.text_field :naim, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :codyktved, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :nomenkl, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
-	<td><%= f.text_field :kolvo, :style => "padding:0; margin:0; width: 99%; height:26px;", :class => 'numbers_only'%></td>
-	<td><%= f.select( :edizm, Edizm.find(:all).collect{|u| [u.name]},{},:style =>"width:100px;height:26px;margin: 0;")%></td>
+	<td><%= f.text_field :kolvo, :style => "padding:0; margin:0; width:80px; height:26px;", :class => 'numbers_only'%></td>
+	<td><%= f.select( :edizm, Edizm.find(:all).collect{|u| [u.name]},{},:style =>"width:80px;height:26px;margin: 0;")%></td>
 	<td><%= f.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :factstoim_all, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :opis_all, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
-	<td>
+	<td style="width:25px;">
 		<center>
 			<button  class="btn btn-mini" id="123" data-toggle="modal" data-target="#myModal" style="">+</button>
 		</center>
 	</td>
-	<td>
-		<%= f.hidden_field :_destroy %>
-		<%= link_to "", '#', class: "remove_fields icon-remove"%>
+	<td style="width:25px;">
+		<center>
+			<%= f.hidden_field :_destroy %>
+			<%= link_to "", '#', class: "remove_fields icon-remove"%>
+		</center>
 	</td>
 	<td  style="width:0px; border-left-style: hidden;">
 		<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
