@@ -7,13 +7,15 @@
 	<td><%= f.text_field :factstoim, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :factstoim_all, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td><%= f.text_field :dopinfo, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
-	<td><%= f.text_field :opis_all, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
+	<td><%= f.text_fяield :opis_all, :style => "padding:0; margin:0; width: 99%; height:26px;"%></td>
 	<td>
 		<center>
 			<button  class="btn btn-mini" id="123" data-toggle="modal" data-target="#myModal" style="">+</button>
 		</center>
+	</td>
+	<td>
 		<%= f.hidden_field :_destroy %>
-		<%= link_to "x", '#', class: "remove_fields" %>
+		<%= link_to "", '#', class: "remove_fields icon-remove"%>
 	</td>
 	<td  style="width:0px; border-left-style: hidden;">
 		<div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
