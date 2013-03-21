@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130225212445) do
+ActiveRecord::Schema.define(:version => 20130321165029) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -171,11 +171,13 @@ ActiveRecord::Schema.define(:version => 20130225212445) do
     t.string   "field_8_6"
     t.string   "field_8_7"
     t.string   "field_9"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.text     "own_comments"
     t.string   "z_currency"
     t.string   "temp_period"
+    t.string   "garantdocnum", :default => ""
+    t.string   "garantsumma",  :default => ""
   end
 
   add_index "zayavkas", ["user_id"], :name => "index_zayavkas_on_user_id"

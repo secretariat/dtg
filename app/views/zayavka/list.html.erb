@@ -1,13 +1,17 @@
 <%= will_paginate @zayavkas, :renderer => BootstrapPagination::Rails %>
-<table class="table table-bordered table-condensed table-stripped span7 offset2">
+<table class="table table-bordered table-condensed table-stripped span9 offset2">
 	<th><center>N%</center></th>
 	<th><center>Cтатус:</center></th>
+	<th><center>№ Гарант Док-та:</center></th>
+	<th><center>Сумма гарантии:</center></th>
 	<th><center>Создана:</center></th>
 	<th><center></center></th>
 	<% @zayavkas.each do |z| %>
 		<tr>
 			<td><center><%= '%05d' % z.usercount %></center></td>
 			<td><center><%= @zayavkas.get_status( z.status ) %></center></td>
+			<td><center><%= z.garantdocnum %></center></td>
+			<td><center><%= z.garantsumma %></center></td>
 			<td><center><%= z.created_at %></center></td>
 			<!-- SHOW->active for all types of status -->
 			<td>

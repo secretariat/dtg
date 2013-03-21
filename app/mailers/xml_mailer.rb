@@ -20,7 +20,7 @@ class XmlMailer < ActionMailer::Base
       xml.z_currency zayavka.z_currency
       xml.products{
       	x = 1
-      	product.each do |pr|  
+      	product.each do |pr|
       		xml.item(:id => x){
 	      		xml.naim pr.naim
 	      		xml.cod pr.codyktved
@@ -32,7 +32,7 @@ class XmlMailer < ActionMailer::Base
 	      		xml.dopinfo pr.dopinfo
 	      		xml.calc_data pr.opis_all
       		}
-      	 	
+
       	 	x+=1
       	end
       }
