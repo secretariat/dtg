@@ -31,12 +31,12 @@ class CreateZayavkas < ActiveRecord::Migration
       t.string :field_5_6
       t.string :field_5_7
       #7. Экспедиторская организация
-      t.string :field_7_1 
-      t.string :field_7_2 
-      t.string :field_7_3 
-      t.string :field_7_4 
+      t.string :field_7_1
+      t.string :field_7_2
+      t.string :field_7_3
+      t.string :field_7_4
       #8. Информация о перевозчике и транспортном средстве
-      t.string :field_8_1 
+      t.string :field_8_1
       t.string :field_8_2
       t.string :field_8_3
       t.string :field_8_4_1

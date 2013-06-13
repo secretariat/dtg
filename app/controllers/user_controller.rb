@@ -1,12 +1,11 @@
 # -*- encoding : utf-8 -*-
 class UserController < ApplicationController
-	
 	layout 'user'
 
 	before_filter :confirm_logged_in
 	before_filter :confirm_priveleges_user
 	before_filter :get_uniq_user, :only => 'index'
-	
+
 	def index
 		# @zayavkas = Zayavka.where(:user_id => session[:uid])
 		@zayavkas = Zayavka.where( :user_id => session[:uid] ).paginate(:page => params[:page] ).order('created_at DESC')

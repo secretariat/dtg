@@ -43,6 +43,6 @@ production:
     adapter: mysql2
     encoding: utf8
     database: dtg
-    username: root  
+    username: root
     password: ctrhtnfhbfn
     socket: /var/run/mysqld/mysqld.sock
