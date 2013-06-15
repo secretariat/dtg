@@ -116,7 +116,7 @@ class ZayavkaPdf < Prawn::Document
     text "6. Лицо заключившее договор на предоставление финансовой гарантии", :align => :center, :style => :bold
     move_down 5
     formatted_text [ { :text =>"6.1 Полное наименование фирмы: "},
-								     { :text => "#{@user.pib}",:styles => [:underline]}]
+								     { :text => "#{@user.cname}",:styles => [:underline]}]
 		formatted_text [ { :text =>"6.2 Юридический адрес, телефон, email: "},
 								     { :text => "#{@user.uaddr}",:styles => [:underline]}]
 		formatted_text [ { :text =>"6.3 Руководитель, Ф.И.О.: "},
