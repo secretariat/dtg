@@ -21,7 +21,7 @@
 	 		</div>
 	 		<div class="span3">
 	 			Вид транспорта*:
-	 			<%= f.select( :typetran, Transport.find(:all).collect{ |u| [u.name] }) %>
+	 			<%= f.select( :typetran, Transport.find(:all , :order => "name" ).collect{ |u| [u.name] }) %>
 	 		</div>
 	 	</div>
 	 	<div class=row>
