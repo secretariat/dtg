@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321165029) do
+ActiveRecord::Schema.define(:version => 20130701202123) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -178,6 +178,8 @@ ActiveRecord::Schema.define(:version => 20130321165029) do
     t.string   "temp_period"
     t.string   "garantdocnum", :default => ""
     t.string   "garantsumma",  :default => ""
+    t.string   "field_5_6_1"
+    t.string   "field_5_7_1"
   end
 
   add_index "zayavkas", ["user_id"], :name => "index_zayavkas_on_user_id"

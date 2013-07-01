@@ -103,78 +103,80 @@
 
 	 		<div class="span2">3.3 Пункт назначения*:</div>
 	 		<div class="span3"><%= f.text_field :field_3_3,:class=>'input-large' %></div>
-	 		
+
 	 		<div class="span2" style="width:200px;">3.4 Таможня назначения*:</div>
 	 		<div class="span3"><%= f.text_field :field_3_4,:class=>'input-large' %></div>
 	 	</div>
 	 	<br>
 
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center><h4>4. Получатель товара</h4></center>
 	 	</div>
 	 	<br>
-	 		
- 		<div class="row">	
+
+ 		<div class="row">
 	 		<div class="span3">4.1 Наименование фирмы:</div>
 	 		<div class="span4"><%= f.text_field :field_4_1,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">4.2 Юридический адрес, телефон, email:</div>
 	 		<div class="span4"><%= f.text_field :field_4_2,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">4.3 Руководитель, Ф.И.О.:</div>
 	 		<div class="span4"><%= f.text_field :field_4_3,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<center><h4>5. Субъект ВЭД, заключивший внешнеэкономический договор</h4></center>
 	 	</div>
 	 	<br>
-	 	
-	 	<div class="row">	
+
+	 	<div class="row">
  			<div class="span3">5.1 Наименование фирмы:</div>
 	 		<div class="span4"><%= f.text_field :field_5_1 ,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
  			<div class="span3">5.2 Юридический адрес, телефон, email:</div>
 			<div class="span4"><%= f.text_field :field_5_2 ,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
  			<div class="span3">5.3 Руководитель, ФИО:</div>
 			<div class="span4"><%= f.text_field :field_5_3 ,:class=>'input-xxlarge' %></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">5.4 ЕГРПОУ:</div>
 	 		<div class="span4"><%= f.text_field :field_5_4 ,:class=>'input-xxlarge' %></div>
  		</div>
-	 
- 		<div class="row">	
+
+ 		<div class="row">
 		 	<div class="span3">5.5 Код налогоплательщика:</div>
 		 	<div class="span4"><%= f.text_field :field_5_5 ,:class=>'input-xxlarge' %></div>
 		</div>
-		
-	 	<div class="row">	
+
+	 	<div class="row">
 		 	<div class="span3">5.6 Договор внешнеэкономический №:</div>
-	 		<div class="span4"><%= f.text_field :field_5_6 ,:class=>'input-xxlarge' %></div>
+	 		<div class="span4"><%= f.text_field :field_5_6 , :style => 'width: 350px;' %></div>
+	 		<div class="span1"><%= f.text_field :field_5_6_1 , :style => 'width: 130px;' %></div>
  		</div>
- 		
- 		<div class="row">	
+
+ 		<div class="row">
 	 		<div class="span3">5.7 Счет фактура №:</div>
- 			<div class="span4"><%= f.text_field :field_5_7 ,:class=>'input-xxlarge' %></div>
+ 			<div class="span4"><%= f.text_field :field_5_7, :style => 'width: 350px;' %></div>
+ 			<div class="span1"><%= f.text_field :field_5_7_1, :style => 'width: 130px;' %></div>
 	 	</div>
 
 
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center><h4>
 	 			6. Лицо заключившее договор на предоставление финансовой гарантии*
 	 		</h4></center>
 	 	</div>
 	 	<br>
-	 	<div class="row">	
+	 	<div class="row">
  			<div class="span3">6.1 Полное наименование фирмы:
  			</div>
 	 			<div class="span6">
