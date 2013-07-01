@@ -8,7 +8,7 @@ class ZayavkaPdf < Prawn::Document
     @products = products
     show
   end
-  
+
   def show
 	font_families.update(
     "Verdana" => {
@@ -16,10 +16,10 @@ class ZayavkaPdf < Prawn::Document
       :italic => "prawn_fonts/verdanai.ttf",
       :normal  => "prawn_fonts/verdana.ttf" })
     font "Verdana", :size => 10
-    
+
     text "Завление опросник № #{@zayavka.id} от #{@zayavka.created_at}     к Договору № #{@user.dognum}     от #{@user.dogdate} г.", :align => :center, :style => :bold
     move_down 5
-    
+
     formatted_text [ { :text =>"Таможенный режим: "},
                         { :text => "#{@zayavka.tamrez}",:styles => [:underline]},
                         { :text => "     Тип гарантии: "},
@@ -109,9 +109,9 @@ class ZayavkaPdf < Prawn::Document
     formatted_text [ { :text =>"5.5 Код налогоплательщика: "},
 								     { :text => "#{@zayavka.field_5_5}",:styles => [:underline]}]
 		formatted_text [ { :text =>"5.6 Договор внешнеэкономический №: "},
-								     { :text => "#{@zayavka.field_5_6}",:styles => [:underline]}]
+								     { :text => "#{@zayavka.field_5_6} от #{@zayavka.field_5_6_1}",:styles => [:underline]}]
 		formatted_text [ { :text =>"5.7 Счет фактура №: "},
-								     { :text => "#{@zayavka.field_5_7}",:styles => [:underline]}]
+								     { :text => "#{@zayavka.field_5_7} от #{@zayavka.field_5_7_1}",:styles => [:underline]}]
     move_down 5
     text "6. Лицо заключившее договор на предоставление финансовой гарантии", :align => :center, :style => :bold
     move_down 5

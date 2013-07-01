@@ -42,15 +42,15 @@ class XmlMailer < ActionMailer::Base
 	      xml.startcustom zayavka.field_3_2
 	      xml.endtpoint zayavka.field_3_3
 	      xml.endcustom zayavka.field_3_4
-      }   
+      }
 
       # 4 Polychatel tovara
       xml.reciever{
       	xml.companyname zayavka.field_4_1
       	xml.uadrphonemail zayavka.field_4_2
-      	xml.chef zayavka.field_4_3	
+      	xml.chef zayavka.field_4_3
       }
-      
+
       # 5 Sybekt VED
       xml.sybekt_ved{
 	      xml.companyname zayavka.field_5_1
@@ -58,8 +58,10 @@ class XmlMailer < ActionMailer::Base
 	      xml.chef zayavka.field_5_3
 	      xml.egrpoy zayavka.field_5_4
 	      xml.kod_pl zayavka.field_5_5
-	      xml.dognum zayavka.field_5_6
-	      xml.bill zayavka.field_5_7
+        xml.dognum zayavka.field_5_6
+	      xml.dognum_date zayavka.field_5_6_1
+        xml.bill zayavka.field_5_7
+	      xml.bill_date zayavka.field_5_7_1
 	     }
 
       # 6 Firma zakluchivshaya dogovor
