@@ -7,11 +7,11 @@
 	 		<div class="span2"><h4> от <%=@user.dogdate%>г.</h4></b></div>
 	 	</div>
 	 	<br>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3 offset1">
 	 			Таможенный режим*:
 	 			<u><%= @zayavka.tamrez %></u><br/>
-	 				<% if @zayavka.tamrez == "Временный" %> 
+	 				<% if @zayavka.tamrez == "Временный" %>
 	 					Срок действия гарантии (мес.): <u><%= @zayavka.temp_period %></u>
 	 				<% end %>
 	 		</div>
@@ -202,49 +202,49 @@
 	 		<center><h4>8. Информация о перевозчике и транспортном средстве</h4></center>
 	 	</div>
 	 	<br>
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span10">8.1 Наименование перевозчика:&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_1%></u></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span10">8.2 Юридический адрес, телефон, email:&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_2%></u></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span10">8.3 Руководитель, Ф.И.О.:&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_3%></u></div>
  		</div>
- 		
- 		<div class="row">	
+
+ 		<div class="row">
 	 		<div class="span3">8.4 Для ж/д:</div>
 	 	</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span10 offset1">№ вагона:&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_4_1%></u></div>
 	 	</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span10 offset1">№ контейнера&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_4_2%></u></div>
 	 	</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">8.5 Для авто:</div>
 	 	</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span10 offset1">Тип, марка, гос.№:&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_5%></u></div>
 	  </div>
-	  <div class="row">	
+	  <div class="row">
 	 		<div class="span10 offset1">ФИО Водителя:&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_6%></u></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span10 offset1">Паспортные данные:&nbsp&nbsp&nbsp&nbsp
 	 		<u><%= @zayavka.field_8_7%></u></div>
  		</div>
  		<br>
- 		<div class="row">	
+ 		<div class="row">
 	 		<center><h4>9. Дополнительная информация</h4></center>
 	 	</div>
 	 	<br>
@@ -255,20 +255,27 @@
 	 	</div>
 	 	<br>
 	 	<br>
-	 	<div class="row">	
-	 		<center><h4>10. Личные комментарии</h4></center>
+	 	<div class="row">
+	 		<center><h4>10. Лицо заполнившее заявку</h4></center>
 	 	</div>
 	 	<br>
 	 	<div class="row">
- 			<center>
-	 			<%= @zayavka.own_comments%>
-	 		</center>
+	 		<div class="span10">10.1 ФИО:&nbsp&nbsp&nbsp&nbsp
+	 		<u><%= @zayavka.field_10_1%></u></div>
+	 	</div>
+	 	<div class="row">
+	 		<div class="span10">10.2 Контактный телефон:&nbsp&nbsp&nbsp&nbsp
+	 		<u><%= @zayavka.field_10_1%></u></div>
+	 	</div>
+	 	<div class="row">
+	 		<div class="span10">10.3 E-mail:&nbsp&nbsp&nbsp&nbsp
+	 		<u><%= @zayavka.field_10_3%></u></div>
 	 	</div>
 	 	<br>
 
 	 	<center>
 	 		<%= link_to('Назад', {:controller => 'user', :action => 'index'}, :class => 'btn') %>
 	 		<%= link_to('Экспорт в PDF', {:contoller => 'zayavka', :action => 'show', format: "pdf"}, :class => 'btn') %>
-	 		<%= link_to('Копировать', {:contoller => 'zayavka', :action => 'copy', :id => @zayavka.id}, :class => 'btn') %>
+	 		<%= link_to('Копировать', {:contoller => 'zayavka', :action => 'duplicate', :id => @zayavka.id}, :class => 'btn') %>
 	 	</center>
 	 	<br>

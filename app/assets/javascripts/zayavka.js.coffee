@@ -37,9 +37,40 @@ $(document).on 'change', $('input.numbers_only'), ->
 
 jQuery ->
   $('form').on 'change', $('select[id*=tamrez]'), ( event ) ->
-    if $('select[id*=tamrez]').val() == "Временный"
+    if $('select[id*=tamrez]').val() == "Временный ввоз"
       $('input[id*=zayavka_temp_period]').show()
+      $('input[id*=zayavka_field_8_]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_1_]').attr('disabled','disabled');
+      $('select[id*=zayavka_typetran]').attr('disabled','disabled');
       $('label[for*=zayavka_]').show()
     else
       $('input[id*=zayavka_temp_period]').hide()
       $('label[for*=zayavka_]').hide()
+      $('select[id*=zayavka_typetran]').removeAttr("disabled");
+      $('input[id*=zayavka_field_8_]').removeAttr("disabled");
+      $('input[id*=zayavka_field_1_]').removeAttr("disabled");
+
+jQuery ->
+  if $('select[id*=tamrez]').val() == "Транзит"
+    $('input[id*=zayavka_field_5_]').attr('disabled','disabled');
+  $('form').on 'change', $('select[id*=tamrez]'), ( event ) ->
+    if $('select[id*=tamrez]').val() == "Транзит"
+      $('input[id*=zayavka_field_5_]').attr('disabled','disabled');
+    else
+      $('input[id*=zayavka_field_5_]').removeAttr("disabled");
+
+jQuery ->
+  $('input[id*=zayavka_field_7_4]').attr('disabled','disabled');
+  $('form').on 'change', $('select[id*=tamrez]'), ( event ) ->
+    if $('select[id*=zayavka_typetran]').val() == "ЖД"
+      $('input[id*=zayavka_field_7_4]').removeAttr("disabled");
+      $('input[id*=zayavka_field_8_1]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_2]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_3]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_5]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_6]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_7]').attr('disabled','disabled');
+    else
+      $('input[id*=zayavka_field_7_4]').attr('disabled','disabled');
+  if $('select[id*=zayavka_typetran]').val() == "Авто"
+    $('input[id*=zayavka_field_8_4_]').attr('disabled','disabled');

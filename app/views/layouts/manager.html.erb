@@ -15,6 +15,7 @@
             <ul class="nav">
               <li><%= link_to "Пользователи", :controller => 'manager', :action => 'index' %></li>
               <li><%= link_to "Единицы измерения", :controller => 'edizms', :action => 'index' %></li>
+              <li><%= link_to "Cписок валют", :controller => 'currencies', :action => 'index' %></li>
             </ul>
           </div><!--/.nav-collapse -->
 
@@ -29,7 +30,7 @@
               <ul class="dropdown-menu">
                 <li><%= link_to "Выйти", :controller => 'main', :action => 'logout'%></li>
               </ul>
-            </ul>      
+            </ul>
         </div>
       </div>
   </div>
@@ -37,7 +38,7 @@
     <%= image_tag "logo.png" %>
   </center>
 	<div class="container">
-		<div class="row">	
+		<div class="row">
       <% if !flash[:notice].blank? %>
         <div class="alert alert-success">
           <%= flash[:notice] %>

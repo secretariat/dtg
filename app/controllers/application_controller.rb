@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def get_layout
+    case session[:priv]
+    when 1
+      'admin'
+    when 2
+      'manager'
+    end
+  end
+
   def confirm_logged_in
     unless session[:user_id]
       flash[:notice] = "Please log in."
@@ -11,6 +20,16 @@ class ApplicationController < ActionController::Base
       return false # halts the before_filter
     else
       return true
+    end
+  end
+
+  def confirm_priveleges_admin_or_manager
+    if session[:priv] == 1 || session[:priv] == 2
+      return true
+    else
+      flash[:notice] = "You must be logged in as ADMINISTARTOR or MANAGER."
+      redirect_to(:controller => 'main', :action => 'login')
+      return false
     end
   end
 
@@ -43,5 +62,5 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
-  
+
 end

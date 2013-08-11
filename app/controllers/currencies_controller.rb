@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 class CurrenciesController < ApplicationController
-  layout 'admin'
-  
+  layout :get_layout
+
   before_filter :confirm_logged_in
-  before_filter :confirm_priveleges_admin
-  
+  before_filter :confirm_priveleges_admin_or_manager
+
   def index
     @currencies = Currency.all
 

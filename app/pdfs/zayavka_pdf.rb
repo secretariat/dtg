@@ -135,7 +135,7 @@ class ZayavkaPdf < Prawn::Document
     move_down 5
     text "8. Информация о перевозчике и транспортном средстве", :align => :center, :style => :bold
     move_down 5
-    formatted_text [ { :text =>"8.1 Наименование перевозчика: "},
+        formatted_text [ { :text =>"8.1 Наименование перевозчика: "},
 								     { :text => "#{@zayavka.field_8_1}",:styles => [:underline]}]
 		formatted_text [ { :text =>"8.2 Юридический адрес, телефон, email: "},
 								     { :text => "#{@zayavka.field_8_2}",:styles => [:underline]}]
@@ -155,8 +155,14 @@ class ZayavkaPdf < Prawn::Document
     text "9. Дополнительная информация", :align => :center, :style => :bold
     move_down 5
     formatted_text [ { :text =>"#{@zayavka.field_9}",  :align => :center,:styles => [:underline]}]
-
+    move_down 5
+    text "10. Лицо заполнившее заявку", :align => :center, :style => :bold
+        formatted_text [ { :text =>"10.1 ФИО: "},
+                                     { :text => "#{@zayavka.field_10_1}",:styles => [:underline]}]
+        formatted_text [ { :text =>"10.2 Контактный телефон: "},
+                                     { :text => "#{@zayavka.field_10_2}",:styles => [:underline]}]
+        formatted_text [ { :text =>"10.3 E-mail: "},
+                                     { :text => "#{@zayavka.field_10_3}",:styles => [:underline]}]
 	end
 
-  
 end

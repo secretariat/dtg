@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 Dtg::Application.routes.draw do
   root :to => 'main#login'
-  
+
   resources :currencies
   resources :edizms
   resources :chmails
@@ -10,10 +10,10 @@ Dtg::Application.routes.draw do
   resources :edizms
   resources :currencies
   resources :transports
-  
+
   resources :admin, only: [ :index, :list, :new, :create, :destroy]
   resources :manager, only: [:index, :list, :new, :create, :destroy]
-  resources :zayavka, only: [:index, :edit, :list, :new, :create, :destroy]
+  resources :zayavka, only: [:index, :edit, :list, :new, :create, :destroy, :duplicate]
   resources :main, only: [:index, :list, :new, :create, :destroy]
   # resources :user
   # , only: [:index, :list, :new, :create, :destroy, :show, :edit, :update]

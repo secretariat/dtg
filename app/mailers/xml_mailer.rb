@@ -98,15 +98,20 @@ class XmlMailer < ActionMailer::Base
 
 	    #9 DopInfo
 	    xml.dopolnitelno{
-	    	xml.dopinfo zayavka.field_9	
+	    	xml.dopinfo zayavka.field_9
 	    }
 
+      xml.person_who_filled_zayavka{
+        xml.person_fio zayavka.field_10_1
+        xml.person_phone zayavka.field_10_2
+        xml.person_email zayavka.field_10_3
+      }
     }
 		end
     att_name = "report_#{'%05d' % zayavka.id}.xml"
     attachments[att_name] = { :mime_type => 'application/xml',
                               :content => builder.to_xml}
-    
+
     mail( :to => email_to.email, :subject => "Zayavka XML REPORT" )
   end
 

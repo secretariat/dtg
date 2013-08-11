@@ -202,46 +202,46 @@
 	 	</div>
 	 	<br>
 
-	 	<div class="row">	
+	 	<div class="row">
 	 		<center><h4>7. Экспедиторская организация</h4></center>
 	 	</div>
 	 	<br>
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">7.1 Наименование фирмы:</div>
 	 		<div class="span6"><%= f.text_field :field_7_1 ,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">7.2 Юридический адрес, телефон, email:</div>
 	 		<div class="span6"><%= f.text_field :field_7_2 ,:class=>'input-xxlarge' %></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">7.3 Руководитель, Ф.И.О.:</div>
 	 		<div class="span6"><%= f.text_field :field_7_3 ,:class=>'input-xxlarge' %></div>
  		</div>
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">7.4 Код Ж/Д перевозки:</div>
 	 		<div class="span6"><%= f.text_field :field_7_4 ,:class=>'input-xxlarge' %></div>
  		</div>
  		<br>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<center><h4>8. Информация о перевозчике и транспортном средстве</h4></center>
 	 	</div>
 	 	<br>
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">8.1 Наименование перевозчика:</div>
 	 		<div class="span4"><%= f.text_field :field_8_1 ,:class=>'input-xxlarge'%></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">8.2 Юридический адрес, телефон, email:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_2 ,:class=>'input-xxlarge'%></div>
  		</div>
-	 	<div class="row">	
+	 	<div class="row">
 	 		<div class="span3">8.3 Руководитель, Ф.И.О.:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_3 ,:class=>'input-xxlarge'%></div>
  		</div>
- 		
- 		<div class="row">	
+
+ 		<div class="row">
 	 		<div class="span3">8.4 Для ж/д*:</div>
 	 		<div class="span1" style="width:140px;">№ вагона:</div>
 	 		<div class="span1 input"><%= f.text_field :field_8_4_1 ,:class=>'input-mini'%></div>
@@ -249,23 +249,23 @@
 	 		<div class="span1 input"><%= f.text_field :field_8_4_2 ,:class=>'input-mini'%></div>
 	 	</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">8.5 Для авто*:</div>
 	 		<div class="span2" style="width: 140px;">Тип, марка, гос.№:</div>
 	 		<div class="span3 input"><%= f.text_field :field_8_5 ,:class=>'input-xlarge'%></div>
 	  </div>
-	  <div class="row">	
+	  <div class="row">
 	 		<div class="span3">8.5.1 ФИО Водителя:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_6,:class=>'input-xxlarge'%></div>
  		</div>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<div class="span3">8.5.2 Паспортные данные:</div>
 	 		<div class="span4 input"><%= f.text_field :field_8_7,:class=>'input-xxlarge'%></div>
  		</div>
  		<br>
 
- 		<div class="row">	
+ 		<div class="row">
 	 		<center><h4>9. Дополнительная информация</h4></center>
 	 	</div>
 	 	<br>
@@ -275,17 +275,23 @@
 	 		</center>
 	 	</div>
 
-	 	<div class="row">	
-	 		<center><h4>10. Личные комментарии</h4></center>
-	 	</div>
-	 	<br>
 	 	<div class="row">
- 			<center>
-	 			<%= f.text_area :own_comments, :size => "30x5" ,:class=>'input-xxlarge'%>
-	 		</center>
+	 		<center><h4>10. Лицо заполнившее заявку</h4></center>
 	 	</div>
 	 	<br>
-
+ 		<div class="row">
+	 		<div class="span3">10.1 ФИО:*</div>
+	 		<div class="span4"><%= f.text_field :field_10_1 ,:class=>'input-xxlarge'%></div>
+ 		</div>
+	 	<div class="row">
+	 		<div class="span3">10.2 Контактный телефон:*</div>
+	 		<div class="span4"><%= f.text_field :field_10_2 ,:class=>'input-xxlarge'%></div>
+ 		</div>
+	 	<div class="row">
+	 		<div class="span3">10.3 E-mail:*</div>
+	 		<div class="span4"><%= f.text_field :field_10_3 ,:class=>'input-xxlarge'%></div>
+ 		</div>
+	 	<br>
 		<div class="row">
 			<div class="span5 offset6">
 				<%= link_to('Назад',{ :controller => 'user', :action => 'index'}, :class => 'btn') %>

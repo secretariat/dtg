@@ -5,7 +5,7 @@ class EdizmsController < ApplicationController
 
   before_filter :confirm_logged_in
   before_filter :confirm_priveleges_manager
-  
+
   def index
     @edizms = Edizm.all
 
@@ -15,8 +15,6 @@ class EdizmsController < ApplicationController
     end
   end
 
-  # GET /edizms/1
-  # GET /edizms/1.json
   def show
     @edizm = Edizm.find(params[:id])
 
@@ -26,8 +24,6 @@ class EdizmsController < ApplicationController
     end
   end
 
-  # GET /edizms/new
-  # GET /edizms/new.json
   def new
     @edizm = Edizm.new
 
@@ -37,13 +33,10 @@ class EdizmsController < ApplicationController
     end
   end
 
-  # GET /edizms/1/edit
   def edit
     @edizm = Edizm.find(params[:id])
   end
 
-  # POST /edizms
-  # POST /edizms.json
   def create
     @edizm = Edizm.new(params[:edizm])
 
@@ -58,8 +51,6 @@ class EdizmsController < ApplicationController
     end
   end
 
-  # PUT /edizms/1
-  # PUT /edizms/1.json
   def update
     @edizm = Edizm.find(params[:id])
 
@@ -74,8 +65,6 @@ class EdizmsController < ApplicationController
     end
   end
 
-  # DELETE /edizms/1
-  # DELETE /edizms/1.json
   def destroy
     @edizm = Edizm.find(params[:id])
     @edizm.destroy

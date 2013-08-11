@@ -12,7 +12,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: dtg_dev
+  database: dtg
   username: root
   password:
   socket: /var/lib/mysql/mysql.sock
