@@ -108,9 +108,11 @@ class XmlMailer < ActionMailer::Base
       }
     }
 		end
-    att_name = "report_#{'%05d' % zayavka.id}.xml"
-    attachments[att_name] = { :mime_type => 'application/xml',
-                              :content => builder.to_xml}
+    att_name_xml = "report_#{'%05d' % zayavka.id}.xml"
+    att_name_pdf = "zayavka_#{'%05d' % zayavka.id}.pdf"
+    pdf = ZayavkaPdf.new( zayavka, product, user)
+    attachments[att_name_xml] = { :mime_type => 'application/xml',:content => builder.to_xml}
+    attachments[att_name_pdf] = { :mime_type => 'application/pdf',:content => pdf.render}
 
     mail( :to => email_to.email, :subject => "Zayavka XML REPORT" )
   end
