@@ -1,0 +1,44 @@
+<h5>Менеджеры</h5>
+<table class="table table-bordered table-condensed table-stripped span10 offset1">
+	<th><center>N%</center></th>
+	<th><center>ФИО</center></th>
+	<th><center>Должность</center></th>
+	<th><center>Телефон</center></th>
+	<th><center>Email</center></th>
+	<th><center>Логин</center></th>
+	<th><center>Создан</center></th>
+	<th><center>Пользователи</center></th>
+	<th></th>
+	<% @managers.each do |man| %>
+		<tr>
+			<td><center><%= man.manager.id %></center></td>
+			<td><center><%= man.manager.pib %></center></td>
+			<td><center><%= man.manager.position %></center></td>
+			<td><center><%= man.manager.phone %></center></td>
+			<td><center><%= man.manager.email %></center></td>
+			<td><center><%= man.manager.main.login %></center></td>
+			<td><center><%= man.manager.main.created_at %></center></td>
+			<td>
+				<center>
+					<%= link_to("Просмотр",  :controller => 'manager', :action=>'super_list', :id => man.id ) %>
+				</center>
+			</td>
+			<td>
+				<center>
+					<%= link_to( "Показать",  :controller => 'manager', :action=>'show', :id => man.manager.id ) %>
+				</center>
+			</td>
+			<td>
+				<center>
+				<%= link_to( "Редактировать", :controller => 'manager', :action=>'edit',:id => man.manager.id ) %>
+				</center>
+			</td>
+			<td>
+				<center>
+					<%= link_to( "", man.manager, :method => :delete,  :class => "icon-remove", :confirm => "Вы уверены?") %>
+				</center>
+			</td>
+		</tr>
+
+	<% end %>
+</table>

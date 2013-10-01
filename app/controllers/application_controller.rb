@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
       'admin'
     when 2
       'manager'
+    when 3
+      'user'
+    when 4
+      'manager'
     end
   end
 
@@ -44,7 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   def confirm_priveleges_manager
-    if session[:priv] == 2  || session[:priv] == 1
+    if session[:priv] == 2  || session[:priv] == 1 || session[:priv] == 4
       return true
     else
       flash[:notice] = "You must be logged in as MANAGER."
@@ -54,7 +58,7 @@ class ApplicationController < ActionController::Base
   end
 
   def confirm_priveleges_user
-    if session[:priv] == 3 || session[:priv] == 2
+    if session[:priv] == 3 || session[:priv] == 2 || session[:priv] == 4
       return true
     else
       flash[:notice] = "You must be logged in as USER."
@@ -62,5 +66,15 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
+
+  # def confirm_priveleges_supermanager
+  #   if session[:priv] == 4
+  #     return true
+  #   else
+  #     flash[:notice] = "You must be logged in as High level Manager."
+  #     redirect_to(:controller => 'main', :action => 'login')
+  #     return false
+  #   end
+  # end
 
 end

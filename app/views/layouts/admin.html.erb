@@ -52,7 +52,9 @@
 </center>
   <% if !flash[:notice].blank? %>
     <div class="alert alert-success">
-      <%= flash[:notice] %>
+      <center>
+        <%= flash[:notice] %>
+      </center>
     </div>
   <% end %>
 	<%= yield %>

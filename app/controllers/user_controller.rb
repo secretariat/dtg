@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class UserController < ApplicationController
-	layout 'user'
+
+	layout :get_layout
 
 	before_filter :confirm_logged_in
 	before_filter :confirm_priveleges_user
@@ -13,18 +14,18 @@ class UserController < ApplicationController
 
 	def show
 		@user = User.find( params[:id] )
-		render :layout => "manager"	
+		render :layout => "manager"
 	end
 
 	def list
 		@mains = Main.where( :owner_id => session[:user_id] )
-		render :layout => "manager"	
+		render :layout => "manager"
 	end
 
 	def new
     @user = User.new
     @main = Main.new
-    render :layout => "manager"	
+    render :layout => "manager"
   end
 
   def create

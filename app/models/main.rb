@@ -9,19 +9,18 @@ class Main < ActiveRecord::Base
   validates_associated :admin
   validates_associated :manager
   validates_associated :user
-  
+
   attr_accessible :login, :hash_pass, :hash_salt, :owner_id, :priv_level, :password
-  
+
   attr_accessor :password
 
   validates_uniqueness_of :login, :message => ": Пользователь с таким Логином уже существует"
   validates_length_of :password, :within => 6..32, :on => :create
-  
+
 
   before_save :create_hashed_password
   after_save :clear_password
 
-  #######################################################
   #######################################################
   def self.authenticate(login="", password="")
     main = Main.find_by_login(login)
@@ -32,12 +31,11 @@ class Main < ActiveRecord::Base
     end
   end
   #######################################################
-  #######################################################
+
 	def password_match?(password="")
     hash_pass == Main.hash_with_salt(password, hash_salt)
   end
 	#######################################################
-  #######################################################
 
   def self.make_salt(login="")
     Digest::SHA1.hexdigest("#{login}#{Time.now}")
@@ -49,10 +47,9 @@ class Main < ActiveRecord::Base
 
 
 
- # #  #######################################################
- # #  #######################################################
+  #######################################################
   private
-  
+
   def create_hashed_password
     # Whenever :password has a value hashing is needed
     unless password.blank?

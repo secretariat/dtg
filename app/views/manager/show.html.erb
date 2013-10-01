@@ -25,7 +25,7 @@
 
   <br/>
   <center>
-    <%= link_to('Назад',{ :controller => 'admin', :action => 'index'}, :class => 'btn btn-info') %>
+    <%= link_to('Назад', request.env["HTTP_REFERER"], :class => 'btn btn-info') %>
   </center>
 
 

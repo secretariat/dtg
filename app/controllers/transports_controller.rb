@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 class TransportsController < ApplicationController
   layout 'admin'
-  
+
   before_filter :confirm_logged_in
   before_filter :confirm_priveleges_admin
-  
+
   def index
     @transports = Transport.all
 
@@ -14,8 +14,6 @@ class TransportsController < ApplicationController
     end
   end
 
-  # GET /transports/1
-  # GET /transports/1.json
   def show
     @transport = Transport.find(params[:id])
 
@@ -25,8 +23,6 @@ class TransportsController < ApplicationController
     end
   end
 
-  # GET /transports/new
-  # GET /transports/new.json
   def new
     @transport = Transport.new
 
@@ -36,13 +32,10 @@ class TransportsController < ApplicationController
     end
   end
 
-  # GET /transports/1/edit
   def edit
     @transport = Transport.find(params[:id])
   end
 
-  # POST /transports
-  # POST /transports.json
   def create
     @transport = Transport.new(params[:transport])
 
@@ -57,8 +50,6 @@ class TransportsController < ApplicationController
     end
   end
 
-  # PUT /transports/1
-  # PUT /transports/1.json
   def update
     @transport = Transport.find(params[:id])
 
@@ -73,8 +64,6 @@ class TransportsController < ApplicationController
     end
   end
 
-  # DELETE /transports/1
-  # DELETE /transports/1.json
   def destroy
     @transport = Transport.find(params[:id])
     @transport.destroy

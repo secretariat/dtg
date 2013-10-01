@@ -1,12 +1,9 @@
-
 <br/>
-
 <center><h3>Редактировании информация о менеджере <i><%= @manager.pib %></i></h3><br/>
-
 <%= form_for( :manager, :url => {:controller => 'manager', :action => 'update', :id => @manager.id }) do |f| %>
  	<center>
  		<br>
- 	<table>
+	 	<table>
 			<tr>
 				<th class="span3" align="left">ФИО Сотрудника:</th>
 				<td><%= f.text_field(:pib) %></td>
@@ -23,14 +20,10 @@
 				<th align="left">Email:</th>
 				<td><%= f.text_field(:email) %></td>
 			</tr>
-	</table>
-
-
-	<br/>
-
-	<div>
-		 <%= submit_tag("Обновить", class: "btn btn-primary") %>
-	</div>
+		</table>
+		<br/>
+		<div>
+			 <%= submit_tag("Обновить", class: "btn btn-primary") %>
+		</div>
 	</center>
-
 <% end %>

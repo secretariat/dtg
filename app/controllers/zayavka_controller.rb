@@ -61,7 +61,7 @@ class ZayavkaController < ApplicationController
 		if @zayavka.save then
 			@user.save
 			if( params[:send_button] ) then
-				@zayavka.update_attributes( :status => 2)
+				@zayavka.update_attributes( :status => 2 )
 				@products = @zayavka.products
 				@chmail = Chmail.find( :last )
 
@@ -109,25 +109,7 @@ class ZayavkaController < ApplicationController
   	redirect_to :back
   end
 
-  # def send_xml
-  # 	@user = User.find( session[:uid] )
-		# @zayavka = @user.zayavkas.new( params[:zayavka] )
-  # 	@zayavka.status = 1
-  # 	@zayavka.usercount = @user.zcount
-  # 	@user.zcount += 1
-		# if @zayavka.save then
-		# 	@user.save
-		# 	@chmail = Chmail.find( :last )
-		# 	XmlMailer.xml_email( @chmail, @zayavka ).deliver
-		# 	flash[:notice] = "Заявка создана успешно"
-		# 	redirect_to( :controller => 'user', :action => 'index')
-		# else
-		# 	flash[:notice] = "Ошибка при создании Заявки"
-		# 	redirect_to(:controller => 'user', :action => 'new')
-		# end
-  # end
-
-	private
+  private
 
 	def get_uniq_user
 		main = Main.find( session[:user_id] )

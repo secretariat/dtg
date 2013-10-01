@@ -1,11 +1,11 @@
 # -*- encoding : utf-8 -*-
 class ChmailsController < ApplicationController
-  
+
   layout 'admin'
-  
+
   before_filter :confirm_logged_in
   before_filter :confirm_priveleges_admin
-  
+
   def index
     @chmails = Chmail.all
 
@@ -15,8 +15,6 @@ class ChmailsController < ApplicationController
     end
   end
 
-  # GET /chmails/1
-  # GET /chmails/1.json
   def show
     @chmail = Chmail.find(params[:id])
 
@@ -26,8 +24,6 @@ class ChmailsController < ApplicationController
     end
   end
 
-  # GET /chmails/new
-  # GET /chmails/new.json
   def new
     @chmail = Chmail.new
 
@@ -37,13 +33,10 @@ class ChmailsController < ApplicationController
     end
   end
 
-  # GET /chmails/1/edit
   def edit
     @chmail = Chmail.find(params[:id])
   end
 
-  # POST /chmails
-  # POST /chmails.json
   def create
     @chmail = Chmail.new(params[:chmail])
 
@@ -58,8 +51,6 @@ class ChmailsController < ApplicationController
     end
   end
 
-  # PUT /chmails/1
-  # PUT /chmails/1.json
   def update
     @chmail = Chmail.find(params[:id])
 
@@ -74,8 +65,6 @@ class ChmailsController < ApplicationController
     end
   end
 
-  # DELETE /chmails/1
-  # DELETE /chmails/1.json
   def destroy
     @chmail = Chmail.find(params[:id])
     @chmail.destroy
