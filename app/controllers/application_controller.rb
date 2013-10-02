@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def confirm_priveleges_admin_or_manager
-    if session[:priv] == 1 || session[:priv] == 2
+    if session[:priv] == 1 || session[:priv] == 2 || session[:priv] == 4
       return true
     else
       flash[:notice] = "You must be logged in as ADMINISTARTOR or MANAGER."
