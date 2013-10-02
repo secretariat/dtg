@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class XmlMailer < ActionMailer::Base
-  default from: "admin@dtg.kiev.ua"
+  default from: "dtg.admin@citrusdev.com.ua"
 
   def xml_email( email_to, user, zayavka, product )
   	builder = Nokogiri::XML::Builder.new(:encoding => 'UTF-8') do |xml|

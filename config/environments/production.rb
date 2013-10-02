@@ -2,13 +2,13 @@
 Dtg::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "mail.citrusdev.com.ua",
+    :address              => "smtp.yandex.ru",
     :port                 => 25,
-    :domain               => "mail.citrusdev.com.ua",
-    :user_name            => 'info@citrusdev.com.ua',
-    :password             => 'info123!@#',
+    :domain               => "yandex.ru",
+    :user_name            => 'dtg.admin@citrusdev.com.ua',
+    :password             => 'dtg123!@#',
     :authentication       => 'login',
-    :openssl_verify_mode  => 'none'
+    :openssl_verify_mode  => 'none',
     # :enable_starttls_auto => true
   }
 
