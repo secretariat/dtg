@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class DtgMailer < ActionMailer::Base
-  default from: "admin@dtg.kiev.ua"
+  default from: "dtg.admin@citrusdev.com.ua"
 
   def welcome_email( uname, user, user_mail, pass)
   	@uname = uname
