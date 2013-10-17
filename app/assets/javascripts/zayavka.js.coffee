@@ -72,5 +72,8 @@ jQuery ->
       $('input[id*=zayavka_field_8_7]').attr('disabled','disabled');
     else
       $('input[id*=zayavka_field_7_4]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_4_1]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_4_2]').attr('disabled','disabled');
   if $('select[id*=zayavka_typetran]').val() == "Авто"
-    $('input[id*=zayavka_field_8_4_]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_4_1]').attr('disabled','disabled');
+      $('input[id*=zayavka_field_8_4_2]').attr('disabled','disabled');
