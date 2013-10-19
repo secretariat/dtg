@@ -164,7 +164,7 @@
 	 	<br>
  		<div class="row">
 	 		<div class="span10">6.1 Полное наименование фирмы:&nbsp&nbsp&nbsp&nbsp
-	 		<u><%= @user.pib%></u></div>
+	 		<u><%= @user.cname%></u></div>
  		</div>
 	 	<div class="row">
 	 		<div class="span10">6.2 Юридический адрес, телефон, email:&nbsp&nbsp&nbsp&nbsp
@@ -256,13 +256,20 @@
 	 	<br>
 	 	<br>
 	 	<div class="row">
-	 		<center><h4>10. Личные комментарии</h4></center>
+	 		<center><h4>10. Лицо заполнившее заявку</h4></center>
 	 	</div>
 	 	<br>
 	 	<div class="row">
- 			<center>
-	 			<%= @zayavka.own_comments%>
-	 		</center>
+	 		<div class="span10">10.1 ФИО:&nbsp&nbsp&nbsp&nbsp
+	 		<u><%= @zayavka.field_10_1%></u></div>
+	 	</div>
+	 	<div class="row">
+	 		<div class="span10">10.2 Контактный телефон:&nbsp&nbsp&nbsp&nbsp
+	 		<u><%= @zayavka.field_10_1%></u></div>
+	 	</div>
+	 	<div class="row">
+	 		<div class="span10">10.3 E-mail:&nbsp&nbsp&nbsp&nbsp
+	 		<u><%= @zayavka.field_10_3%></u></div>
 	 	</div>
 	 	<br>
 
