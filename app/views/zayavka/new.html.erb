@@ -3,7 +3,7 @@
   <div class="span12">
   	<%= form_for( @zayavka, :url => {:action => 'create'} ) do |f| %>
     <div class="row">
-	 		<div class="span5 offset2" style="width: 495px;"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= Time.now%> г.  к Договору </div>
+	 		<div class="span5 offset2" style="width: 530px;"><h4>Завление опросник №<%= '%05d' % @zcount %> от <%= Time.now%> г.  к Договору </div>
 	 		<% dogovora = @user.dogovors.collect{ |u| "#{u.dognum} от #{u.dogdate}" } %>
 	 		<% dogovora << "#{@user.dognum} от #{@user.dogdate}" if @user.dognum.present? %>
 	 		<div class="span1"><h4><%= f.select( :dogovor, dogovora ) %></h4></div>
