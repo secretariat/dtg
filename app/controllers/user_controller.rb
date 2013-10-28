@@ -25,6 +25,10 @@ class UserController < ApplicationController
 	def new
     @user = User.new
     @main = Main.new
+    1.times do
+			@user.dogovors.build
+		end
+
     render :layout => "manager"
   end
 

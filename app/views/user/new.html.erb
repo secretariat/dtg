@@ -1,8 +1,7 @@
 <br/>
-
 <center><h3>Создание нового пользователя</h3></center>
 <div class="span4 offset4">
-	<%= form_for(:user, :url => {:action => 'create'},:html => {:name => 'form1'}) do |f| %>
+	<%= form_for(@user, :url => {:action => 'create'},:html => {:name => 'form1'}) do |f| %>
 	 	<table>
 			<tr>
 				<th class="span4" align="left">ФИО Сотрудника:*</th>
@@ -25,8 +24,15 @@
 				<td><%= f.text_field(:chef) %></td>
 			</tr>
 			<tr>
-				<th align="left">Номер договора:*</th>
-				<td><%=f.text_field :dognum, :class=>'input-mini' %>&nbsp&nbsp от &nbsp&nbsp&nbsp<%=f.text_field :dogdate, :class=>'input-small'%></td>
+				<%= f.fields_for :dogovors do |builder| %>
+					<%= render "dogovor_fields", :f => builder %>
+				<% end %>
+			</tr>
+			<div id="goods"></div>
+			<tr>
+				<td>
+					<%= link_to_add_fields "Добавить", f, :dogovors %>
+				</td>
 			</tr>
 			<tr>
 				<th align="left">Код ЕДРПО:*</th>
@@ -39,7 +45,7 @@
 			<tr>
 				<th align="left">Email:*</th>
 				<td><%= f.text_field(:email) %></td>
-			</tr>	
+			</tr>
 			<%= form_for(:main, :url => {:action => 'create'},:html => {:name => 'form2'}) do |m| %>
 				<tr>
 					<th align="left">Логин:*</th>
