@@ -4,9 +4,10 @@
 <center><h3>Редактирование пользователя</h3></center>
 <br>
 
-<%= form_for( :user, :url => {:controller => 'user', :action => 'update', :id => @user.id }) do |f| %>
+<%= form_for( @user, :url => {:controller => 'user', :action => 'update', :id => @user.id }) do |f| %>
 <center>
  	<table>
+ 		<tbody id="goods">
 			<tr>
 				<th class="span3" align="left">ФИО Сотрудника:</th>
 				<td><%= f.text_field(:pib) %></td>
@@ -27,9 +28,23 @@
 				<th align="left">Руководитель:</th>
 				<td><%= f.text_field(:chef) %></td>
 			</tr>
+			<% if @user.dognum.present? %>
+        <tr>
+          <th align="left">Договор:</th>
+          <td class="input-large uneditable-input"><%= @user.dognum%> от <%= @user.dogdate %></td>
+        </tr>
+      <% end %>
 			<tr>
-				<th align="left">Номер договора:</th>
-				<td><%=f.text_field :dognum, :class=>'input-small' %> от<%=f.text_field :dogdate, :class=>'input-small'%></td>
+				<%= f.fields_for :dogovors do |builder| %>
+					<%= render "dogovor_fields", :f => builder %>
+				<% end %>
+			</tr>
+			</tbody>
+			<tr>
+				<td></td>
+				<td class="pull-right">
+					<%= link_to_add_fields "Добавить", f, :dogovors %>
+				</td>
 			</tr>
 			<tr>
 				<th align="left">Код ЕДРПО:</th>
@@ -42,8 +57,8 @@
 			<tr>
 				<th align="left">Email:</th>
 				<td><%= f.text_field(:email) %></td>
-			</tr>	
-			
+			</tr>
+
 	</table>
 
 	<br/>

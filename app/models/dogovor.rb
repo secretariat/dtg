@@ -1,4 +1,4 @@
 class Dogovor < ActiveRecord::Base
 	belongs_to :user
-  attr_accessible :dogdate, :dogname
+  attr_accessible :dognum, :dogdate
 end

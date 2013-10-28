@@ -24,10 +24,18 @@
         <th align="left">Руководитель:</th>
         <td class="input-large uneditable-input"><%= @user.chef %></td>
       </tr>
-      <tr>
-        <th align="left">Номер договора:</th>
-        <td class="input-large uneditable-input"><%= @user.dognum%> от <%=@user.dogdate %></td>
-      </tr>
+      <% if @user.dognum.present? %>
+        <tr>
+          <th align="left">Договор:</th>
+          <td class="input-large uneditable-input"><%= @user.dognum%> от <%= @user.dogdate %></td>
+        </tr>
+      <% end %>
+      <% @user.dogovors.each do |dogovor| %>
+        <tr>
+          <th align="left">Договор:</th>
+            <td class="input-large uneditable-input"><%= dogovor.dognum%> от <%= dogovor.dogdate %></td>
+        </tr>
+      <% end %>
       <tr>
         <th align="left">Код ЕДРПО:</th>
         <td class="input-large uneditable-input"><%= @user.edrpo %></td>
@@ -40,7 +48,6 @@
         <th align="left">Email:</th>
         <td class="input-large uneditable-input"><%= @user.email %></td>
       </tr>
-
   </table>
 
   <br/>

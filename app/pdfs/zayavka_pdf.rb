@@ -17,7 +17,7 @@ class ZayavkaPdf < Prawn::Document
       :normal  => "prawn_fonts/verdana.ttf" })
     font "Verdana", :size => 10
 
-    text "Завление опросник № #{@zayavka.id} от #{@zayavka.created_at}     к Договору № #{@user.dognum}     от #{@user.dogdate} г.", :align => :center, :style => :bold
+    text "Завление опросник № #{@zayavka.id} от #{@zayavka.created_at}     к Договору № #{@zayavka.dogovor} г.", :align => :center, :style => :bold
     move_down 5
 
     formatted_text [ { :text =>"Таможенный режим: "},

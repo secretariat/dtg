@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131028084153) do
+ActiveRecord::Schema.define(:version => 20131028213648) do
 
   create_table "admins", :force => true do |t|
     t.integer  "main_id"
@@ -191,6 +191,7 @@ ActiveRecord::Schema.define(:version => 20131028084153) do
     t.string   "field_10_1"
     t.string   "field_10_2"
     t.string   "field_10_3"
+    t.string   "dogovor"
   end
 
   add_index "zayavkas", ["user_id"], :name => "index_zayavkas_on_user_id"

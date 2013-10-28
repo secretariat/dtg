@@ -3,6 +3,7 @@
 <div class="span4 offset4">
 	<%= form_for(@user, :url => {:action => 'create'},:html => {:name => 'form1'}) do |f| %>
 	 	<table>
+	 		<tbody id="goods">
 			<tr>
 				<th class="span4" align="left">ФИО Сотрудника:*</th>
 				<td><%= f.text_field(:pib) %></td>
@@ -28,9 +29,10 @@
 					<%= render "dogovor_fields", :f => builder %>
 				<% end %>
 			</tr>
-			<div id="goods"></div>
+			</tbody>
 			<tr>
-				<td>
+				<td></td>
+				<td class="pull-right">
 					<%= link_to_add_fields "Добавить", f, :dogovors %>
 				</td>
 			</tr>

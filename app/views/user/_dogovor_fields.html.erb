@@ -1,6 +1,10 @@
-<tr>
+<tr class="fieldset">
 	<th align="left">Номер договора:*</th>
 	<td>
 		<%=f.text_field :dognum, :class=>'input-mini' %>&nbsp&nbsp от &nbsp&nbsp&nbsp<%=f.text_field :dogdate, :class=>'input-small', :style => "width: 95px;"%>
+	</td>
+	<td>
+		<%= f.hidden_field :_destroy %>
+		<%= link_to "", '#', class: "remove_fields icon-remove"%>
 	</td>
 </tr>
