@@ -71,9 +71,9 @@ class XmlMailer < ActionMailer::Base
         xml.phone user.phone
         xml.email user.email
         xml.chef user.chef
-        xml.dogovor zayavka.dogovor
-        # xml.dognum user.dognum
-        # xml.dogdate user.dogdate
+        dg = zayavka.dogovor.split(/от/)
+        xml.dognum dg[0].strip
+        xml.dogdate dg[1].strip
         xml.edrpo user.edrpo
         xml.gdcode user.gdcode
         xml.pib user.pib
