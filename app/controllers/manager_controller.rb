@@ -8,8 +8,8 @@ class ManagerController < ApplicationController
 
 	def index
 		if session[:priv] == 4
-			@mains = Main.where( "owner_id = #{session[:user_id]} AND priv_level = 3" ).order('created_at DESC')
-			@managers = Main.where("owner_id = #{session[:user_id]} AND priv_level = 2").order('created_at DESC')
+			@mains = Main.where( "priv_level = 3" ).order('created_at DESC')
+			@managers = Main.where("priv_level = 2").order('created_at DESC')
 		else
 			@mains = Main.where(:priv_level => 3 ).order('created_at DESC')
 		end
@@ -49,6 +49,7 @@ class ManagerController < ApplicationController
 	def new
     @manager = Manager.new
     @main = Main.new
+    @current_privileges = Main.find( session[:user_id] ).priv_level
     render :layout => get_layout
   end
 

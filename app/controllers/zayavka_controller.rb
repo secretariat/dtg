@@ -73,7 +73,7 @@ class ZayavkaController < ApplicationController
 			redirect_to( :controller => 'user', :action => 'index')
 		else
 			flash[:notice] = "Ошибка при создании Заявки"
-			redirect_to(:controller => 'user', :action => 'new')
+			redirect_to(:controller => 'zayavka', :action => 'new')
 		end
 
 	end

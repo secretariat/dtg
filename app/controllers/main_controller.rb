@@ -39,7 +39,7 @@ class MainController < ApplicationController
   def destroy
     Main.find( params[:id] ).destroy
     flash[:notice] = "Пользователь успешно удален"
-    redirect_to( :controller => 'user', :action => 'list')
+    redirect_to( :controller => 'manager', :action => 'index')
   end
 
   def logout

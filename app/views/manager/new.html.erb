@@ -5,7 +5,12 @@
 
 <div class="span4 offset4">
 <%= form_for(:manager, :url => {:action => 'create'}, :html => {:name => 'form1'}) do |f| %>
-	<h5>Менеджер с повышенными привилегиями &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= f.check_box(:supermanager) %></h5>
+	<% unless @current_privileges != 1%>
+		<h5>
+			Менеджер с повышенными привилегиями &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<%= f.check_box(:supermanager) %>
+		</h5>
+	<% end %>
  	<table>
  		<tr>
 			<th class="span2">ФИО:*</th>

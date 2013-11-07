@@ -24,16 +24,25 @@
 	height:20px;
 }
 
-.field_with_errors {
-	display: inline;
-}
-
-.field_with_errors .message{
-	color: red;
-	padding-left: 5px;
-	font-size: 12px;
-}
-
 .customs{
 	display: none;
 }
+
+/*CLEENT SIDE VALIDATIONS*/
+.field_with_errors {
+    display: inline;
+}
+
+.message{
+	color: red;
+	padding-left: 10px;
+	margin-top: -10px;
+	font-size: 12px;
+}
+
+/*.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}*/
