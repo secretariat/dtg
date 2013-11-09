@@ -12,7 +12,7 @@ class Zayavka < ActiveRecord::Base
   validates_presence_of :field_3_4, :message => "п. 3.4 не может быть пустым"
   # validates_presence_of :field_8_4_1, :message => "п. 8.4.1 не может быть пустым"
   # validates_presence_of :field_8_4_2, :message => "п. 8.4.2 не может быть пустым"
-  validates_presence_of :field_8_5, :message => "п. 8.5 не может быть пустым"
+  # validates_presence_of :field_8_5, :message => "п. 8.5 не может быть пустым"
   validates_presence_of :field_10_1, :message => "п. 10.1 не может быть пустым"
   validates_presence_of :field_10_2, :message => "п. 10.2 не может быть пустым"
   validates_presence_of :field_10_3, :message => "п. 10.3 не может быть пустым"

@@ -1,5 +1,4 @@
-set :deploy_to, "/home/user/www/sites/dtg"
-
+set :deploy_to, "/home/user/www/sites/dtgdev"
 namespace :deploy do
 
   task :restart do
