@@ -1,6 +1,4 @@
 <br/>
-
-
 <center><h3>Редактирование пользователя</h3></center>
 <br>
 
@@ -31,7 +29,7 @@
 			<% if @user.dognum.present? %>
         <tr>
           <th align="left">Договор:</th>
-          <td class="input-large uneditable-input"><%= @user.dognum%> от <%= @user.dogdate %></td>
+          <td><%= f.text_field(:dognum, :class => "input-mini") %>&nbsp&nbsp от &nbsp&nbsp&nbsp<%= f.text_field(:dogdate, :class => "input-mini", :style => "width: 85px;") %></td>
         </tr>
       <% end %>
 			<tr>
