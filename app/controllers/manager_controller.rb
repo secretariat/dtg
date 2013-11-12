@@ -11,7 +11,7 @@ class ManagerController < ApplicationController
 			@mains = Main.where( "priv_level = 3" ).order('created_at DESC')
 			@managers = Main.where("priv_level = 2").order('created_at DESC')
 		else
-			@mains = Main.where(:priv_level => 3 ).order('created_at DESC')
+			@mains = Main.where("priv_level = 3 AND owner_id = #{session[:user_id]}" ).order('created_at DESC')
 		end
 	end
 
