@@ -16,7 +16,7 @@ gem "nokogiri", "~> 1.5.5"
 gem 'mysql2'
 gem "builder", "~> 3.0.0"
 gem 'prawn'
-gem 'will_paginate', '~> 3.0.3'
+gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 
 gem 'daemons'
