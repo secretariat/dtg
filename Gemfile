@@ -11,7 +11,7 @@ gem 'client_side_validations'
 gem 'amoeba'
 
 gem "letter_opener", :group => :development
-gem "nokogiri", "~> 1.5.5"
+gem "nokogiri", "~> 1.11.4"
 
 gem 'mysql2'
 gem "builder", "~> 3.0.0"
